@@ -2,7 +2,7 @@ module.exports = {
  signup(user) {
    return $.ajax({
      method: "POST",
-     url: 'api/users',
+     url: '/api/users',
      data: {user: user}
    });
  },
@@ -10,7 +10,7 @@ module.exports = {
  login(user) {
    return $.ajax({
      method: "POST",
-     url: 'api/session',
+     url: '/api/session',
      data: {user: user}
    });
  },
@@ -18,7 +18,7 @@ module.exports = {
  logout() {
    return $.ajax({
      method: "DELETE",
-     url: 'api/session'
+     url: '/api/session'
    });
  }
 };
