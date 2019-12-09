@@ -11,9 +11,7 @@ const App = () => (
       <h1>Dopamine Dispenser</h1>
       <GreetingContainer />
     </header>
-    <Link to="/signup">Sign Up</Link>
-    <br></br>
-    <Link to="/login">Log In</Link>
+
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
   </div>
