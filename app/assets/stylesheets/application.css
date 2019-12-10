@@ -23,48 +23,118 @@ html, body {
   display: flex;
   justify-content: center;
   height: 100%;
-  background-color: rgba(var(--b3f,250,250,250),1);
+  background-color: rgb(250, 250, 250);
 }
  
 .app {
   display: flex;
+  justify-content: center;
   width: 100%;
   max-width: 350px;
   max-height: 540px;
-  border: 1px solid black;
+  border: 1px solid rgb(230, 230, 230);
   margin-top: 12px;
+  background-color: white;
 }
+/* possible inhert on display, align, flex direcion */
 
 .form-holder-div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 258px;
 }
+/* possible inhert on display, align, flex direcion */
 
 .signup {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 100%;
+  max-width: 350px;
+  min-width: 350px;
   height: 100%;
+}
+/* possible inhert on display, align, flex direcion */
+
+.signup-div {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  justify-content: center;
+  border-bottom: 6px solid transparent;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
 }
 
 input {
-  width: 50%;
+  background-color: rgb(250, 250, 250);
+  border: 0;
+  box-sizing: border-box;
+  min-height: 36px;
+  padding: 9px 0 7px 8px;
+  min-width: 258px;
+  max-width: 350px;
+  width: 100%;
+  border: #efefef 1px solid;
+}
+/* possible inheritance on line-height, background color */
+
+label {
+  position: relative;
+}
+
+.inactive-span {
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  color: rgb(153, 153, 153);
+  left: 8px;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 12px;
+}
+
+.active-span{
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  color: rgb(153, 153, 153);
+  left: 8px;
+  font-size: 11px;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 3px;
+}
+
+.button-div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  margin: 8px 40px 6px;
 }
 
 button {
-  background-color: rgba(var(--h5f,56,151,240),1);
-  color: rgba(var(--eca,255,255,255),1);
+  background-color: rgb(56, 145, 237);
+  color: white;
   font-weight: 600;
   font-size: 14px;
+  border: 1px solid transparent;
   border-radius: 5px;
-  min-height: 18px;
-  width: 70%;
+  height: 100%;
+  max-height: 29px;
+  min-width: 258px;
   padding: 5px 9px;
+  box-sizing: border-box;
 }
+
+
+
+
 
  /* 
 html{

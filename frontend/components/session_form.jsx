@@ -25,6 +25,14 @@ class SessionForm extends React.Component {
     };
   }
 
+  spanClass(field) {
+    if (this.state[field].length > 0){
+      return "active-span";
+    } else {
+      return "inactive-span";
+    }
+  }
+
   render() {
     //if youre logged in, show neither of these
     const errors = this.props.errors.map((error, i) => {
@@ -35,28 +43,32 @@ class SessionForm extends React.Component {
       return (
         <form className="signup">
           <h2>Sign up to see photos from your friends.</h2>
-          <ul>{errors}</ul>
           <br/>
-          <div>
+          <div className="signup-div">
             <label>
-              <span className="input-span">Email</span>
+              <span className={this.spanClass("email")} id="span">Email</span>
               <input type="email" onChange={this.handleChange("email")} value={this.state.email} />
             </label>
           </div>
-          <br/>
-          <div>
+          <div className="signup-div">
             <label>
-              Username <input type="text" onChange={this.handleChange("username")} value={this.state.username} />
+              <span className={this.spanClass("username")} id="span">Username</span>
+              <input type="text" onChange={this.handleChange("username")} value={this.state.username} />
             </label>
           </div>
-          <br/>
-          <div>
+          <div className="signup-div">
             <label>
-              Password <input type="password" onChange={this.handleChange("password")} value={this.state.password}></input>
+              <span className={this.spanClass("password")} id="span">Password</span>
+              <input type="password" onChange={this.handleChange("password")} value={this.state.password}></input>
             </label>
           </div>
-          <br/>
-          <button onClick={this.handleSubmit}>Sign Up</button>
+          <div className="button-div">
+            <button onClick={this.handleSubmit}>Sign Up</button>
+          </div>
+          <p>{errors}</p>
+          {/* <p>
+            By signing up, you agree to our Terms , Data Policy and Cookies Policy .
+          </p> */}
           <p>
             Have an account? <Link to="/login">Log in</Link> instead
           </p>
