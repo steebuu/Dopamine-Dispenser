@@ -36,15 +36,29 @@ class SessionForm extends React.Component {
         <form className="signup">
           <h2>Sign Up</h2>
           <ul>{errors}</ul>
-          <Link to="/login">Log in instead</Link>
           <br/>
-          Username: <input type="text" onChange={this.handleChange("username")} value={this.state.username} />
+          <div>
+            <label>
+              Email <input type="text" onChange={this.handleChange("email")} value={this.state.email} />
+            </label>
+          </div>
           <br/>
-          Email: <input type="text" onChange={this.handleChange("email")} value={this.state.email} />
+          <div>
+            <label>
+              Username <input type="text" onChange={this.handleChange("username")} value={this.state.username} />
+            </label>
+          </div>
           <br/>
-          Password: <input type="password" onChange={this.handleChange("password")} value={this.state.password}></input>
+          <div>
+            <label>
+              Password <input type="password" onChange={this.handleChange("password")} value={this.state.password}></input>
+            </label>
+          </div>
           <br/>
           <button onClick={this.handleSubmit}>Sign Up</button>
+          <p>
+            Have an account? <Link to="/login">Log in</Link> instead
+          </p>
         </form>
       )
     } else if (this.props.formType === "login") {

@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ @import "base/reset.scss";
 
 .main-component {
   display: flex;
@@ -25,6 +26,8 @@
 
 header > h1 {
   display: flex;
+  justify-content: center;
+  font-size: 30px;
 }
 
 form {
