@@ -10,7 +10,7 @@ const App = () => (
     
     <div className="form-holder-div">
       <header>
-        <h1>Dopamine Dispenser</h1>
+        {/* <img src={require()}/> */}
       </header>
       <Switch>
         <Route exact path="/" component={GreetingContainer}/>
