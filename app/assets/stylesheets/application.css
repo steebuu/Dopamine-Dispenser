@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+
+.main-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 30px auto 0;
+  width: 348px;
+  height: 526px;
+}
+
+header > h1 {
+  display: flex;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form > h2 {
+  text-align: center;
+}
+
+.signup {
+  font-size: 25px;
+  justify-items: center;
+}
+
+button {
+  background-color: rgba(var(--h5f,56,151,240),1);
+  color: rgba(var(--eca,255,255,255),1);
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 5px;
+  min-height: 18px;
+  width: auto;
+  padding: 5px 9px;
+}
