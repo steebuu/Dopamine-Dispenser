@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
- @import "base/reset.scss";
 
 html, body {
   height: 100%;
