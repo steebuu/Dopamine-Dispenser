@@ -7,9 +7,16 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <script type="text/javascript">
+      window.signupPhoto = "<%= image_url('logos/iglogo.png') %>"
+    </script>
+    <script type="text/javascript">
+      window.splashPhoto = "<%= image_url('logos/igsplashphone.png') %>"
+    </script>
   </head>
 
   <body>
     <%= yield %>
   </body>
 </html>
+

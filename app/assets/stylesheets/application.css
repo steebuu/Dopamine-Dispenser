@@ -25,18 +25,40 @@ html, body {
   height: 100%;
   background-color: rgb(250, 250, 250);
 }
+
+.text-logo{
+  height: 65px;
+  width: 175px;
+  margin-top: 22px;
+  margin-bottom: 12px;
+}
  
 .app {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   width: 100%;
   max-width: 350px;
-  max-height: 540px;
+  /* max-height: 542px;
   border: 1px solid rgb(230, 230, 230);
-  margin-top: 12px;
+  margin-top: 48px;
+  margin-bottom: 10px;
   background-color: white;
+  padding: 10px 0; */
 }
 /* possible inhert on display, align, flex direcion */
+
+.app-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+  max-height: 542px;
+  border: 1px solid rgb(230, 230, 230);
+  margin-top: 48px;
+  margin-bottom: 10px;
+  background-color: white;
+}
 
 .form-holder-div {
   display: flex;
@@ -47,7 +69,7 @@ html, body {
 }
 /* possible inhert on display, align, flex direcion */
 
-.signup {
+.signup, .login {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -57,12 +79,27 @@ html, body {
 }
 /* possible inhert on display, align, flex direcion */
 
+.signup-msg {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-weight: 600;
+  line-height: 20px;
+  font-size: 17px;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 10px solid transparent;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 350px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .signup-div {
   display: flex;
   box-sizing: border-box;
   width: 100%;
   flex-direction: row;
-  -webkit-box-orient: horizontal;
   justify-content: center;
   border-bottom: 6px solid transparent;
   border-left: 40px solid transparent;
@@ -79,6 +116,7 @@ input {
   max-width: 350px;
   width: 100%;
   border: #efefef 1px solid;
+  border-radius: 3px;
 }
 /* possible inheritance on line-height, background color */
 
@@ -92,7 +130,7 @@ label {
   user-select: none;
   position: absolute;
   color: rgb(153, 153, 153);
-  left: 8px;
+  left: 9px;
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
   top: 12px;
@@ -132,8 +170,27 @@ button {
   box-sizing: border-box;
 }
 
+.opposite{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: white;
+  border: 1px solid rgb(230, 230, 230);
+  padding: 10px 0px;
+  line-height: 18px;
+  height: 48px;
+}
+
+.signup-tos {
+  text-align: center;
+  margin: 10px 60px;
+  line-height: 18px;
+}
 /* .instagram-text-logo{
   background-image: url(/images/ig_logo.png);
 } */
+
 
 
