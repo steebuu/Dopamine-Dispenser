@@ -44,6 +44,12 @@ class SessionForm extends React.Component {
         <div className="form-holder-div">
           <form className="signup">
             <h2 className="signup-msg">Sign up to see photos from your friends.</h2>
+            <button>Log in with Facebook</button>
+            <div className="or-block-div">
+              <div className="line-div"></div>
+              <div className="or-div">OR</div>
+              <div className="line-div"></div>
+            </div>
             <div className="signup-div">
               <label>
                 <span className={this.spanClass("email")} id="span">Email</span>
