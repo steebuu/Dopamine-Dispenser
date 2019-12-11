@@ -35,9 +35,7 @@
   color: rgb(152, 152, 152);
 }
 
-label {
-  position: relative;
-}
+
 
 .app-div {
   display: flex;
@@ -137,10 +135,19 @@ label {
   height: 48px;
 }
 
+.opposite-p{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
 .signup-tos {
   text-align: center;
   margin: 10px 60px;
   line-height: 18px;
+  color: rgb(153, 153, 153);
+  font-size: 14px;
+  line-height: 18px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .downloads-div {
@@ -152,4 +159,22 @@ label {
 .get-app-msg {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.error-div {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  justify-content: center;
+  max-width: 286px;
+  margin-top: 10px;
+}
+
+.error-p {
+  display: block;
+  text-align: center;
+  color: red;
+  font-size: 14px;
+  line-height: 18px;
+  font-family: Arial, Helvetica, sans-serif;
 }
