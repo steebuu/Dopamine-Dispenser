@@ -28,17 +28,17 @@ const App = () => (
         <div className="opposite">
           <Route exact path="/signup" >
             <p className="opposite-p">
-              Have an account? <Link to="/login">Log in</Link>
+              Have an account? <Link to="/login" className="link">Log in</Link>
             </p>
           </Route>
           <Route exact path="/">
             <p className="opposite-p">
-              Have an account? <Link to="/login">Log in</Link>
+              Have an account? <Link to="/login" className="link">Log in</Link>
             </p>
           </Route>
           <Route exact path="/login">
             <p className="opposite-p">
-              Don't have an account? <Link to="/signup">Sign up</Link>
+              Don't have an account? <Link to="/signup" className="link">Sign up</Link>
             </p>
           </Route>
         </div>
@@ -69,7 +69,7 @@ const App = () => (
               <a className="footer-link" href="">LANGUAGE</a>
             </ul>
           </nav>
-          <p className="copyright">not a real copyright</p>
+        <p className="copyright">© 2019 DYING APE MAN TRAPPED IN SMALL ROOM</p>
         </div>
       </footer>
   </section>
