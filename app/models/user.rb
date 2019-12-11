@@ -8,6 +8,7 @@
 #  password_digest :string           not null
 #  session_token   :string           not null
 #  bio             :text
+#  full_name       :string
 #
 
 class User < ApplicationRecord
