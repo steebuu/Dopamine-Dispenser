@@ -1,6 +1,5 @@
 import React from 'react';
 import {Route, Link} from 'react-router-dom';
-import {AuthRoute} from '../util/route_util';
 
 const Opposite = () => {
   return (

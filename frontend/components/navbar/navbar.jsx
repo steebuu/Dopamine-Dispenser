@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link, Route} from 'react-router-dom';
-import {AuthRoute} from '../../util/route_util';
-import SignupFormContainer from '../../components/signup_form_container';
-import LoginFormContainer from '../../components/login_form_container';
+import {AuthRoute} from '../../util/route_util'
+import SignupFormContainer from '../userauth/signup_form_container';
+import LoginFormContainer from '../userauth/login_form_container';
 
 class NavBar extends React.Component {
   constructor(props){
@@ -18,8 +18,8 @@ class NavBar extends React.Component {
   render() {
     return(
       <nav className="navbar-nav">
-        <AuthRoute path="/signup" component={SignupFormContainer} />
-        <AuthRoute path="/login" component={LoginFormContainer} />
+        {/* <AuthRoute path="/signup" component={SignupFormContainer} />
+        <AuthRoute path="/login" component={LoginFormContainer} /> */}
         <div className="navbar-content-div">
           <div className="icon-logo-div">
             <i className="fas fa-theater-masks"></i>

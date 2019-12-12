@@ -1,14 +1,13 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import SignupJoiner from './signup_joiner';
 
-const LoginOrSignup = () => {
+const SignupSplash = () => {
   return (
     <div className="splash-signup-div">
       <Route exact path="/">
         <div className="splash-slide-div">
-          {/* <img className="splash-photo" src={window.splashPhoto} alt="" /> */}
-          <img className="splash-slide" src={window.splashSlide1} alt=""/>
+          <img className="splash-slide" src={window.splashSlide1} alt="" />
         </div>
       </Route>
 
@@ -17,4 +16,4 @@ const LoginOrSignup = () => {
   )
 }
 
-export default LoginOrSignup;
+export default SignupSplash;

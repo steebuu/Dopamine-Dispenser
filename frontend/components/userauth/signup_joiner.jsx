@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import Opposite from './opposite';
-import { AuthRoute } from '../util/route_util';
-import SignupFormContainer from '../components/signup_form_container';
-import LoginFormContainer from '../components/login_form_container';
+import { AuthRoute } from '../../util/route_util';
+import SignupFormContainer from './signup_form_container';
+import LoginFormContainer from './login_form_container';
 
 const SignupJoiner = () => {
   return(

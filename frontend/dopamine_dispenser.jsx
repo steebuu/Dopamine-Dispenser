@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 // import * as APIUtil from './util/session_api_util';
 import Root from '../frontend/components/root';
 import configureStore from './store/store';
-import { login, signup } from './actions/session_actions';
-import {logout} from './actions/session_actions';
+import { login, signup, logout } from './actions/session_actions';
 
 
 document.addEventListener("DOMContentLoaded", () => {
