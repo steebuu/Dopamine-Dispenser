@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
-import { receiveCurrentUser, logout } from '../actions/session_actions';
-import Greeting from './greeting';
+import App from './App';
 
 const msp = (state) => {
   return {
@@ -15,4 +14,4 @@ const mdp = (dispatch) => {
   };
 };
 
-export default connect(msp, mdp)(Greeting);
+export default connect(msp, mdp)(App);

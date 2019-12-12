@@ -20,8 +20,7 @@
 .footer-list {
   display: flex;
   width: 100%;
-  align-content: center;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 
@@ -36,7 +35,7 @@
 
 .copyright {
   display: flex;
-  align-self: center;
+  align-self: flex-end;
   max-width: 228px;
   font-size: 12px;
   font-weight: 600;

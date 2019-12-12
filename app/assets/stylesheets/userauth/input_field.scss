@@ -48,6 +48,7 @@ input {
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
   top: 12px;
+  transition: all 200ms ease;
 }
 
 .active-span{
@@ -60,4 +61,5 @@ input {
   font-size: 11px;
   font-family: Arial, Helvetica, sans-serif;
   top: 3px;
+  transition: all 250ms ease; 
 }

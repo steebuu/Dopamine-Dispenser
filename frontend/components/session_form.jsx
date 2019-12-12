@@ -12,6 +12,9 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
+    this.logoutTest = this.logoutTest.bind(this);
+    this.errorCheck = this.errorCheck.bind(this);
   }
 
   handleSubmit(e) {
@@ -53,9 +56,14 @@ class SessionForm extends React.Component {
     }
   }
   
-  handleDemoSubmit(){
-    const demoUser = {username: "demo", password: "demopass"}
+  handleDemoSubmit(e){
+    e.preventDefault();
+    const demoUser = {username: "demo", password: "demopass"};  
     this.props.login(demoUser);
+  }
+
+  logoutTest(){
+    this.props.logout();
   }
 
   render() {
@@ -69,7 +77,7 @@ class SessionForm extends React.Component {
         <div className="form-holder-div">
           <form className="signup">
             <h2 className="signup-msg">Sign up to see photos from your friends.</h2>
-            <button className="blue-button" onClick={this.handleDemoSubmit()}>Log in with Facebook</button>
+            <button className="blue-button" onClick={this.handleDemoSubmit}>Log in with Facebook</button>
             <div className="or-block-div">
               <div className="line-div"></div>
               <div className="or-div">OR</div>
@@ -120,6 +128,7 @@ class SessionForm extends React.Component {
             <p className="signup-tos">
               By signing up, you agree to our Terms, Data Policy and Cookies Policy.
             </p>
+            <button type="button" onClick={this.logoutTest}>LOG OUT</button>
           </form>
         </div>
       )
@@ -154,7 +163,7 @@ class SessionForm extends React.Component {
               <div className="line-div"></div>
             </div>
             <div className="login-form-demo">
-              <button className="login-form-demo-button" onClick={this.handleDemoLogin()}>
+              <button className="login-form-demo-button" onClick={this.handleDemoSubmit}>
                 Log in with demo account
               </button>
             </div>
@@ -162,6 +171,7 @@ class SessionForm extends React.Component {
               <p className="error-p">{this.errorCheck()}</p>
             </div>
           </form>
+          <button onClick={this.logoutTest}>LOG OUT</button>
         </div>
       )
     }
