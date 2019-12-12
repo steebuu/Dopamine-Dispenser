@@ -1,0 +1,94 @@
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 7.87%;
+  border-bottom: 1px solid rgb(219, 219, 219);
+  background-color: rgb(255,255,255);
+}
+
+.navbar-content-div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1010px;
+  width: 100%;
+
+}
+
+.icon-logo-div{
+  width: 100%;
+  display: flex;
+  flex-basis: auto;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+
+.fa-theater-masks {
+  font-size: 24px;
+}
+
+.nav-text-logo-div{
+  display: flex;
+  width: 100%;
+}
+
+.navlogo{
+  object-fit: contain;
+  height: 100%;
+  max-width: 103px;
+  max-height: 29px;
+}
+
+.vr {
+  display: flex;
+  min-height: 28px;
+  max-height: 28px;
+  height: 100%;
+  min-width: 1px;
+  max-width: 1px;
+  width: 100%;
+  margin: 0px 16px;
+  background-color: black;
+}
+
+.nav-search-div {
+  max-width: 215px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 28px;
+}
+
+.nav-search {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 3px;
+    background-color: rgb(250,250,250);
+}
+
+.nav-right-div{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.nav-right-icons-div{
+  display: flex;
+  max-width: 132px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.nav-logout-button{
+  justify-self: right;
+}
+
+.fa-compass, .fa-heart, .fa-user{
+  font-size: 24px;
+  padding: 0px, 15px;
+}

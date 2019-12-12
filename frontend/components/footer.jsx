@@ -19,7 +19,7 @@ const Footer = () => {
             <a className="footer-link" href="">LANGUAGE</a>
           </ul>
         </nav>
-        <p className="copyright">© 2019 DYING APE MAN TRAPPED IN SMALL ROOM</p>
+        <p className="copyright">© 2019 EVERY MOMENT I SPEND ON THESE STYLESHEETS I FALL FURTHER FROM THE LIGHT OF DIVINITY</p>
       </div>
     </footer>
   )

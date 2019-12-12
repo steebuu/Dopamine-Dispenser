@@ -5,7 +5,11 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render '/api/users/show'
     else
-      render json: ['wrong user/password combination'], status: 401
+      if !@user
+        render json: ["The username you entered doesn't belong to an account. Please check your username and try again."], status: 401
+      elsif @user.password != params[:user][:password]
+        render json: ["Sorry, your password was incorrect. Please double-check your password."], status: 401
+      end
     end
   end
 

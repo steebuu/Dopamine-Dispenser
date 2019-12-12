@@ -21,11 +21,11 @@ const SignupJoiner = () => {
       </div>
       <Opposite />
 
-      <p className="get-app-msg">Get the app.</p>
+      {/* <p className="get-app-msg">Get the app.</p>
       <div className="downloads-div">
         <img className="download-img" src={window.appStore} alt="" />
         <img className="download-img" src={window.googlePlay} alt="" />
-      </div>
+      </div> */}
     </div>
   )
 }

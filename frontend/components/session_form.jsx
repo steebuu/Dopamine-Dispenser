@@ -13,8 +13,7 @@ class SessionForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
-    this.logoutTest = this.logoutTest.bind(this);
-    this.errorCheck = this.errorCheck.bind(this);
+    this.errorCheck = this.errorCheck.bind(this); 
   }
 
   handleSubmit(e) {
@@ -62,14 +61,10 @@ class SessionForm extends React.Component {
     this.props.login(demoUser);
   }
 
-  logoutTest(){
-    this.props.logout();
-  }
-
   render() {
     //if youre logged in, show neither of these
     const errors = this.props.errors.map((error, i) => {
-      return <li key={i}>{error}</li>
+      return <p className="error-p" key={i}>{error}</p>
     })
 
     if (this.props.formType === "signup") {
@@ -77,7 +72,7 @@ class SessionForm extends React.Component {
         <div className="form-holder-div">
           <form className="signup">
             <h2 className="signup-msg">Sign up to see photos from your friends.</h2>
-            <button className="blue-button" onClick={this.handleDemoSubmit}>Log in with Facebook</button>
+            <button className="blue-button" onClick={this.handleDemoSubmit}>Demo Login</button>
             <div className="or-block-div">
               <div className="line-div"></div>
               <div className="or-div">OR</div>
@@ -86,7 +81,7 @@ class SessionForm extends React.Component {
             <div className="signup-div">
               <label className="input-label">
                 <span className={this.spanClass("email")} id="span">Email</span>
-                <input type="email" onChange={this.handleChange("email")} value={this.state.email} />
+                <input className="session-input"  type="email" onChange={this.handleChange("email")} value={this.state.email} />
                 <div className="x-div">
                   <i className={"far fa-times-circle " + this.xClass("Email")}></i>
                 </div>
@@ -95,7 +90,7 @@ class SessionForm extends React.Component {
             <div className="signup-div">
               <label className="input-label">
                 <span className={this.spanClass("full_name")} id="span">Full Name</span>
-                <input type="full_name" onChange={this.handleChange("full_name")} value={this.state.full_name} />
+                <input className="session-input" type="full_name" onChange={this.handleChange("full_name")} value={this.state.full_name} />
                 <div className="x-div">
                   <i className={"far fa-times-circle " + this.xClass("full_name")}></i>
                 </div>
@@ -104,7 +99,7 @@ class SessionForm extends React.Component {
             <div className="signup-div">
               <label className="input-label">
                 <span className={this.spanClass("username")} id="span">Username</span>
-                <input type="text" onChange={this.handleChange("username")} value={this.state.username} />
+                <input className="session-input" type="text" onChange={this.handleChange("username")} value={this.state.username} />
                 <div className="x-div">
                   <i className={"far fa-times-circle " + this.xClass("Username")}></i>
                 </div>
@@ -113,7 +108,7 @@ class SessionForm extends React.Component {
             <div className="signup-div">
               <label className="input-label">
                 <span className={this.spanClass("password")} id="span">Password</span>
-                <input type="password" onChange={this.handleChange("password")} value={this.state.password}></input>
+                <input className="session-input" type="password" onChange={this.handleChange("password")} value={this.state.password}></input>
                 <div className="x-div">
                   <i className={"far fa-times-circle " + this.xClass("Password")}></i>
                 </div>
@@ -126,9 +121,8 @@ class SessionForm extends React.Component {
               <p className="error-p">{this.errorCheck()}</p>
             </div>
             <p className="signup-tos">
-              By signing up, you agree to our Terms, Data Policy and Cookies Policy.
+              You may experience mild to extreme envy as you compare yourself to the curated and edited lives of your peers.
             </p>
-            <button type="button" onClick={this.logoutTest}>LOG OUT</button>
           </form>
         </div>
       )
@@ -139,18 +133,18 @@ class SessionForm extends React.Component {
             <div className="signup-div">
               <label className="input-label">
                 <span className={this.spanClass("username")} id="span">Username</span>
-                <input type="text" onChange={this.handleChange("username")} value={this.state.username} />
+                <input className="session-input" type="text" onChange={this.handleChange("username")} value={this.state.username} />
                 <div className="x-div">
-                  <i className={"far fa-times-circle " + this.xClass("Username")}></i>
+                  <i className={"far fa-times-circle " + this.xClass("zxcv")}></i>
                 </div>
               </label>
             </div>
             <div className="signup-div">
               <label className="input-label">
                 <span className={this.spanClass("password")} id="span">Password</span>
-                <input type="password" onChange={this.handleChange("password")} value={this.state.password}></input>
+                <input className="session-input" type="password" onChange={this.handleChange("password")} value={this.state.password}></input>
                 <div className="x-div">
-                  <i className={"far fa-times-circle " + this.xClass("Password")}></i>
+                  <i className={"far fa-times-circle " + this.xClass("zxcv")}></i>
                 </div>
               </label>
             </div>
@@ -168,10 +162,9 @@ class SessionForm extends React.Component {
               </button>
             </div>
             <div className="error-div">
-              <p className="error-p">{this.errorCheck()}</p>
+              {errors}
             </div>
           </form>
-          <button onClick={this.logoutTest}>LOG OUT</button>
         </div>
       )
     }

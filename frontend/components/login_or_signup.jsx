@@ -6,7 +6,10 @@ const LoginOrSignup = () => {
   return (
     <div className="splash-signup-div">
       <Route exact path="/">
-        <img className="splash-photo" src={window.splashPhoto} alt="" />
+        <div className="splash-slide-div">
+          {/* <img className="splash-photo" src={window.splashPhoto} alt="" /> */}
+          <img className="splash-slide" src={window.splashSlide1} alt=""/>
+        </div>
       </Route>
 
       <SignupJoiner />

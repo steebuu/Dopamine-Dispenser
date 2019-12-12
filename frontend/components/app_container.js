@@ -3,7 +3,7 @@ import App from './App';
 
 const msp = (state) => {
   return {
-    currentUser: state.entities.users[state.session.id]
+    loggedIn: state.entities.users[state.session.id]
   };
 };
 
