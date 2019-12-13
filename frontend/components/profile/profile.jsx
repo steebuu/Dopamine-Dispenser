@@ -8,6 +8,7 @@ class Profile extends React.Component {
 
   render(){
     const {currentUser} = this.props;
+    const {openModal} = this.props;
     return(
       <main className="profile-main">
         <NavBarContainer/>
@@ -22,7 +23,7 @@ class Profile extends React.Component {
               <div className="info-username-div">
                 <h1 className="profile-username">{currentUser.username}</h1>
                 <button className="profile-action-button">Edit Profile</button>
-                <i className="fas fa-cog"></i>
+                <i className="fas fa-cog" onClick={()=>{openModal('profile')}}></i>
               </div>
               <div className="info-stats-div">
                 <ul className="info-stats-ul">
@@ -31,7 +32,12 @@ class Profile extends React.Component {
                   <li className="stat-element">0 following</li>
                 </ul>
               </div>
-              <span className="info-bio-div">{currentUser.bio}</span>
+              <div className="info-bio-div">
+                <h1 className="bio-fullname-h1">{currentUser.full_name}</h1>
+                <div className="bio-text-div">
+                  <span className="user-bio-span">{currentUser.bio}</span>
+                </div>
+              </div>
             </div>
           </div>
           <div className="profile-feed">

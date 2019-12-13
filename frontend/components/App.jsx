@@ -9,6 +9,7 @@ import SignupJoiner from './userauth/signup_joiner';
 import SplashContainer from './splash_container';
 import NavBarContainer from './navbar/navbar_container';
 import ProfileContainer from './profile/profile_container';
+import Modal from './modal';
 
 class App extends React.Component {
   constructor(props){
@@ -20,8 +21,9 @@ class App extends React.Component {
     // const {currentUser} = this.props.currentUser;
     return (
       <section className="app">
+        <Modal/>
         <Switch>
-          <Route path="/users/:username" component={ProfileContainer}/>
+          <ProtectedRoute path="/users/:username" component={ProfileContainer}/>
           <Route path="/" component={SplashContainer}/>
         </Switch>
         <Footer/> 

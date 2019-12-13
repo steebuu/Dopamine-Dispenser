@@ -1,20 +1,17 @@
 import React from 'react';
-import { closeModal } from '../../actions/modal_actions';
+import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
-import LoginFormContainer from '../session_form/login_form_container';
-import SignupFormContainer from '../session_form/signup_form_container';
+import ProfileModal from '../components/profile/profile_modal';
 
 function Modal({ modal, closeModal }) {
+  // debugger;
   if (!modal) {
     return null;
   }
   let component;
   switch (modal) {
-    case 'login':
-      component = <LoginFormContainer />;
-      break;
-    case 'signup':
-      component = <SignupFormContainer />;
+    case 'profile':
+      component = <ProfileModal></ProfileModal>
       break;
     default:
       return null;
