@@ -21,6 +21,8 @@
 .profile-summary-div {
   display: flex;
   justify-content: flex-start;
+  padding-bottom: 44px;
+  border-bottom: 1px solid rgb(239, 239, 239);
 }
 
 .profile-summary-info-div {
@@ -28,6 +30,8 @@
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 2;
+  max-width: 613px;
+
 }
 
 .profile-pic-div{
@@ -35,6 +39,7 @@
   justify-content: center;
   align-items: flex-start;
   flex-grow: 1;
+  margin-right: 30px;
 }
 
 .profile-pic-holder{
@@ -57,6 +62,13 @@
 
 .info-username-div {
   display: flex;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.profile-username {
+  font-size: 28px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .info-stats-ul {
@@ -66,4 +78,32 @@
 
 .stat-element {
   margin-right: 40px;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
+.info-bio-div {
+  display: flex;
+  width: 100%;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.profile-action-button {
+  background-color: transparent;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 4px;
+  margin-left: 20px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+  padding: 5px 9px;
+}
+
+.fa-cog {
+  font-size: 24px;
+  background-color: transparent;
+  border: none;
+  margin-left: 5px;
+}
+
+

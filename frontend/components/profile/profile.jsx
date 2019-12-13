@@ -21,6 +21,8 @@ class Profile extends React.Component {
             <div className="profile-summary-info-div">
               <div className="info-username-div">
                 <h1 className="profile-username">{currentUser.username}</h1>
+                <button className="profile-action-button">Edit Profile</button>
+                <i className="fas fa-cog"></i>
               </div>
               <div className="info-stats-div">
                 <ul className="info-stats-ul">
@@ -29,7 +31,7 @@ class Profile extends React.Component {
                   <li className="stat-element">0 following</li>
                 </ul>
               </div>
-              <div className="info-bio-div">bio</div>
+              <span className="info-bio-div">{currentUser.bio}</span>
             </div>
           </div>
           <div className="profile-feed">
