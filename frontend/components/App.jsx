@@ -1,5 +1,4 @@
 import React from 'react';
-import GreetingContainer from './greeting_container';
 import SignupFormContainer from './userauth/signup_form_container';
 import LoginFormContainer from './userauth/login_form_container';
 import { Route, Switch } from 'react-router-dom';
@@ -9,6 +8,7 @@ import Footer from './footer';
 import SignupJoiner from './userauth/signup_joiner';
 import SplashContainer from './splash_container';
 import NavBarContainer from './navbar/navbar_container';
+import ProfileContainer from './profile/profile_container';
 
 class App extends React.Component {
   constructor(props){
@@ -17,19 +17,13 @@ class App extends React.Component {
   }
 
   render() {
-    // const { loggedIn } = this.props;
-    // // if (loggedIn){
-    // //   return(
-    // //     <section className="app">
-    // //       <NavBarContainer></NavBarContainer>
-    // //       <Footer /> 
-    // //     </section>
-    // //   )
-    // // }  
+    // const {currentUser} = this.props.currentUser;
     return (
       <section className="app">
-        <Route path="/" component={SplashContainer}/>
-        
+        <Switch>
+          <Route path="/users/:username" component={ProfileContainer}/>
+          <Route path="/" component={SplashContainer}/>
+        </Switch>
         <Footer/> 
       </section>
     )

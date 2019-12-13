@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import App from './App';
+import Profile from './profile';
 
-const msp = (state, ownProps) => {
+const msp = (state) => {
   return {
     currentUser: state.entities.users[state.session.id]
   };
@@ -9,8 +9,8 @@ const msp = (state, ownProps) => {
 
 const mdp = (dispatch) => {
   return {
-    logoutCurrentUser: () => dispatch(logout())
+    logout: () => dispatch(logout())
   };
 };
 
-export default connect(msp, mdp)(App);
+export default connect(msp, mdp)(Profile);

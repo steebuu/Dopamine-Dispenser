@@ -1,0 +1,69 @@
+.profile-main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-div {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  max-width: 935px;
+  width: 100%;
+  height: 100%; 
+  padding-top: 60px;
+
+}
+
+.profile-summary-div {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.profile-summary-info-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 2;
+}
+
+.profile-pic-div{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-grow: 1;
+}
+
+.profile-pic-holder{
+  display: flex;
+  max-width: 150px;
+  max-height: 150px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  // border: 1px solid black;
+  border-radius: 100px;
+}
+
+
+.profile-pic {
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+}
+
+.info-username-div {
+  display: flex;
+}
+
+.info-stats-ul {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.stat-element {
+  margin-right: 40px;
+}
