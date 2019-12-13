@@ -4,6 +4,7 @@
   width: 100%;
   max-height: 104px;
   height: 100%;
+  align-self: flex-end;
 }
 
 .footer-nav-div {
@@ -14,14 +15,14 @@
 
 .footer-nav {
   display: flex;
+  align-items: center;
   width: 100%;
 }
 
 .footer-list {
   display: flex;
   width: 100%;
-  align-content: center;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 }
 

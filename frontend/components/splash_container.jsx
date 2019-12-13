@@ -1,11 +1,10 @@
 import { connect } from 'react-redux';
+import Splash from './splash';
 import { receiveCurrentUser, logout } from '../actions/session_actions';
-import Greeting from './greeting';
 
 const msp = (state) => {
-
   return {
-    currentUser: state.entities.users[state.session.id]
+    loggedIn: Boolean(state.entities.users[state.session.id])
   };
 };
 
@@ -16,4 +15,4 @@ const mdp = (dispatch) => {
   };
 };
 
-export default connect(msp, mdp)(Greeting);
+export default connect(msp, mdp)(Splash);
