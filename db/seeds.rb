@@ -12,6 +12,6 @@ demo = User.create!(
   username: "demo",
   password: "demopass",
   email: "demo@e.mail",
-  full_name: "demo user",
+  full_name: "Demo Arigato",
   bio: "Born of crudely cobbled CSS and the unending anguish of my creator. Every waking moment brings untold suffering. also follow 4 follow"
 )
