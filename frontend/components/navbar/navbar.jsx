@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link, Route} from 'react-router-dom';
-import {AuthRoute} from '../../util/route_util'
+import {AuthRoute} from '../../util/route_util';
 import SignupFormContainer from '../userauth/signup_form_container';
 import LoginFormContainer from '../userauth/login_form_container';
 import ProfileContainer from '../profile/profile_container';
