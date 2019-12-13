@@ -70,9 +70,9 @@ class SessionForm extends React.Component {
     if (this.props.formType === "signup") {
       return (
         <div className="form-holder-div">
+          <h2 className="signup-msg">Sign up to see photos from your friends.</h2>
+          <button className="blue-button" onClick={this.handleDemoSubmit}>Demo Login</button>
           <form className="signup">
-            <h2 className="signup-msg">Sign up to see photos from your friends.</h2>
-            <button className="blue-button" onClick={this.handleDemoSubmit}>Demo Login</button>
             <div className="or-block-div">
               <div className="line-div"></div>
               <div className="or-div">OR</div>
@@ -90,7 +90,7 @@ class SessionForm extends React.Component {
             <div className="signup-div">
               <label className="input-label">
                 <span className={this.spanClass("full_name")} id="span">Full Name</span>
-                <input className="session-input" type="full_name" onChange={this.handleChange("full_name")} value={this.state.full_name} />
+                <input className="session-input" type="text" onChange={this.handleChange("full_name")} value={this.state.full_name} />
                 <div className="x-div">
                   <i className={"far fa-times-circle " + this.xClass("full_name")}></i>
                 </div>
