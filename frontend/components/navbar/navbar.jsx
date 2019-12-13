@@ -23,13 +23,15 @@ class NavBar extends React.Component {
         {/* <AuthRoute path="/signup" component={SignupFormContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} /> */}
         <div className="navbar-content-div">
-          <div className="icon-logo-div">
-            <i className="fas fa-theater-masks"></i>
-            <div className="vr"></div>
-            <div className="nav-text-logo-div">
-              <img src={window.signupPhoto} alt="" className="navlogo"/>
+          <Link to="/" className="icon-logo-link"> 
+            <div className="icon-logo-div">
+              <i className="fas fa-theater-masks"></i>
+              <div className="vr"></div>
+              <div className="nav-text-logo-div">
+                <img src={window.signupPhoto} alt="" className="navlogo"/>
+              </div>
             </div>
-          </div>
+          </Link>
           <div className="nav-search-div">
             <span></span>
             <input className="nav-search" type="text" name="" />

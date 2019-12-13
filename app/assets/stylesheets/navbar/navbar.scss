@@ -16,6 +16,16 @@
 
 }
 
+.icon-logo-link{
+  width: 100%;
+  display: flex;
+  flex-basis: auto;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  text-decoration: none;
+}
+
 .icon-logo-div{
   width: 100%;
   display: flex;
@@ -27,6 +37,7 @@
 
 .fa-theater-masks {
   font-size: 24px;
+  color: black;
 }
 
 .nav-text-logo-div{
@@ -92,6 +103,10 @@
   font-size: 24px;
   padding: 0px, 15px; 
   text-decoration: none;
+}
+
+.fa-compass:hover, .fa-heart:hover, .fa-user:hover .icon-logo-div:hover {
+  cursor: pointer;
 }
 
 .icon-link{
