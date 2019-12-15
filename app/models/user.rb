@@ -46,4 +46,9 @@ class User < ApplicationRecord
     self.save!
     self.session_token
   end
+
+  has_many :images,
+    class_name: :Image,
+    foreign_key: :user_id,
+    primary_key: :id
 end
