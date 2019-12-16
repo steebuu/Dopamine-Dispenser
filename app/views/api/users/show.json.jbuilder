@@ -4,9 +4,7 @@
 # json.user do
 #   json.set! @user.id, :id, :username, :bio, :full_name, :image_ids
 # end
-json.set! @user.id do 
   json.extract! @user, :id, :username, :bio, :full_name, :image_ids
-end
 
 json.images do  
   @user.images.each do |image|
