@@ -21,4 +21,16 @@ image = Image.create!(
   caption: "test"
 )
 
-image.photo.attach(io: File.open('app/assets/images/test.png'), filename: "test.png")
+image_2 = Image.create!(
+  user_id: demo.id,
+  caption: "test 2"
+)
+
+image_3 = Image.create!(
+  user_id: demo.id,
+  caption: "test 3"
+)
+
+image.photo.attach(io: File.open('app/assets/images/demo/test.png'), filename: "test.png")
+image_2.photo.attach(io: File.open('app/assets/images/demo/test_2.png'), filename: "test_2.png")
+image_3.photo.attach(io: File.open('app/assets/images/demo/test_3.png'), filename: "test_3.png")

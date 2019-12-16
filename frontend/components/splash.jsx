@@ -12,7 +12,7 @@ class Splash extends React.Component {
       return(
         <div className="loggedin-splash">
           <NavBarContainer></NavBarContainer>
-          <ImageIndex></ImageIndex>
+          {/* <ImageIndex></ImageIndex> */}
         </div>
       )
     } else {
