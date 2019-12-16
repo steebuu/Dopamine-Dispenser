@@ -20,5 +20,12 @@ module.exports = {
      method: "DELETE",
      url: '/api/session'
    });
- }
+ },
+
+ fetchImages() {
+   return $.ajax({
+     method: "GET",
+     url: `/api/images`
+   });
+ },
 };

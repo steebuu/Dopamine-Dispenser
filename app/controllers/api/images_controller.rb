@@ -1,12 +1,12 @@
-class ImagesController < ApplicationController
-  # def show
-  #   @image = Image.find(params[:id])
-  #   render :show
-  # end
-
+class Api::ImagesController < ApplicationController
   def index
     @images = Image.all
     render :index 
+  end
+
+  def show 
+    @post = Post.find(params[:id])
+    render :show
   end
 
   private
@@ -15,3 +15,4 @@ class ImagesController < ApplicationController
     params.require(:image).permit(:caption)
   end
 end
+

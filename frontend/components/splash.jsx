@@ -4,7 +4,7 @@ import SignupJoiner from './userauth/signup_joiner';
 import NavBarContainer from './navbar/navbar_container';
 import SignupSplash from './userauth/signup_splash';
 import {ProtectedRoute, AuthRoute} from '../util/route_util';
-import Feed from './feed/feed';
+import ImageIndex from './feed/image_index';
 
 class Splash extends React.Component {
   render(){
@@ -12,7 +12,7 @@ class Splash extends React.Component {
       return(
         <div className="loggedin-splash">
           <NavBarContainer></NavBarContainer>
-          <Feed></Feed>
+          <ImageIndex></ImageIndex>
         </div>
       )
     } else {

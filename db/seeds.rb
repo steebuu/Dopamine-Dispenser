@@ -15,3 +15,10 @@ demo = User.create!(
   full_name: "Demo Arigato",
   bio: "Born of crudely cobbled CSS and the unending anguish of my creator. Every waking moment brings untold suffering. also follow 4 follow"
 )
+
+image = Image.create!(
+  user_id: demo.id,
+  caption: "test"
+)
+
+image.photo.attach(io: File.open('app/assets/images/test.png'), filename: "test.png")

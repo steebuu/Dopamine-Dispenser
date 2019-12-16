@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBarContainer from '../navbar/navbar_container';
+import ImageIndex from '../feed/image_index';
 
 class Profile extends React.Component {
   constructor(props){
@@ -41,7 +42,7 @@ class Profile extends React.Component {
             </div>
           </div>
           <div className="profile-feed">
-
+            <ImageIndex></ImageIndex>
           </div>
         </div>
       </main>
