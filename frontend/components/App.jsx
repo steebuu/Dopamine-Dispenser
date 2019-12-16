@@ -23,7 +23,8 @@ class App extends React.Component {
       <section className="app">
         <Modal/>
         <Switch>
-          <ProtectedRoute path="/users/:username" component={ProfileContainer}/>
+          <Route path="/users/:id" component={ProfileContainer}/>
+   
           <Route path="/" component={SplashContainer}/>
         </Switch>
         <Footer/> 

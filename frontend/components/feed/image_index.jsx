@@ -1,36 +1,23 @@
 import React from 'react';
+import { openModal } from '../../actions/modal_actions';
 
 class ImageIndex extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      images: []
-    };
-    this.fetchImages = this.fetchImages.bind(this);
-  }
-
-  fetchImages() {
-    return (
-      $.ajax({
-        method: "GET",
-        url: "/api/images"
-      }).then(images => {
-        this.setState({ images });
-      })
-    );
   }
 
   componentDidMount(){
-    this.fetchImages();
+    this.props.fetchImages();
   }
 
   render(){
-    let FeedImages = "";
-    if (this.state.images.length > 0){
-      FeedImages = this.state.images.map(image => {
+    const {openModal, images, image_ids} = this.props;
+    let FeedImages;
+    if (image_ids.length > 0){
+      FeedImages = image_ids.map(id => {
         return (
-          <div key={image.id} className="feed-image-div">
-            <img src={image.photoUrl} className="thumbnail" />
+          <div key={id} className="feed-image-div">
+            <img src={images[id].photoUrl} className="thumbnail" onClick={()=>{openModal('image')}}/>
           </div>
         )
       })

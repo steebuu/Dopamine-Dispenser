@@ -18,6 +18,16 @@ class Api::ImagesController < ApplicationController
     end
   end
 
+  def update
+    @image = Image.find(params[:id])
+    @image.update(caption: params[:image][:caption])
+    if image.update
+      render json: {message: "Update successful"}
+    else
+      render json: image.errors.full_messages, status: 422
+    end
+  end
+
   private
 
   def image_params

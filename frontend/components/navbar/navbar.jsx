@@ -17,7 +17,7 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const {currentUser} = this.props;
+    // const {currentUser} = this.props;
     return(
       <nav className="navbar-nav">
         {/* <AuthRoute path="/signup" component={SignupFormContainer} />
@@ -40,9 +40,9 @@ class NavBar extends React.Component {
             <div className="nav-right-icons-div">
               <i className="far fa-compass"></i>  
               <i className="far fa-heart"></i>
-              <Link to={`/users/${currentUser.id}`} className="icon-link">
+              {/* <Link to={`/users/${currentUser.id}`} className="icon-link"> */}
                 <i className="far fa-user"></i>
-              </Link>
+              {/* </Link> */}
               {/* <i className="far fa-user" onClick={this.handleLogout}></i> */}
               {/* <button className="nav-logout-button" onClick={this.handleLogout}>Logout</button> */}
             </div>

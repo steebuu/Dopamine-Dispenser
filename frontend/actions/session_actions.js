@@ -4,8 +4,6 @@ export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
-export const RECEIVE_SINGLE_USER = "RECEIVE_SINGLE_USER";
-
 
 export const receiveCurrentUser = (currentUser) => {
   return {
@@ -54,15 +52,3 @@ export const clearErrors = () => {
   };
 };
 
-export const requestSingleUser = id => dispatch => {
-  return APIUtil.fetchSingleUser(id).then(user => {
-    dispatch(receiveSingleUser(user));
-  });
-};
-
-export const receiveSingleUser = payload => {
-  return {
-    type: RECEIVE_SINGLE_USER,
-    payload
-  };
-};

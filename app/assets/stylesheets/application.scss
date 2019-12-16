@@ -31,22 +31,6 @@ html, body {
   height: 100%;
 }
 
-.modal-background {
-  display: flex;
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-child{
-  display: flex;
-  width: 400px;
-  max-height: fit-content;
-  background-color: transparent;
-}
 
 
 

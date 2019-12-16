@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBarContainer from '../navbar/navbar_container';
-import ImageIndex from '../feed/image_index';
+import ImageIndexContainer from '../feed/image_index_container';
 import ImageUploadContainer from './image_upload_container';
 
 class Profile extends React.Component {
@@ -8,9 +8,15 @@ class Profile extends React.Component {
     super(props);
   }
 
+  componentDidMount(){
+    const {user, getUser, match} = this.props;
+      getUser(match.params.id);
+  }
+
   render(){
-    const {currentUser} = this.props;
     const {openModal} = this.props;
+    const user = this.props.user || {};
+    // debugger;
     return(
       <main className="profile-main">
         <NavBarContainer/>
@@ -23,7 +29,7 @@ class Profile extends React.Component {
             </div>
             <div className="profile-summary-info-div">
               <div className="info-username-div">
-                <h1 className="profile-username">{currentUser.username}</h1>
+                <h1 className="profile-username">{user.username}</h1>
                 <button className="profile-action-button">Edit Profile</button>
                 <i className="fas fa-cog" onClick={()=>{openModal('profile')}}></i>
               </div>
@@ -35,16 +41,16 @@ class Profile extends React.Component {
                 </ul>
               </div>
               <div className="info-bio-div">
-                <h1 className="bio-fullname-h1">{currentUser.full_name}</h1>
+                <h1 className="bio-fullname-h1">{user.full_name}</h1>
                 <div className="bio-text-div">
-                  <span className="user-bio-span">{currentUser.bio}</span>
+                  <span className="user-bio-span">{user.bio}</span>
                 </div>
               </div>
             </div>
           </div>
           <div className="profile-feed">
             <ImageUploadContainer/>
-            <ImageIndex></ImageIndex>
+            <ImageIndexContainer></ImageIndexContainer>
           </div>
         </div>
       </main>

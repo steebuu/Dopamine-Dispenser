@@ -1,0 +1,46 @@
+
+.modal-background {
+  display: flex;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-child{
+  display: flex;
+  max-width: fit-content;
+  max-height: fit-content;
+  background-color: transparent;
+}
+
+.image-modal {
+  display: flex;
+  min-width: 935px;
+  width: 100%;
+  background-color: white;
+}
+
+.image-modal-picture-div {
+  border-right: 1px solid black;
+  width: 100%;
+}
+
+.image-modal-info-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-modal-info-user-div{
+  border-bottom: 1px solid black;
+}
+
+.image-modal-info-comments-div{
+  border-bottom: 1px solid black;
+}
+.image-modal-info-actions-div{
+  border-bottom: 1px solid black;
+}
+

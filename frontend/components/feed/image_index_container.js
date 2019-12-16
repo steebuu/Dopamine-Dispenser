@@ -1,16 +1,21 @@
 import {connect} from 'react-redux';
 import ImageIndex  from './image_index';
+import {openModal} from '../../actions/modal_actions';
+import {fetchImages} from '../../actions/image_actions';
 
-const msp = state => {
+const msp = (state) => {
   return {
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    images: state.entities.images,
+    image_ids: state.entities.users[1]
   };
 };
 
 const mdp = dispatch => {
   return{
-    
-  }
-}
+    openModal: modal => dispatch(openModal(modal)),
+    fetchImages: () => dispatch(fetchImages())
+  };
+};
 
-export default connect(msp, null)(ImageIndex);
+export default connect(msp, mdp)(ImageIndex);

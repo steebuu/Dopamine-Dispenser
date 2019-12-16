@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
 import ProfileModal from '../components/profile/profile_modal';
+import ImageModal from '../components/feed/image_modal';
 
 function Modal({ modal, closeModal }) {
   // debugger;
@@ -12,6 +13,9 @@ function Modal({ modal, closeModal }) {
   switch (modal) {
     case 'profile':
       component = <ProfileModal></ProfileModal>
+      break;
+    case 'image':
+      component = <ImageModal></ImageModal>
       break;
     default:
       return null;
