@@ -59,7 +59,7 @@ class ImageUpload extends React.Component {
   render(){
     return(
       <form className="image-upload-form" onSubmit={this.handleSubmit}>
-        <input type="text" className="caption-input" value={this.state.caption} onChange={this.handleChange("caption")}/>
+        <input type="text" className="caption-input" value={this.state.caption} onChange={this.handleChange("caption")} placeholder="caption"/>
         <input type="file" onChange={this.handleFile}/>
         <button className="upload-image-button">Upload Image</button>
       </form>
