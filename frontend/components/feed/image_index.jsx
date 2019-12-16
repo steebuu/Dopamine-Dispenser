@@ -30,7 +30,7 @@ class ImageIndex extends React.Component {
       FeedImages = this.state.images.map(image => {
         return (
           <div key={image.id} className="feed-image-div">
-            <img src={image.photoUrl} alt="" />
+            <img src={image.photoUrl} className="thumbnail" />
           </div>
         )
       })
