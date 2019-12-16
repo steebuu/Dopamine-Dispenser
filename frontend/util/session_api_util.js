@@ -28,4 +28,12 @@ module.exports = {
      url: `/api/images`
    });
  },
+
+ uploadImage(formData) {
+   return $.ajax({
+     method: "POST",
+     url: `/api/images`,
+     data: formData
+   });
+ }
 };
