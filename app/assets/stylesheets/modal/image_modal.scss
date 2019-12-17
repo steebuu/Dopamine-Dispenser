@@ -5,32 +5,81 @@
   background-color: white;
 }
 
-.image-modal-picture-div {
+.image-modal-picture-div-holder {
   display: flex;
-  border-right: 1px solid black;
   width: 100%;
   height: 100%;
   max-width: 600px;
-  max-height: 600px
+  max-height: 600px;
+  min-height: 450px;
+  min-width: 450px;
+  justify-content: center;
+  align-content: center;
+  background-color: black;
+  align-items: center;
+  justify-items: center;
+}
+
+.image-modal-picture-div {
+  display: flex;
+  max-height: 600px;
+  max-width: 600px;
+  width: fit-content;
+  height: fit-content;
 }
 
 .modal-picture {
   object-fit: cover;
-  
+  height: 100%;
+  width: 100%;
 }
 
 .image-modal-info-div {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
+  max-width: 335px;
 }
 
 .image-modal-info-user-div{
+  display: flex;
   border-bottom: 1px solid black;
+  width: 100%;
+  min-height: 72px;
+  max-height: 72px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  align-items: center;
+}
+
+.image-modal-profile-pic-div{
+  display: flex;
+  max-width: 32px;
+  max-height: 32px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  // border: 1px solid black;
+  border-radius: 100px;
+  margin-right: 16px;
+  margin-left: 16px;
+}
+
+.modal-prof-pic {
+  width: 100%;
+  height: 100%;
 }
 
 .image-modal-info-comments-div{
   border-bottom: 1px solid black;
+  width: 100%;
+  height: calc(100% - 32px);
 }
 .image-modal-info-actions-div{
   border-bottom: 1px solid black;
+  width: 100%;
+  min-height: 100px;
+  height: 30%;
 }

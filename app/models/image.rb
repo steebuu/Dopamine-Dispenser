@@ -12,7 +12,15 @@
 class Image < ApplicationRecord
   validates :user_id, presence: true
 
+  validate :ensure_photo
+
   has_one_attached :photo
+  
+  def ensure_photo
+    unless self.photo.attached?
+      errors[:photo] << "Must include image"
+    end
+  end
 
   belongs_to :user,
     class_name: :User,
