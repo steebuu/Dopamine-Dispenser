@@ -1,0 +1,36 @@
+.image-modal {
+  display: flex;
+  min-width: 935px;
+  width: 100%;
+  background-color: white;
+}
+
+.image-modal-picture-div {
+  display: flex;
+  border-right: 1px solid black;
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  max-height: 600px
+}
+
+.modal-picture {
+  object-fit: cover;
+  
+}
+
+.image-modal-info-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-modal-info-user-div{
+  border-bottom: 1px solid black;
+}
+
+.image-modal-info-comments-div{
+  border-bottom: 1px solid black;
+}
+.image-modal-info-actions-div{
+  border-bottom: 1px solid black;
+}

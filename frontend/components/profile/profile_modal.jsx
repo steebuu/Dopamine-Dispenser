@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {openModal, closeModal} from '../../actions/modal_actions';
 import {logout} from '../../actions/session_actions';
+import {withRouter} from 'react-router-dom';
 
 class ProfileModal extends React.Component {
   constructor(props){
@@ -12,6 +13,7 @@ class ProfileModal extends React.Component {
   handleLogout(){
     this.props.logout();
     this.props.closeModal();
+    this.props.history.push("/");
   }
 
   render(){
@@ -42,4 +44,4 @@ const mdp = dispatch => {
   }
 }
 
-export default connect(msp, mdp)(ProfileModal);
+export default withRouter(connect(msp, mdp)(ProfileModal));

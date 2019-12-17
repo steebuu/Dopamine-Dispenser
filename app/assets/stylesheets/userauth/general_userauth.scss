@@ -85,8 +85,9 @@
 }
 
 .splash-slide-div{
-  position: relative;
-  top: 120px; 
+  // position: relative;
+  // top: 120px; 
+  margin-top: 120px;
   display: flex;
   background-image: asset_url('logos/igsplashphone.png');
   max-width: 454px;
@@ -107,7 +108,7 @@
 .app {
   display: flex;
   flex-direction: column;
-  position: absolute;
+  // position: absolute;
   width: 100%;
   min-height: 100%;
   align-items: center;

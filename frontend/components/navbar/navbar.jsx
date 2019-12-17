@@ -1,9 +1,10 @@
 import React from 'react';
 import {Link, Route} from 'react-router-dom';
-import {AuthRoute} from '../../util/route_util';
+import {AuthRoute, ProtectedRoute} from '../../util/route_util';
 import SignupFormContainer from '../userauth/signup_form_container';
 import LoginFormContainer from '../userauth/login_form_container';
 import ProfileContainer from '../profile/profile_container';
+import AuthNavBar from './authnavbar';
 
 class NavBar extends React.Component {
   constructor(props){
@@ -18,6 +19,7 @@ class NavBar extends React.Component {
 
   render() {
     // const {currentUser} = this.props;
+
     return(
       <nav className="navbar-nav">
         {/* <AuthRoute path="/signup" component={SignupFormContainer} />
@@ -36,17 +38,7 @@ class NavBar extends React.Component {
             <span></span>
             <input className="nav-search" type="text" name="" />
           </div>
-          <div className="nav-right-div">
-            <div className="nav-right-icons-div">
-              <i className="far fa-compass"></i>  
-              <i className="far fa-heart"></i>
-              {/* <Link to={`/users/${currentUser.id}`} className="icon-link"> */}
-                <i className="far fa-user"></i>
-              {/* </Link> */}
-              {/* <i className="far fa-user" onClick={this.handleLogout}></i> */}
-              {/* <button className="nav-logout-button" onClick={this.handleLogout}>Logout</button> */}
-            </div>
-          </div>
+          <AuthNavBar/>
         </div>
       </nav>
     )

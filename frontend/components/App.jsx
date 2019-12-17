@@ -24,7 +24,8 @@ class App extends React.Component {
         <Route path="/users/:id" component={ModalContainer}/>
         <Switch>
           <Route path="/users/:id" component={ProfileContainer}/>
-   
+          <AuthRoute path="/signup" component={SplashContainer}/>
+          <AuthRoute path="/login" component={SplashContainer}/>
           <Route path="/" component={SplashContainer}/>
         </Switch>
         <Footer/> 

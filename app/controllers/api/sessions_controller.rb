@@ -3,7 +3,7 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
     if @user 
       login(@user)
-      render '/api/users/show'
+      render '/api/session/show'
     else
       if !@user
         render json: ["The username you entered doesn't belong to an account. Please check your username and try again."], status: 401

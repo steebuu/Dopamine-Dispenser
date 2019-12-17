@@ -3,6 +3,7 @@ import NavBarContainer from '../navbar/navbar_container';
 import ImageIndexContainer from '../feed/image_index_container';
 import ImageUploadContainer from './image_upload_container';
 import { Route, Switch } from 'react-router-dom';
+import {ProtectedRoute} from '../../util/route_util';
 
 class Profile extends React.Component {
   constructor(props){

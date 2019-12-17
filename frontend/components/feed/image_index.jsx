@@ -19,7 +19,10 @@ class ImageIndex extends React.Component {
       return null;
     } else if (!image_ids) {
       return null;
+    } else if (!images[image_ids[(image_ids[0])]]) {
+      return null;
     }
+    
     if (image_ids.length > 0){
       FeedImages = image_ids.map(id => {
         return (
