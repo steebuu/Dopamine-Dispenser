@@ -18,17 +18,17 @@ demo = User.create!(
 
 image = Image.create!(
   user_id: demo.id,
-  caption: "test"
+  caption: "caption 1"
 )
 
 image_2 = Image.create!(
   user_id: demo.id,
-  caption: "test 2"
+  caption: "caption 2"
 )
 
 image_3 = Image.create!(
   user_id: demo.id,
-  caption: "test 3"
+  caption: "caption 3"
 )
 
 image.photo.attach(io: File.open('app/assets/images/demo/test.png'), filename: "test.png")

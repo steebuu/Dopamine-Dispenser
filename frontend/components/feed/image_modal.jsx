@@ -8,12 +8,13 @@ class ImageModal extends React.Component {
   }
 
   render(){
+    const {user, image} = this.props;
     return(
       <div className="image-modal">
-        <div className="image-modal-picture-div">picture here</div>
+        <div className="image-modal-picture-div"><img src={image.photoUrl} className="modal-picture" /></div>
         <div className="image-modal-info-div">
           <div className="image-modal-info-user-div">header here</div>
-          <div className="image-modal-info-comments-div">comments here</div>
+          <div className="image-modal-info-comments-div">{image.caption}</div>
           <div className="image-modal-info-actions-div">actions here</div>
         </div>
       </div>
@@ -21,17 +22,6 @@ class ImageModal extends React.Component {
   }
 }
 
-const msp = state => {
-  return {
-    modal: state.ui.modal
-  }
-}
 
-const mdp = dispatch => {
-  return {
-    openModal: modal => { dispatch(openModal(modal)) },
-    closeModal: () => { dispatch(closeModal()) }
-  }
-}
 
-export default connect(msp, mdp)(ImageModal);
+export default ImageModal;

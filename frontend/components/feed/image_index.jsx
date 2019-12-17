@@ -1,6 +1,6 @@
 import React from 'react';
-import { openModal } from '../../actions/modal_actions';
-
+import {withRouter} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 class ImageIndex extends React.Component {
   constructor(props){
     super(props);
@@ -11,7 +11,7 @@ class ImageIndex extends React.Component {
   // }
 
   render(){
-    const {openModal, images, users} = this.props;
+    const {openImageModal, images, users} = this.props;
     let FeedImages;
     const user = this.props.user || {};
     const image_ids = user.image_ids;
@@ -21,11 +21,10 @@ class ImageIndex extends React.Component {
       return null;
     }
     if (image_ids.length > 0){
-      debugger;
       FeedImages = image_ids.map(id => {
         return (
           <div key={id} className="feed-image-div">
-            <img src={images[id].photoUrl} className="thumbnail" onClick={()=>{openModal('image')}}/>
+              <img src={images[id].photoUrl} className="thumbnail" onClick={()=>{openImageModal('image', id)}}/>
           </div>
         )
       })
