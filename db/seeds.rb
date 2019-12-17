@@ -18,17 +18,17 @@ demo = User.create!(
 
 image = Image.create!(
   user_id: demo.id,
-  caption: "caption 1"
+  caption: "caption for demo user image 1"
 )
 
 image_2 = Image.create!(
   user_id: demo.id,
-  caption: "caption 2"
+  caption: "all css and no play makes demo a dull boy all css and no play makes demo a dull boy all css and no play makes demo a dull boy"
 )
 
 image_3 = Image.create!(
   user_id: demo.id,
-  caption: "caption 3"
+  caption: "all css and no play makes demo a dull boy all css and no play makes demo a dull boy all css and no play makes demo a dull boyall css and no play makes demo a dull boy all css and no play makes demo a dull boy all css and no play makes demo a dull boyall css and no play makes demo a dull boy all css and no play makes demo a dull boy all css and no play makes demo a dull boy"
 )
 
 image.photo.attach(io: File.open('app/assets/images/demo/test.png'), filename: "test.png")

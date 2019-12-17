@@ -100,3 +100,19 @@
   min-height: 100px;
   height: 30%;
 }
+
+.image-modal-comment-div {
+  display: flex;
+  justify-content: space-between;
+  min-height: 56px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.comment-input {
+  width: 100%;
+}
+
+.modal-icon {
+  font-size: 24px;
+}

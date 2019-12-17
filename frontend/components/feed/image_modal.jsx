@@ -36,7 +36,17 @@ class ImageModal extends React.Component {
               </span>
             </div>
           </div>
-          <div className="image-modal-info-actions-div">actions here
+          <div className="image-modal-info-actions-div">
+            <div className="image-modal-icons-div">
+              <i class="far fa-heart modal-icon"></i>
+              <i class="far fa-comment modal-icon"></i>
+            </div>
+            <div className="image-modal-likes-div">10 Likes</div>
+            <div className="image-modal-timestamp-div">2 Days</div>  
+          </div>
+          <div className="image-modal-comment-div">
+            <input type="text" className="comment-input" placeholder="Add a comment..." />
+            <button>Post</button>
           </div>
         </div>
       </div>
