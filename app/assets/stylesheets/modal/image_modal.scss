@@ -96,9 +96,14 @@
 
 .image-modal-info-actions-div{
   border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   width: 100%;
   min-height: 100px;
   height: 30%;
+  padding: 0px 0px 16px 16px;
+  box-sizing: border-box;
 }
 
 .image-modal-comment-div {
@@ -114,5 +119,7 @@
 }
 
 .modal-icon {
-  font-size: 24px;
+  font-size: 26px;
+  cursor: pointer;
+  padding-right: 14px;
 }
