@@ -23,8 +23,21 @@ class ImageModal extends React.Component {
               {user.username}
             </div>
           </div>
-          <div className="image-modal-info-comments-div">{image.caption}</div>
-          <div className="image-modal-info-actions-div">actions here</div>
+          <div className="image-modal-info-comments-div">
+            <div className="inner-comments-div">
+              <div className="image-modal-profile-pic-div">
+                <img src={window.profilePic} className="modal-prof-pic" />
+              </div>
+              <div className="image-modal-username-div">
+                {user.username}
+              </div>
+              <span className="caption-comment-span">
+                {image.caption}
+              </span>
+            </div>
+          </div>
+          <div className="image-modal-info-actions-div">actions here
+          </div>
         </div>
       </div>
     )

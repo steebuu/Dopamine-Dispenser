@@ -48,9 +48,6 @@
   width: 100%;
   min-height: 72px;
   max-height: 72px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 600;
   align-items: center;
 }
 
@@ -72,11 +69,31 @@
   height: 100%;
 }
 
+.image-modal-username-div {
+  margin-right: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
 .image-modal-info-comments-div{
+  display: flex;
   border-bottom: 1px solid black;
   width: 100%;
   height: calc(100% - 32px);
 }
+
+.inner-comments-div{
+  display: flex;
+  padding-top: 22px;
+  padding-right: 22px;
+}
+
+.caption-comment-span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
 .image-modal-info-actions-div{
   border-bottom: 1px solid black;
   width: 100%;
