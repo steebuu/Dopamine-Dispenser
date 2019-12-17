@@ -5,7 +5,6 @@ import {openModal} from '../../actions/modal_actions';
 import {getUser} from '../../actions/user_actions';
 
 const msp = (state, ownProps) => {
-  // debugger;
   return {
     currentUser: state.entities.users[state.session.id],
     user: state.entities.users[ownProps.match.params.id],

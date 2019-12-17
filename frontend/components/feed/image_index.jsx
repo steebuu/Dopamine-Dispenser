@@ -6,14 +6,22 @@ class ImageIndex extends React.Component {
     super(props);
   }
 
-  componentDidMount(){
-    this.props.fetchImages();
-  }
+  // componentDidMount(){
+  //   this.props.fetchImages();
+  // }
 
   render(){
-    const {openModal, images, image_ids} = this.props;
+    const {openModal, images, users} = this.props;
     let FeedImages;
+    const user = this.props.user || {};
+    const image_ids = user.image_ids;
+    if (!user){
+      return null;
+    } else if (!image_ids) {
+      return null;
+    }
     if (image_ids.length > 0){
+      debugger;
       FeedImages = image_ids.map(id => {
         return (
           <div key={id} className="feed-image-div">

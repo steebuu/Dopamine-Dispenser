@@ -2,6 +2,7 @@ import React from 'react';
 import NavBarContainer from '../navbar/navbar_container';
 import ImageIndexContainer from '../feed/image_index_container';
 import ImageUploadContainer from './image_upload_container';
+import { Route, Switch } from 'react-router-dom';
 
 class Profile extends React.Component {
   constructor(props){
@@ -10,13 +11,12 @@ class Profile extends React.Component {
 
   componentDidMount(){
     const {user, getUser, match} = this.props;
-      getUser(match.params.id);
+    getUser(match.params.id);
   }
 
   render(){
     const {openModal} = this.props;
     const user = this.props.user || {};
-    // debugger;
     return(
       <main className="profile-main">
         <NavBarContainer/>
