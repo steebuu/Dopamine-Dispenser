@@ -7,6 +7,8 @@ class ImageModal extends React.Component {
     super(props);
   }
 
+
+
   render(){
     const {user, image} = this.props;
     return(
@@ -41,12 +43,12 @@ class ImageModal extends React.Component {
               <i class="far fa-heart modal-icon"></i>
               <i class="far fa-comment modal-icon"></i>
             </div>
-            <div className="image-modal-likes-div">10 Likes</div>
-            <div className="image-modal-timestamp-div">2 Days</div>  
+            <div className="image-modal-likes-div">10 likes</div>
+            <div className="image-modal-timestamp-div">2 DAYS AGO</div>  
           </div>
           <div className="image-modal-comment-div">
             <input type="text" className="comment-input" placeholder="Add a comment..." />
-            <button>Post</button>
+            <button className="post-comment-button">Post</button>
           </div>
         </div>
       </div>

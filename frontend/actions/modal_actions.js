@@ -1,6 +1,7 @@
 export const OPEN_MODAL = 'OPEN_MODAL';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
 export const OPEN_IMAGE_MODAL = "OPEN_IMAGE_MODAL";
+export const OPEN_UPLOAD_MODAL = "OPEN_UPLOAD_MODAL";
 
 export const openModal = (modal) => {
   return {
@@ -14,6 +15,13 @@ export const openImageModal = (modal, imageId) => {
     type: OPEN_IMAGE_MODAL,
     modal,
     imageId
+  };
+};
+
+export const openUploadModal = modal => {
+  return{
+    type: OPEN_IMAGE_MODAL,
+    modal
   };
 };
 

@@ -44,7 +44,7 @@
 
 .image-modal-info-user-div{
   display: flex;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(239, 239, 239);
   width: 100%;
   min-height: 72px;
   max-height: 72px;
@@ -78,7 +78,7 @@
 
 .image-modal-info-comments-div{
   display: flex;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(239, 239, 239);
   width: 100%;
   height: calc(100% - 32px);
 }
@@ -95,7 +95,7 @@
 }
 
 .image-modal-info-actions-div{
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(239, 239, 239);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -114,8 +114,28 @@
   padding-right: 16px;
 }
 
+.image-modal-likes-div {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.image-modal-timestamp-div {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  color: rgb(153, 153, 153);
+}
+
 .comment-input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
   width: 100%;
+  border: none;
+}
+
+.post-comment-button {
+  border: none;
+  background-color: transparent;
 }
 
 .modal-icon {
