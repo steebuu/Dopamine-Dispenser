@@ -20,7 +20,7 @@ class ProfileModal extends React.Component {
     return(
       <div className="profile-modal">
         <div className="profile-modal-option">
-          <button className="profile-modal-button" onClick={() => this.props.openModal("upload")}>Upload Image</button>
+          <button className="profile-modal-button" onClick={() => this.props.openModal("preupload")}>Upload Image</button>
         </div>
         <div className="profile-modal-option">
           <button className="profile-modal-button" onClick={()=>this.handleLogout()}>Log Out</button>

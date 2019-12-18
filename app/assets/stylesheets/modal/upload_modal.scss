@@ -5,10 +5,59 @@
   height: 100%;
 }
 
+.caption-input-div {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
 .caption-input {
   height: 100%;
+  width: 100%;
+  resize: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  border: none;
 }
 
 .upload-bottom {
+  display: flex;
+  flex-direction: column;
   height: 100%;
+}
+
+.image-upload {
+  display: none;
+}
+
+.image-upload-input {
+  border-top: 1px solid rgb(239, 239, 239);
+  display: flex;
+  padding: 6px 12px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+} 
+
+.image-upload-input:hover {
+  background-color: red;
+}
+
+.image-upload-icon {
+  font-size: 60px;
+}
+
+.image-upload-button {
+  height: 30%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600px;
+  line-height: 18px;
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid rgb(239, 239, 239);
 }

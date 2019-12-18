@@ -6,15 +6,14 @@ class ImageUploadModal extends React.Component {
     super(props);
     this.state = {
       caption: "",
-      photoFile: null,
-      photoUrl: null
+      photoFile: this.props.file,
+      photoUrl: this.props.photoUrl
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
 
   handleChange(field) {
     return (e) => {
@@ -40,7 +39,7 @@ class ImageUploadModal extends React.Component {
 
     const formData = new FormData();
     formData.append('image[caption]', this.state.caption);
-    formData.append('image[user_id]', this.props.currentUser.id);
+    formData.append('image[user_id]', this.props.id);
     if (this.state.photoFile) {
       formData.append('image[photo]', this.state.photoFile);
     }
@@ -56,9 +55,11 @@ class ImageUploadModal extends React.Component {
         console.log(response.responseJSON);
       }
     );
+    this.props.closeModal();
   }
 
   render() {
+    debugger;
     const { user } = this.props;
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} className="modal-picture"/> : null;
     return (
@@ -79,10 +80,15 @@ class ImageUploadModal extends React.Component {
           </div>
           <div className="image-modal-info-comments-div">
             <form onSubmit={this.handleSubmit} className="image-upload-form">
-              <input type="textarea" className="caption-input" value={this.state.caption} onChange={this.handleChange("caption")} placeholder="Add Caption..."/>
+              <div className="caption-input-div">
+                <textarea className="caption-input" value={this.state.caption} onChange={this.handleChange("caption")} placeholder="Add Caption..."/>
+              </div>
               <div className="upload-bottom">
-                <input type="file" onChange={this.handleFile} />
-                <button className="image-upload-button"></button>
+                <label htmlFor="image-upload" className="image-upload-input">
+                  <i className="fas fa-camera-retro image-upload-icon"></i>
+                  <input id="image-upload" className="image-upload" type="file" onChange={this.handleFile} />
+                </label>
+                <button className="image-upload-button">Upload</button>
               </div>
             </form>
           </div>

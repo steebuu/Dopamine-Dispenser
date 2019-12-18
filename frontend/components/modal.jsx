@@ -3,6 +3,8 @@ import ProfileModal from '../components/profile/profile_modal';
 import ImageModalContainer from '../components/feed/image_modal_container';
 import {withRouter} from 'react-router-dom';
 import ImageUploadModalContainer from './modals/image_upload_modal_container';
+import PreUploadModal from './modals/pre_upload_modal';
+
 class Modal extends React.Component{
   // ({ modal, closeModal }) {
   // debugger;
@@ -10,7 +12,7 @@ class Modal extends React.Component{
     super(props);
   }
   render(){
-    const {type, closeModal, users, id} = this.props;
+    const {type, closeModal, users, id, file} = this.props;
     if (!type) {
       return null;
     }
@@ -20,7 +22,10 @@ class Modal extends React.Component{
         component = <ProfileModal></ProfileModal>
         break;
       case 'image':
-        component = <ImageModalContainer id={id}></ImageModalContainer>
+        component = <ImageModalContainer id={id} file={file}></ImageModalContainer>
+        break;
+      case 'preupload':
+        component = <PreUploadModal></PreUploadModal>
         break;
       case 'upload':
         component = <ImageUploadModalContainer id={id}></ImageUploadModalContainer>

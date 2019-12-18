@@ -6,7 +6,8 @@ const msp = (state, ownProps) => {
   return {
     type: state.ui.modal.type,
     users: state.entities.users,
-    id: ownProps.match.params.id
+    id: ownProps.match.params.id,
+    file: state.ui.modal.file
   };
 };
 

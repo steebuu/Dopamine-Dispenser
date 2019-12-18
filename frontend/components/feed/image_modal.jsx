@@ -40,8 +40,8 @@ class ImageModal extends React.Component {
           </div>
           <div className="image-modal-info-actions-div">
             <div className="image-modal-icons-div">
-              <i class="far fa-heart modal-icon"></i>
-              <i class="far fa-comment modal-icon"></i>
+              <i className="far fa-heart modal-icon"></i>
+              <i className="far fa-comment modal-icon"></i>
             </div>
             <div className="image-modal-likes-div">10 likes</div>
             <div className="image-modal-timestamp-div">2 DAYS AGO</div>  
