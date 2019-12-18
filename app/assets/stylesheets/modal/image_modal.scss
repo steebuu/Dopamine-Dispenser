@@ -1,8 +1,8 @@
 .image-modal {
   display: flex;
-  min-width: 935px;
+  min-width: 1150px;
   width: 100%;
-  background-color: white;
+  justify-content: center;
 }
 
 .image-modal-picture-div-holder {
@@ -40,6 +40,7 @@
   width: 100%;
   height: 100%;
   max-width: 335px;
+  background-color: white;
 }
 
 .image-modal-info-user-div{
@@ -69,11 +70,25 @@
   height: 100%;
 }
 
+.image-modal-username-comment-div {
+  display: inline-block;
+}
+
 .image-modal-username-div {
+  display: inline-flex;
   margin-right: 4px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 600;
+}
+
+.image-modal-user-actions-div {
+  margin-left: auto;
+  margin-right: 16px;
+}
+
+.image-modal-user-actions {
+  cursor: pointer;
 }
 
 .image-modal-info-comments-div{
@@ -142,4 +157,21 @@
   font-size: 26px;
   cursor: pointer;
   padding-right: 14px;
+}
+
+.modal-arrow {
+    font-weight: 900;
+    align-self: center;
+    background-color: transparent;
+    font-size: 40px;
+    color: rgb(204, 204, 204);
+    cursor: pointer;
+}
+
+.modal-arrow:first-child {
+  margin-right: 12px;
+}
+
+.modal-arrow:last-child {
+  margin-left: 12px;
 }

@@ -1,18 +1,18 @@
 class Api::ImagesController < ApplicationController
   def index
     @images = Image.all
-    render json: @images
+    render 'api/images/index'
   end
 
   def show 
     @image = Image.find(params[:id])
-    render :show
+    render 'api/images/show'
   end
 
   def create
-    image = Image.new(image_params)
-    if image.save
-      render json: {message: "You did it!"}
+    @image = Image.new(image_params)
+    if @image.save
+      render '/api/images/show'
     else
       render json: image.errors.full_messages, status: 422
     end
@@ -21,8 +21,8 @@ class Api::ImagesController < ApplicationController
   def update
     @image = Image.find(params[:id])
     @image.update(caption: params[:image][:caption])
-    if image.update
-      render json: {message: "Update successful"}
+    if @image.update
+      render 'api/images/show'
     else
       render json: image.errors.full_messages, status: 422
     end

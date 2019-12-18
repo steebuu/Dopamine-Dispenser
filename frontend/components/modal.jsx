@@ -30,6 +30,9 @@ class Modal extends React.Component{
       case 'upload':
         component = <ImageUploadModalContainer id={id}></ImageUploadModalContainer>
         break;
+      case 'edit':
+        
+        break;
       default:
         return null;
     }

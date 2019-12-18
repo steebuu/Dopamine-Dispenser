@@ -59,7 +59,6 @@ class ImageUploadModal extends React.Component {
   }
 
   render() {
-    debugger;
     const { user } = this.props;
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} className="modal-picture"/> : null;
     return (

@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import ImageModal from './image_modal';
-import {closeModal} from '../../actions/modal_actions';
+import {closeModal, openImageModal} from '../../actions/modal_actions';
 
 
 const msp = (state, ownProps) => {
@@ -8,13 +8,15 @@ const msp = (state, ownProps) => {
   return{
     user: state.entities.users[ownProps.id],
     image: state.entities.images[state.ui.modal.imageId],
-    modal: state.ui.modal
+    modal: state.ui.modal,
+    image_ids: state.entities.users[ownProps.id].image_ids
   };
 };
 
 const mdp = dispatch => {
   return{
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    openImageModal: (modal, id) => dispatch(openImageModal(modal, id))
   };
 };
 

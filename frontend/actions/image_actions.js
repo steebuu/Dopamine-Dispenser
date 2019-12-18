@@ -16,7 +16,7 @@ export const receiveImages = images => {
   };
 };
 
-export const editImage = image => dispatch => {
+export const updateImage = image => dispatch => {
   return APIUtil.update(image)
     .then(image => dispatch(receiveImage(image)));
 };

@@ -20,13 +20,13 @@ export const openImageModal = (modal, imageId) => {
   };
 };
 
-export const openUploadModal = (modal, file) => {
-  return{
-    type: OPEN_IMAGE_MODAL,
-    modal,
-    file
-  };
-};
+// export const openUploadModal = (modal, file) => {
+//   return{
+//     type: OPEN_IMAGE_MODAL,
+//     modal,
+//     file
+//   };
+// };
 
 export const closeModal = () => {
   return {
