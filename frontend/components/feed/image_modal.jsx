@@ -1,6 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { openModal, closeModal, openImageModal } from '../../actions/modal_actions';
 
 class ImageModal extends React.Component {
   constructor(props){
@@ -8,6 +6,11 @@ class ImageModal extends React.Component {
 
     this.handleLeft = this.handleLeft.bind(this);
     this.handleRight = this.handleRight.bind(this);
+    this.handleUserAction = this.handleUserAction.bind(this);
+  }
+
+  handleUserAction(){
+    this.props.openModal("update", this.props.image, this.props.user);
   }
 
   handleLeft(){
@@ -48,7 +51,7 @@ class ImageModal extends React.Component {
               {user.username}
             </div>
             <div className="image-modal-user-actions-div">
-              <i className="fas fa-ellipsis-h image-modal-user-actions"></i>
+              <i className="fas fa-ellipsis-h image-modal-user-actions" onClick={this.handleUserAction}></i>
             </div>
           </div>
           <div className="image-modal-info-comments-div">

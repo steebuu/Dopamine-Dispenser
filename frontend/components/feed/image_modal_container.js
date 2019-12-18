@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import ImageModal from './image_modal';
-import {closeModal, openImageModal} from '../../actions/modal_actions';
+import {closeModal, openImageModal, openModal} from '../../actions/modal_actions';
 
 
 const msp = (state, ownProps) => {
@@ -16,7 +16,8 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => {
   return{
     closeModal: () => dispatch(closeModal()),
-    openImageModal: (modal, id) => dispatch(openImageModal(modal, id))
+    openImageModal: (modal, id) => dispatch(openImageModal(modal, id)),
+    openModal: (modal, image, user) => dispatch(openModal(modal, image, user))
   };
 };
 

@@ -3,7 +3,7 @@ import { OPEN_MODAL, CLOSE_MODAL, OPEN_IMAGE_MODAL, OPEN_UPLOAD_MODAL } from '..
 const modalReducer = (state = {}, action) => {
   switch (action.type) {
     case OPEN_MODAL:
-      return Object.assign({}, state, {type: action.modal, file: action.file, photoUrl: action.photoUrl});
+      return Object.assign({}, state, {type: action.modal, file: action.file, photoUrl: action.photoUrl, imageId: action.imageId});
     case OPEN_IMAGE_MODAL:
       return Object.assign({}, state, {type: action.modal, imageId: action.imageId});
     case CLOSE_MODAL:

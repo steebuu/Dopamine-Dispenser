@@ -3,12 +3,13 @@ export const CLOSE_MODAL = 'CLOSE_MODAL';
 export const OPEN_IMAGE_MODAL = "OPEN_IMAGE_MODAL";
 export const OPEN_UPLOAD_MODAL = "OPEN_UPLOAD_MODAL";
 
-export const openModal = (modal, file, photoUrl) => {
+export const openModal = (modal, file, photoUrl, image, user) => {
   return {
     type: OPEN_MODAL,
     modal,
     file,
-    photoUrl
+    photoUrl,
+    imageId
   };
 };
 

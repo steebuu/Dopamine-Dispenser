@@ -4,6 +4,7 @@ import ImageModalContainer from '../components/feed/image_modal_container';
 import {withRouter} from 'react-router-dom';
 import ImageUploadModalContainer from './modals/image_upload_modal_container';
 import PreUploadModal from './modals/pre_upload_modal';
+import ImageUpdateModalContainer from './modals/image_update_modal';
 
 class Modal extends React.Component{
   // ({ modal, closeModal }) {
@@ -12,7 +13,7 @@ class Modal extends React.Component{
     super(props);
   }
   render(){
-    const {type, closeModal, users, id, file} = this.props;
+    const {type, closeModal, user, id, file, image} = this.props;
     if (!type) {
       return null;
     }
@@ -30,8 +31,8 @@ class Modal extends React.Component{
       case 'upload':
         component = <ImageUploadModalContainer id={id}></ImageUploadModalContainer>
         break;
-      case 'edit':
-        
+      case 'update':
+        component = <ImageUpdateModalContainer image={image} user={user}></ImageUpdateModalContainer>
         break;
       default:
         return null;
