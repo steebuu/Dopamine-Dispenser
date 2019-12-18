@@ -16,17 +16,17 @@ demo = User.create!(
   bio: "Born of crudely cobbled CSS and the unending anguish of my creator. Every waking moment brings untold suffering. also follow 4 follow"
 )
 
-image = Image.create!(
+image = Image.new(
   user_id: demo.id,
   caption: "caption for demo user image 1"
 )
 
-image_2 = Image.create!(
+image_2 = Image.new(
   user_id: demo.id,
   caption: "all css and no play makes demo a dull boy all css and no play makes demo a dull boy all css and no play makes demo a dull boy"
 )
 
-image_3 = Image.create!(
+image_3 = Image.new(
   user_id: demo.id,
   caption: "all css and no play makes demo a dull boy all css and no play makes demo a dull boy all css and no play makes demo a dull boyall css and no play makes demo a dull boy all css and no play makes demo a dull boy all css and no play makes demo a dull boyall css and no play makes demo a dull boy all css and no play makes demo a dull boy all css and no play makes demo a dull boy"
 )
@@ -34,3 +34,7 @@ image_3 = Image.create!(
 image.photo.attach(io: File.open('app/assets/images/demo/test.png'), filename: "test.png")
 image_2.photo.attach(io: File.open('app/assets/images/demo/test_2.png'), filename: "test_2.png")
 image_3.photo.attach(io: File.open('app/assets/images/demo/test_3.png'), filename: "test_3.png")
+
+image.save
+image_2.save
+image_3.save
