@@ -1,0 +1,18 @@
+.option-modal-background {
+  display: flex;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.option-modal-child {
+  display: flex;
+  max-width: fit-content;
+  max-height: fit-content;
+  background-color: transparent;
+}

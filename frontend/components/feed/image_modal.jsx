@@ -15,32 +15,32 @@ class ImageModal extends React.Component {
   }
 
   optionModal(){
-    const {optionModalType} = this.state;
-    if (optionModalType === "closed"){
-      return null;
-    } else {
+    const {deleteImage, openModal, image} = this.props;
       return (
-        <div className="modal-background" onClick={this.setState({optionModalType: "closed"})}>
-          <div className="modal-child" onClick={e => e.stopPropagation()}>
+        <div className="option-modal-background" onClick={this.handleUserAction}>
+          <div className="option-modal-child" onClick={e => e.stopPropagation()}>
             <div className="profile-modal">
               <div className="profile-modal-option">
-                <button className="profile-modal-button" onClick={() => this.props.openModal("update")}>Edit Caption</button>
+                <button className="profile-modal-button" onClick={() => openModal("update")}>Edit Caption</button>
               </div>
               <div className="profile-modal-option">
-                <button className="profile-modal-button" onClick={() => this.handleLogout()}>Delete Post</button>
+                <button className="profile-modal-button" onClick={() => deleteImage(image.id)}>Delete Post</button>
               </div>
               <div className="profile-modal-option">
-                <button className="profile-modal-button" onClick={() => this.setState({optionModalType: "closed"})}>Cancel</button>
+                <button className="profile-modal-button" onClick={this.handleUserAction}>Cancel</button>
               </div>
             </div>
           </div>
         </div>
       );
-    }
   }
 
   handleUserAction(){
-    this.setState({optionModalType: "open"});
+    if (this.state.optionModalType === "closed"){
+      this.setState({optionModalType: "opened"});
+    } else {
+      this.setState({optionModalType: "closed"})
+    }
   }
 
   handleLeft(){
@@ -68,9 +68,24 @@ class ImageModal extends React.Component {
   }
 
   render(){
-    const {user, image, modal, image_ids} = this.props;
+    const {user, image} = this.props;
+    const {optionModalType} = this.state;
+    let component;
+    switch (optionModalType) {
+      case "closed":
+        component = null;
+        break;
+      case "opened":
+        component = this.optionModal();
+        break;
+      default:
+        component = null;
+        break;
+    }
+
     return(
       <div className="image-modal">
+        {component}
         <Link to={`${this.handleLeft()}`} className="modal-arrow">
           <i className="fas fa-chevron-left modal-arrow"></i>
         </Link>

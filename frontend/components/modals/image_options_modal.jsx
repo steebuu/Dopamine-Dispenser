@@ -10,42 +10,25 @@ class OptionModal extends React.Component {
 
   }
 
-  handleLogout() {
-    this.props.logout();
-    this.props.closeModal();
-    this.props.history.push("/");
-  }
-
   render() {
     return (
-      <div className="profile-modal">
-        <div className="profile-modal-option">
-          <button className="profile-modal-button" onClick={() => this.props.openModal("update")}>Edit Caption</button>
-        </div>
-        <div className="profile-modal-option">
-          <button className="profile-modal-button" onClick={() => this.handleLogout()}>Delete</button>
-        </div>
-        <div className="profile-modal-option">
-          <button className="profile-modal-button" onClick={() => this.props.closeModal()}>Cancel</button>
+      <div className="modal-background" onClick={this.setState({ optionModalType: "closed" })}>
+        <div className="modal-child" onClick={e => e.stopPropagation()}>
+          <div className="profile-modal">
+            <div className="profile-modal-option">
+              <button className="profile-modal-button" onClick={() => openModal("update")}>Edit Caption</button>
+            </div>
+            <div className="profile-modal-option">
+              <button className="profile-modal-button" onClick={deleteImage(image.id)}>Delete Post</button>
+            </div>
+            <div className="profile-modal-option">
+              <button className="profile-modal-button" onClick={this.setState({ optionModalType: "closed" })}>Cancel</button>
+            </div>
+          </div>
         </div>
       </div>
     );
   }
 }
 
-const msp = (state, ownProps) => {
-  return {
-    modal: state.ui.modal,
-    userId: ownProps.id
-  }
-}
-
-const mdp = dispatch => {
-  return {
-    openModal: modal => { dispatch(openModal(modal)) },
-    closeModal: () => { dispatch(closeModal()) },
-    logout: () => { dispatch(logout()) }
-  }
-}
-
-export default withRouter(connect(msp, mdp)(OptionModal));
+export default OptionModal;

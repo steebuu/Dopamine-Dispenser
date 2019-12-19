@@ -18,7 +18,7 @@ module.exports = {
   delete(id) {
     return $.ajax({
       method: "DELETE",
-      url: `/api/images/${image.id}`,
+      url: `/api/images/${id}`,
       data: {id: id}
     });
   },
