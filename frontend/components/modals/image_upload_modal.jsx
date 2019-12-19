@@ -43,25 +43,14 @@ class ImageUploadModal extends React.Component {
     if (this.state.photoFile) {
       formData.append('image[photo]', this.state.photoFile);
     }
-    $.ajax({
-      url: '/api/images',
-      method: 'POST',
-      data: formData,
-      contentType: false,
-      processData: false
-    }).then(
-      (response) => console.log(response.message),
-      (response) => {
-        console.log(response.responseJSON);
-      }
-    );
+    this.props.createImage(formData);
     this.props.closeModal();
+    this.props.history.push(`/users/${this.props.userId}`)
   }
 
   render() {
     const { currentUser } = this.props;
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} className="modal-picture"/> : null;
-    debugger;
     return (
       <div className="image-modal">
         <div className="image-modal-picture-div-holder">

@@ -12,6 +12,7 @@ class Api::ImagesController < ApplicationController
   def create
     @image = Image.new(image_params)
     if @image.save
+      @user = User.find_by(id: @image.user_id)
       render '/api/images/show'
     else
       render json: @image.errors.full_messages, status: 422

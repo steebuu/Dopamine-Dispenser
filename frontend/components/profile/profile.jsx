@@ -50,7 +50,6 @@ class Profile extends React.Component {
             </div>
           </div>
           <div className="profile-feed">
-            {/* <ImageUploadContainer/> */}
             <ImageIndexContainer></ImageIndexContainer>
           </div>
         </div>

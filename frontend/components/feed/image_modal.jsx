@@ -12,10 +12,11 @@ class ImageModal extends React.Component {
     this.handleRight = this.handleRight.bind(this);
     this.handleUserAction = this.handleUserAction.bind(this);
     this.optionModal = this.optionModal.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   optionModal(){
-    const {deleteImage, openModal, image} = this.props;
+    const { openModal, image} = this.props;
       return (
         <div className="option-modal-background" onClick={this.handleUserAction}>
           <div className="option-modal-child" onClick={e => e.stopPropagation()}>
@@ -24,7 +25,7 @@ class ImageModal extends React.Component {
                 <button className="profile-modal-button" onClick={() => openModal("update")}>Edit Caption</button>
               </div>
               <div className="profile-modal-option">
-                <button className="profile-modal-button" onClick={() => deleteImage(image.id)}>Delete Post</button>
+                <button className="profile-modal-button" onClick={() => this.handleDelete(image.id)}>Delete Post</button>
               </div>
               <div className="profile-modal-option">
                 <button className="profile-modal-button" onClick={this.handleUserAction}>Cancel</button>
@@ -33,6 +34,14 @@ class ImageModal extends React.Component {
           </div>
         </div>
       );
+  }
+
+  handleDelete(id){
+    const {deleteImage, history, closeModal, user} = this.props;
+    deleteImage(id);
+    this.setState({optionModalType: "closed"});
+    closeModal();
+    history.push(`/users/${user.id}`);
   }
 
   handleUserAction(){

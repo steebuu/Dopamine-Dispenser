@@ -10,10 +10,10 @@ const imagesReducer = (state = {}, action) => {
     case RECEIVE_USER:
       return Object.assign({}, state, action.images);
     case RECEIVE_IMAGE:
-      return Object.assign({}, state, action.image);
+      return Object.assign({}, state, {[action.image.id]: action.image});
     case REMOVE_IMAGE:
-      let newState = state;
-      delete newState[action.id];
+      let newState = Object.assign({}, state);
+      delete newState[action.image.id];
       return newState;
     default:
       return state;

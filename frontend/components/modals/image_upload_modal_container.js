@@ -1,6 +1,8 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import ImageUploadModal from './image_upload_modal';
+import {closeModal} from '../../actions/modal_actions';
+import { createImage } from '../../actions/image_actions';
 
 const msp = (state, ownProps) => {
   const {users} = state.entities;
@@ -16,7 +18,8 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
   return{
-    closeModal: () => dispatch(closeModal())
+    createImage: (formData) => dispatch(createImage(formData)),
+    closeModal: () => dispatch(closeModal()),
   };
 };
 

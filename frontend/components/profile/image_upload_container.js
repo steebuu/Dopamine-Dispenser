@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ImageUpload from './image_upload';
-import {uploadImage} from '../../util/session_api_util';
+import {createImage} from '../../actions/image_actions';
 
 const msp = (state, file) => {
   return{
@@ -11,7 +11,8 @@ const msp = (state, file) => {
 
 const mdp = dispatch => {
   return {
-    uploadImage: (formData) => dispatch(uploadImage(formData))
+    createImage: (formData) => dispatch(createImage(formData)),
+    closeModal: () => dispatch(closeModal())
   };
 };
 

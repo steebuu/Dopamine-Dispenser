@@ -7,11 +7,13 @@ module.exports = {
     });
   },
 
-  create(data) {
+  create(image) {
     return $.ajax({
       method: "POST",
       url: `/api/images`,
-      data: data
+      data: image,
+      contentType: false,
+      processData: false
     });
   },
 

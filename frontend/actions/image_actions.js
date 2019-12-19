@@ -17,11 +17,16 @@ export const receiveImages = images => {
   };
 };
 
-export const removeImage = id => {
+export const removeImage = image => {
   return{
     type: REMOVE_IMAGE,
-    id
+    image
   };
+};
+
+export const createImage = image => dispatch => {
+  return ImageAPI.create(image)
+    .then(img => dispatch(receiveImage(img)));
 };
 
 export const updateImage = image => dispatch => {
@@ -36,5 +41,5 @@ export const fetchImages = () => dispatch => {
 
 export const deleteImage = id => dispatch => {
   return ImageAPI.delete(id)
-    .then(() => dispatch(removeImage(id)));
+    .then(image => dispatch(removeImage(image)));
 };
