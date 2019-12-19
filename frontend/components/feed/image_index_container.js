@@ -1,22 +1,26 @@
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
 import ImageIndex  from './image_index';
-import {openImageModal} from '../../actions/modal_actions';
 import {fetchImages} from '../../actions/image_actions';
+import {openModal} from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
+  const {userId, imageId} = ownProps.match.params;
+  const {users, images} = state.entities;
   return {
-    currentUser: state.entities.users[state.session.id],
-    images: state.entities.images,
-    user: state.entities.users[1]
+    currentUser: users[state.session.id],
+    images: images,
+    user: users[userId],
+    userId: userId,
+    imageId: imageId
   };
 };
 
 const mdp = dispatch => {
   return{
     openModal: modal => dispatch(openModal(modal)),
-    openImageModal: (modal, id) => dispatch(openImageModal(modal, id)),
     fetchImages: () => dispatch(fetchImages())
   };
 };
 
-export default connect(msp, mdp)(ImageIndex);
+export default withRouter(connect(msp, mdp)(ImageIndex));

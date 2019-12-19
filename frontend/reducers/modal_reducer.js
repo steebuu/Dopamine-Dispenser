@@ -1,11 +1,10 @@
 import { OPEN_MODAL, CLOSE_MODAL, OPEN_IMAGE_MODAL, OPEN_UPLOAD_MODAL } from '../actions/modal_actions';
 
 const modalReducer = (state = {}, action) => {
+  // debugger;
   switch (action.type) {
     case OPEN_MODAL:
-      return Object.assign({}, state, {type: action.modal, file: action.file, photoUrl: action.photoUrl, imageId: action.imageId});
-    case OPEN_IMAGE_MODAL:
-      return Object.assign({}, state, {type: action.modal, imageId: action.imageId});
+      return {modal: action.modal, file: action.file, photoUrl: action.photoUrl};
     case CLOSE_MODAL:
       return {};
     default:

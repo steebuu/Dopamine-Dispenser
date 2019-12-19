@@ -9,8 +9,8 @@ class ImageUpdateModal extends React.Component {
   }
 
   render() {
-    const { user, photoUrl } = this.props;
-    const preview = photoUrl;
+    const { user, image } = this.props;
+    const preview = image.photoUrl;
     return (
       <div className="image-modal">
         <div className="image-modal-picture-div-holder">

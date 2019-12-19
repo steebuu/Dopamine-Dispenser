@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class ImageModal extends React.Component {
   constructor(props){
@@ -10,35 +11,40 @@ class ImageModal extends React.Component {
   }
 
   handleUserAction(){
-    this.props.openModal("update", this.props.image, this.props.user);
+    this.props.openModal("update");
   }
 
   handleLeft(){
-    const { image, image_ids, openImageModal } = this.props;
+    const { image, image_ids } = this.props;
     const imageId = image.id;
     const currentIndex = image_ids.indexOf(imageId);
     const prevId = image_ids[currentIndex - 1];
     if (currentIndex > 0){
-      openImageModal("image", (prevId));
+      return prevId;
+    } else {
+      return imageId;
     }
   }
 
   handleRight(){
-    const { image, image_ids, openImageModal } = this.props;
+    const { image, image_ids } = this.props;
     const imageId = image.id;
     const currentIndex = image_ids.indexOf(imageId);
     const nextId = image_ids[currentIndex + 1];
     if (currentIndex < image_ids.length - 1) {
-      openImageModal("image", (nextId));
+      return nextId;
+    } else {
+      return imageId;
     }
   }
 
   render(){
-    const {user, image, image_ids} = this.props;
-    // debugger;
+    const {user, image, modal, image_ids} = this.props;
     return(
       <div className="image-modal">
-        <i className="fas fa-chevron-left modal-arrow" onClick={this.handleLeft}></i>
+        <Link to={`${this.handleLeft()}`} className="modal-arrow">
+          <i className="fas fa-chevron-left modal-arrow"></i>
+        </Link>
         <div className="image-modal-picture-div-holder">
           <div className="image-modal-picture-div"><img src={image.photoUrl} className="modal-picture" /></div>
         </div>
@@ -82,7 +88,9 @@ class ImageModal extends React.Component {
             <button className="post-comment-button">Post</button>
           </div>
         </div>
-        <i className="fas fa-chevron-right modal-arrow" onClick={this.handleRight}></i>
+        <Link to={`${this.handleRight()}`} className="modal-arrow">
+          <i className="fas fa-chevron-right modal-arrow"></i>
+        </Link>
       </div>
     )
   }

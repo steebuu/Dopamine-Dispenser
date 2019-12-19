@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import ImageUpload from './image_upload';
 import {uploadImage} from '../../util/session_api_util';
 
-const msp = state => {
+const msp = (state, file) => {
   return{
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    file: file
   };
 };
 

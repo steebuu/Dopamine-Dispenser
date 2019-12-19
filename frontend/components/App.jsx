@@ -1,13 +1,8 @@
 import React from 'react';
-import SignupFormContainer from './userauth/signup_form_container';
-import LoginFormContainer from './userauth/login_form_container';
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import {Link} from 'react-router-dom';
 import Footer from './footer';
-import SignupJoiner from './userauth/signup_joiner';
 import SplashContainer from './splash_container';
-import NavBarContainer from './navbar/navbar_container';
 import ProfileContainer from './profile/profile_container';
 import ModalContainer from './modal_container';
 
@@ -21,9 +16,10 @@ class App extends React.Component {
     // const {currentUser} = this.props.currentUser;
     return (
       <section className="app">
-        <Route path="/users/:id" component={ModalContainer}/>
+        <Route path="/users/:userId/images/:imageId" component={ModalContainer}/>
+        <Route exact path="/users/:userId" component={ModalContainer}/>
         <Switch>
-          <Route path="/users/:id" component={ProfileContainer}/>
+          <Route path="/users/:userId" component={ProfileContainer}/>
           <AuthRoute path="/signup" component={SplashContainer}/>
           <AuthRoute path="/login" component={SplashContainer}/>
           <Route path="/" component={SplashContainer}/>

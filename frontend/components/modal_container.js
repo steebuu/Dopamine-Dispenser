@@ -1,13 +1,15 @@
 import { connect } from 'react-redux';
+import {withRouter} from 'react-router-dom';
 import Modal from './modal';
 import {closeModal} from '../actions/modal_actions';
 
 const msp = (state, ownProps) => {
+  const {modal} = state.ui;
   return {
-    type: state.ui.modal.type,
-    users: state.entities.users,
-    id: ownProps.match.params.id,
-    file: state.ui.modal.file
+    userId: ownProps.match.params.userId,
+    modal: modal.modal,
+    file: modal.file,
+    photoUrl: modal.photoUrl
   };
 };
 
@@ -17,4 +19,4 @@ const mdp = dispatch => {
   };
 };
 
-export default connect(msp, mdp)(Modal);
+export default withRouter(connect(msp, mdp)(Modal));

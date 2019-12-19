@@ -1,44 +1,50 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom';
 import ProfileModal from '../components/profile/profile_modal';
 import ImageModalContainer from '../components/feed/image_modal_container';
-import {withRouter} from 'react-router-dom';
 import ImageUploadModalContainer from './modals/image_upload_modal_container';
 import PreUploadModal from './modals/pre_upload_modal';
 import ImageUpdateModalContainer from './modals/image_update_modal';
 
 class Modal extends React.Component{
-  // ({ modal, closeModal }) {
-  // debugger;
   constructor(props){
     super(props);
+    
+    this.handleClose = this.handleClose.bind(this);
   }
+
+  handleClose(){
+    this.props.closeModal();
+    this.props.history.push(`/users/${this.props.userId}`);
+  }
+
   render(){
-    const {type, closeModal, user, id, file, image} = this.props;
-    if (!type) {
+    const {modal} = this.props;
+    if (!modal) {
       return null;
     }
     let component;
-    switch (type) {
+    switch (modal) {
       case 'profile':
         component = <ProfileModal></ProfileModal>
         break;
       case 'image':
-        component = <ImageModalContainer id={id} file={file}></ImageModalContainer>
+        component = <ImageModalContainer></ImageModalContainer>
         break;
       case 'preupload':
         component = <PreUploadModal></PreUploadModal>
         break;
       case 'upload':
-        component = <ImageUploadModalContainer id={id}></ImageUploadModalContainer>
+        component = <ImageUploadModalContainer></ImageUploadModalContainer>
         break;
       case 'update':
-        component = <ImageUpdateModalContainer image={image} user={user}></ImageUpdateModalContainer>
+        component = <ImageUpdateModalContainer></ImageUpdateModalContainer>
         break;
       default:
         return null;
     }
     return (
-      <div className="modal-background" onClick={closeModal}>
+      <div className="modal-background" onClick={this.handleClose}>
         <div className="modal-child" onClick={e => e.stopPropagation()}>
           {component}
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
-import {Route} from 'react-router-dom';
+import {Link, Route, withRouter} from 'react-router-dom';
+
 class ImageIndex extends React.Component {
   constructor(props){
     super(props);
@@ -11,7 +11,7 @@ class ImageIndex extends React.Component {
   // }
 
   render(){
-    const {openImageModal, images, users} = this.props;
+    const {openModal, images, userId} = this.props;
     let FeedImages;
     const user = this.props.user || {};
     const image_ids = user.image_ids;
@@ -27,7 +27,9 @@ class ImageIndex extends React.Component {
       FeedImages = image_ids.map(id => {
         return (
           <div key={id} className="feed-image-div">
-              <img src={images[id].photoUrl} className="thumbnail" onClick={()=>{openImageModal('image', id)}}/>
+              <Link to={`/users/${userId}/images/${id}`}>
+                <img src={images[id].photoUrl} className="thumbnail" onClick={()=>{openModal('image')}}/>
+              </Link>
           </div>
         )
       })

@@ -39,7 +39,7 @@ class ImageUploadModal extends React.Component {
 
     const formData = new FormData();
     formData.append('image[caption]', this.state.caption);
-    formData.append('image[user_id]', this.props.id);
+    formData.append('image[user_id]', this.props.userId);
     if (this.state.photoFile) {
       formData.append('image[photo]', this.state.photoFile);
     }
@@ -59,8 +59,9 @@ class ImageUploadModal extends React.Component {
   }
 
   render() {
-    const { user } = this.props;
+    const { currentUser } = this.props;
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} className="modal-picture"/> : null;
+    debugger;
     return (
       <div className="image-modal">
         <div className="image-modal-picture-div-holder">
@@ -74,7 +75,7 @@ class ImageUploadModal extends React.Component {
               <img src={window.profilePic} className="modal-prof-pic" />
             </div>
             <div className="image-modal-username-div">
-              {user.username}
+              {currentUser.username}
             </div>
           </div>
           <div className="image-modal-info-comments-div">

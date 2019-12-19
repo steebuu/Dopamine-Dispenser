@@ -1,14 +1,17 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import Profile from './profile';
 import {logout} from '../../actions/session_actions';
 import {openModal} from '../../actions/modal_actions';
 import {getUser} from '../../actions/user_actions';
 
 const msp = (state, ownProps) => {
+  const {users} = state.entities;
+  const {userId} = ownProps.match.params;
   return {
-    currentUser: state.entities.users[state.session.id],
-    user: state.entities.users[ownProps.match.params.id],
-    userId: ownProps.match.params.id
+    currentUser: users[state.session.id],
+    user: users[userId],
+    userId
   };
 };
 
@@ -20,4 +23,4 @@ const mdp = (dispatch) => {
   };
 };
 
-export default connect(msp, mdp)(Profile);
+export default withRouter(connect(msp, mdp)(Profile));
