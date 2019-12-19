@@ -18,7 +18,7 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => {
   return{
     closeModal: () => dispatch(closeModal()),
-    openModal: (modal, image, user) => dispatch(openModal(modal, image, user))
+    openModal: (modal) => dispatch(openModal(modal))
   };
 };
 

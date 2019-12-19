@@ -4,7 +4,7 @@ import ProfileModal from '../components/profile/profile_modal';
 import ImageModalContainer from '../components/feed/image_modal_container';
 import ImageUploadModalContainer from './modals/image_upload_modal_container';
 import PreUploadModal from './modals/pre_upload_modal';
-import ImageUpdateModalContainer from './modals/image_update_modal';
+import ImageUpdateModalContainer from './modals/image_update_modal_container';
 
 class Modal extends React.Component{
   constructor(props){

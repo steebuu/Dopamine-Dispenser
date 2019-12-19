@@ -4,18 +4,26 @@ class ImageUpdateModal extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      caption: this.props.image.caption
+      caption: props.image.caption
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(field){
+    return (e) => {
+      this.setState({ [field]: e.target.value });
     };
   }
 
   render() {
     const { user, image } = this.props;
-    const preview = image.photoUrl;
+    
     return (
       <div className="image-modal">
         <div className="image-modal-picture-div-holder">
           <div className="image-modal-picture-div">
-            {preview}
+            <img src={image.photoUrl} className="modal-picture" />
           </div>
         </div>
         <div className="image-modal-info-div">

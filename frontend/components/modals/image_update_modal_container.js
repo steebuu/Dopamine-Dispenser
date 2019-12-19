@@ -17,4 +17,4 @@ const mdp = dispatch => {
   };
 };
 
-export default withRouter(connect(msp, mdp)(ImageUploadModal));
+export default withRouter(connect(msp, mdp)(ImageUpdateModal));
