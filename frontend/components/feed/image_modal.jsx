@@ -4,14 +4,43 @@ import {Link} from 'react-router-dom';
 class ImageModal extends React.Component {
   constructor(props){
     super(props);
+    this.state = {
+      optionModalType: "closed"
+    };
 
     this.handleLeft = this.handleLeft.bind(this);
     this.handleRight = this.handleRight.bind(this);
     this.handleUserAction = this.handleUserAction.bind(this);
+    this.optionModal = this.optionModal.bind(this);
+  }
+
+  optionModal(){
+    const {optionModalType} = this.state;
+    if (optionModalType === "closed"){
+      return null;
+    } else {
+      return (
+        <div className="modal-background" onClick={this.setState({optionModalType: "closed"})}>
+          <div className="modal-child" onClick={e => e.stopPropagation()}>
+            <div className="profile-modal">
+              <div className="profile-modal-option">
+                <button className="profile-modal-button" onClick={() => this.props.openModal("update")}>Edit Caption</button>
+              </div>
+              <div className="profile-modal-option">
+                <button className="profile-modal-button" onClick={() => this.handleLogout()}>Delete Post</button>
+              </div>
+              <div className="profile-modal-option">
+                <button className="profile-modal-button" onClick={() => this.setState({optionModalType: "closed"})}>Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
   }
 
   handleUserAction(){
-    this.props.openModal("update");
+    this.setState({optionModalType: "open"});
   }
 
   handleLeft(){

@@ -1,6 +1,7 @@
-import * as APIUtil from '../util/image_api_util';
+import * as ImageAPI from '../util/image_api_util';
 export const RECEIVE_IMAGE = "RECEIVE_IMAGE";
 export const RECEIVE_IMAGES = "RECEIVE_IMAGES";
+export const REMOVE_IMAGE = "REMOVE_IMAGE";
 
 export const receiveImage = image => {
   return{
@@ -16,12 +17,24 @@ export const receiveImages = images => {
   };
 };
 
+export const removeImage = id => {
+  return{
+    type: REMOVE_IMAGE,
+    id
+  };
+};
+
 export const updateImage = image => dispatch => {
-  return APIUtil.update(image)
+  return ImageAPI.update(image)
     .then(image => dispatch(receiveImage(image)));
 };
 
 export const fetchImages = () => dispatch => {
-  return APIUtil.fetchImages()
+  return ImageAPI.fetchImages()
     .then(images => dispatch(receiveImages(images)));
+};
+
+export const deleteImage = id => dispatch => {
+  return ImageAPI.delete(id)
+    .then(() => dispatch(removeImage(id)));
 };

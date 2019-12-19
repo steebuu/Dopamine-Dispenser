@@ -2,6 +2,7 @@ import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import ImageModal from './image_modal';
 import {closeModal, openModal} from '../../actions/modal_actions';
+import {deleteImage} from '../../actions/image_actions';
 
 
 const msp = (state, ownProps) => {
@@ -18,7 +19,8 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => {
   return{
     closeModal: () => dispatch(closeModal()),
-    openModal: (modal) => dispatch(openModal(modal))
+    openModal: (modal) => dispatch(openModal(modal)),
+    deleteImage: (id) => dispatch(deleteImage(id))
   };
 };
 

@@ -1,19 +1,36 @@
 import React from 'react';
+import { openModal } from '../../actions/modal_actions';
 
 class ImageUpdateModal extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      caption: props.image.caption
+      caption: this.props.image.caption,
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleBack = this.handleBack.bind(this);
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+
+    const {updateImage, openModal, image} = this.props;
+    const newImage = {id: image.id, caption: this.state.caption};
+    
+    updateImage(newImage);
+    openModal("image");
   }
 
   handleChange(field){
     return (e) => {
       this.setState({ [field]: e.target.value });
     };
+  }
+
+  handleBack() {
+    this.props.openModal("image");
   }
 
   render() {
@@ -34,6 +51,9 @@ class ImageUpdateModal extends React.Component {
             <div className="image-modal-username-div">
               {user.username}
             </div>
+            <div className="image-modal-user-actions-div">
+              <i className="fas fa-backspace image-modal-user-actions" onClick={this.handleBack}></i>
+            </div>
           </div>
           <div className="image-modal-info-comments-div">
             <form onSubmit={this.handleSubmit} className="image-update-form">
@@ -42,7 +62,6 @@ class ImageUpdateModal extends React.Component {
               </div>
               <div className="update-bottom">
                 <button className="image-update-button">
-                  <i className="fas fa-edit"></i>
                   <p className="update-message">Update</p>
                 </button>
               </div>

@@ -7,7 +7,7 @@ const msp = (state, ownProps) => {
   const {modal} = state.ui;
   return {
     userId: ownProps.match.params.userId,
-    modal: modal.modal,
+    modalType: modal.modalType,
     file: modal.file,
     photoUrl: modal.photoUrl
   };

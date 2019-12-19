@@ -14,18 +14,23 @@ class Api::ImagesController < ApplicationController
     if @image.save
       render '/api/images/show'
     else
-      render json: image.errors.full_messages, status: 422
+      render json: @image.errors.full_messages, status: 422
     end
   end
 
   def update
     @image = Image.find(params[:id])
     @image.update(caption: params[:image][:caption])
-    if @image.update
+    if @image.save
       render 'api/images/show'
     else
       render json: image.errors.full_messages, status: 422
     end
+  end
+
+  def delete
+    @image = Image.find(params[:id])
+    @image.delete
   end
 
   private

@@ -19,12 +19,12 @@ class Modal extends React.Component{
   }
 
   render(){
-    const {modal} = this.props;
-    if (!modal) {
+    const {modalType} = this.props;
+    if (!modalType) {
       return null;
     }
     let component;
-    switch (modal) {
+    switch (modalType) {
       case 'profile':
         component = <ProfileModal></ProfileModal>
         break;

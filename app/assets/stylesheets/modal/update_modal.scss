@@ -6,5 +6,23 @@
 }
 
 .update-bottom {
+  display: flex;
+  border-top: 1px solid rgb(239, 239, 239);
   width: 100%;
+  min-height: 56px;
+}
+
+.image-update-button {
+  height: 100%;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  color: rgb(56, 149, 237);
+  font-weight: 600;
+  font-size: 14px;
+  opacity: 0.3;
+}
+
+.image-update-button:hover {
+  opacity: 1;
 }

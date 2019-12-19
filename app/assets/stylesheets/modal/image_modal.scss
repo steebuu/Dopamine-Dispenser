@@ -110,6 +110,7 @@
 }
 
 .image-modal-info-actions-div{
+  border-top: 1px solid rgb(239, 239, 239);
   border-bottom: 1px solid rgb(239, 239, 239);
   display: flex;
   flex-direction: column;
@@ -117,7 +118,7 @@
   width: 100%;
   min-height: 100px;
   height: 30%;
-  padding: 0px 0px 16px 16px;
+  padding: 6px 0px 16px 16px;
   box-sizing: border-box;
 }
 
@@ -151,10 +152,13 @@
 .post-comment-button {
   border: none;
   background-color: transparent;
+  color: rgb(56, 149, 237);
+  font-weight: 600;
+  font-size: 14px;
 }
 
 .modal-icon {
-  font-size: 26px;
+  font-size: 28px;
   cursor: pointer;
   padding-right: 14px;
 }
@@ -175,3 +179,4 @@
 .modal-arrow:last-child {
   margin-left: 12px;
 }
+

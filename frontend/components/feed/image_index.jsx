@@ -27,7 +27,7 @@ class ImageIndex extends React.Component {
       FeedImages = image_ids.map(id => {
         return (
           <div key={id} className="feed-image-div">
-              <Link to={`/users/${userId}/images/${id}`}>
+              <Link to={`/users/${userId}/images/${id}`} className="index-item-link">
                 <img src={images[id].photoUrl} className="thumbnail" onClick={()=>{openModal('image')}}/>
               </Link>
           </div>

@@ -13,10 +13,10 @@ class AuthNavBar extends React.Component {
       return(
         <div className="nav-right-div">
           <div className="nav-right-icons-div">
-            <i className="far fa-compass"></i>
-            <i className="far fa-heart"></i>
+            <i className="far fa-compass navbar-icon"></i>
+            <i className="far fa-heart navbar-icon"></i>
             <Link to={`/users/${currentUser.id}`} className="icon-link">
-              <i className="far fa-user"></i>
+              <i className="far fa-user navbar-icon"></i>
             </Link>
           </div>
         </div>
