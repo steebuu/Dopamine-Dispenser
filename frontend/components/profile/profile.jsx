@@ -39,7 +39,7 @@ class Profile extends React.Component {
     const {openModal, currentUserId} = this.props;
     const user = this.props.user || {};
     let cogComponent = null;
-
+    debugger;
     if (!isEmpty(user) && currentUserId === user.id) {
       cogComponent = this.cogComponent()
     }
