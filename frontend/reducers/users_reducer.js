@@ -10,7 +10,6 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_CURRENT_USER:
       const {payload} = action;
       const userId = Object.keys(action.payload.user);
-      debugger;
       return Object.assign({}, state, { [userId]: payload.user[userId] });
       case RECEIVE_USER:
         return Object.assign({}, state, action.user);

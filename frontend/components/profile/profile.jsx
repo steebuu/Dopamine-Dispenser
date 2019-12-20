@@ -19,7 +19,6 @@ class Profile extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-    // debugger;
     const { userId, getUser, users } = this.props;
     if (users[userId] === undefined || prevProps.match.params.userId !== this.props.match.params.userId) {
       getUser(userId);

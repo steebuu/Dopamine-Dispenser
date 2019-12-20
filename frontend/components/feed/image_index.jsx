@@ -8,22 +8,29 @@ class ImageIndex extends React.Component {
 
   }
 
-  // componentDidMount(){
-  //   this.props.fetchImages();
-  // }
+  componentDidMount(){
+    this.props.fetchImages();
+  }
+
+  componentDidUpdate(prevProps) {
+    const { userId, fetchImages, users } = this.props;
+    if (users[userId] === undefined || prevProps.match.params.userId !== this.props.match.params.userId) {
+      fetchImages();
+    }
+  }
 
   render(){
     const { openModal, images, userId, user } = this.props;
     let FeedImages;
-    
     if (!user) {
       return null;
     } else if (!user.image_ids) {
       return null;
-    } else if (!images[user.image_ids[user.image_ids[0]]]) {
+    } else if (!images[user.image_ids[0]]) {
       return null;
     }
-
+    
+   
     // if (!images){
     //   return null;
     // }

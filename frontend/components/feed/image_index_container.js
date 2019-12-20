@@ -12,7 +12,8 @@ const msp = (state, ownProps) => {
     images: images,
     user: users[userId],
     userId: userId,
-    imageId: imageId
+    imageId: imageId,
+    users
   };
 };
 

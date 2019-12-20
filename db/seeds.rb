@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# require 'open-uri'
 
 Image.destroy_all
 User.destroy_all
@@ -42,15 +43,48 @@ image.save
 image_2.save
 image_3.save
 
-# demo_2 = User.create!(
-#   username: "DemoTheSecond",
-#   password: "demopass",
-#   email: "demo2@e.mail",
-#   full_name: "Demo Lisher",
-#   bio: "I am the missing semicolon, the undeclared variable, the forgotten export that wakes you in the unyielding grip of terror. Dread me. Run from me. I still arrive."
-# )
+demo_2 = User.create!(
+  username: "DemoTheSecond",
+  password: "demopass",
+  email: "demo2@e.mail",
+  full_name: "Demo Lisher",
+  bio: "I am the missing semicolon, the undeclared variable, the forgotten export that wakes you in the unyielding grip of terror. Dread me. Run from me. I still arrive."
+)
 
-# demo_2_image_1 = Image.new(
-#   user_id: demo_2.id
-#   caption: 
-# )
+demo_2.propic.attach(io: File.open('app/assets/images/placeholder/thanos_patrick.jpg'), filename: "demo_2_propic.png")
+
+demo_2_image_1 = Image.new(
+  user_id: demo_2.id,
+  caption: "say 'cannot read params of undefined again' i dare you i double dare you"
+)
+
+demo_2_image_1.photo.attach(io: File.open('app/assets/images/placeholder/kermit_gun.jpg'), filename: "kermit_gun.jpg")
+
+demo_2_image_2 = Image.new(
+  user_id: demo_2.id,
+  caption: "okay i take it back please just let my code run"
+)
+
+demo_2_image_2.photo.attach(io: File.open('app/assets/images/placeholder/kermit_crying.jpg'), filename: "kermit_crying.jpg")
+
+demo_2_image_1.save
+demo_2_image_2.save
+
+demo_3 = User.create!(
+  username: "Democles",
+  password: "demopass",
+  email: "demo3@e.mail",
+  full_name: "Demmy the Third",
+  bio: "send help"
+)
+
+demo_3.propic.attach(io: File.open('app/assets/images/placeholder/demo_3_propic.png'), filename: "demo_3_propic.png")
+
+demo_3_image_1 = Image.new(
+  user_id: demo_3.id,
+  caption: "The weight of your code debt hang above you like a blade. Every instance of denormalized state, every hardcoded attribute of CSS. Soon your sins shall fall upon you."
+)
+
+demo_3_image_1.photo.attach(io: File.open('app/assets/images/demo/swordofdamocles.jpg'), filename: "swordofdamocles.jpg")
+
+demo_3_image_1.save

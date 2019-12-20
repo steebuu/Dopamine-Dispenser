@@ -79,7 +79,6 @@ class ImageModal extends React.Component {
   }
 
   handleKeyDown(e){
-    // debugger;
     e.preventDefault();
     
     if (e.keyCode === 37) {
