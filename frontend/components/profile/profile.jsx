@@ -14,8 +14,16 @@ class Profile extends React.Component {
   }
 
   componentDidMount(){
-    const {userId, getUser, match} = this.props;
+    const {userId, getUser } = this.props;
     getUser(userId);
+  }
+
+  componentDidUpdate(prevProps){
+    // debugger;
+    const { userId, getUser, users } = this.props;
+    if (users[userId] === undefined || prevProps.match.params.userId !== this.props.match.params.userId) {
+      getUser(userId);
+    }
   }
 
   cogComponent(){
@@ -37,6 +45,13 @@ class Profile extends React.Component {
       cogComponent = this.cogComponent()
     }
 
+    let propic;
+    if (!user.propicUrl) {
+      propic = window.propic
+    } else (
+      propic = user.propicUrl
+    )
+
     return(
       <main className="profile-main">
         <NavBarContainer/>
@@ -44,7 +59,7 @@ class Profile extends React.Component {
           <div className="profile-summary-div">
             <div className="profile-pic-div">
               <div className="profile-pic-holder">
-                <img src={user.propicUrl} alt="" className="profile-pic"/>
+                <img src={propic} alt="" className="profile-pic"/>
               </div>
             </div>
             <div className="profile-summary-info-div">

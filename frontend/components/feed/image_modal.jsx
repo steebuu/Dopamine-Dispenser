@@ -119,7 +119,7 @@ class ImageModal extends React.Component {
     }
     let propic;
     if (!user.propicUrl) {
-      propic = "/images/igprofilepic.png"
+      propic = window.propic
     } else (
       propic = user.propicUrl
     )

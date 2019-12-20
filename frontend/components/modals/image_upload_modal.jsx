@@ -53,7 +53,7 @@ class ImageUploadModal extends React.Component {
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} className="modal-picture"/> : null;
     let propic;
     if (!currentUser.propicUrl) {
-      propic = "/images/igprofilepic.png";
+      propic = window.propic;
     } else {
       propic = currentUser.propicUrl;
     }
