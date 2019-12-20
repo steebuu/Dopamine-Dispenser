@@ -7,6 +7,7 @@
 json.user do 
   json.set! @user.id do 
     json.extract! @user, :id, :username, :bio, :full_name, :image_ids
+    json.propicUrl url_for(@user.propic)
   end
 end
 

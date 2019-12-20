@@ -44,7 +44,7 @@ class Profile extends React.Component {
           <div className="profile-summary-div">
             <div className="profile-pic-div">
               <div className="profile-pic-holder">
-                <img src={window.profilePic} alt="" className="profile-pic"/>
+                <img src={user.propicUrl} alt="" className="profile-pic"/>
               </div>
             </div>
             <div className="profile-summary-info-div">

@@ -52,5 +52,5 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     primary_key: :id
 
-  has_one_attached :profile_pic
+  has_one_attached :propic
 end

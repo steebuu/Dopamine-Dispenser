@@ -51,6 +51,12 @@ class ImageUploadModal extends React.Component {
   render() {
     const { currentUser } = this.props;
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} className="modal-picture"/> : null;
+    let propic;
+    if (!currentUser.propicUrl) {
+      propic = "/images/igprofilepic.png";
+    } else {
+      propic = currentUser.propicUrl;
+    }
     return (
       <div className="image-modal">
         <div className="image-modal-picture-div-holder">
@@ -61,7 +67,7 @@ class ImageUploadModal extends React.Component {
         <div className="image-modal-info-div">
           <div className="image-modal-info-user-div">
             <div className="image-modal-profile-pic-div">
-              <img src={window.profilePic} className="modal-prof-pic" />
+              <img src={propic} className="modal-prof-pic" />
             </div>
             <div className="image-modal-username-div">
               {currentUser.username}
@@ -75,6 +81,7 @@ class ImageUploadModal extends React.Component {
               <div className="upload-bottom">
                 <label htmlFor="image-upload" className="image-upload-input">
                   <i className="fas fa-camera-retro image-upload-icon"></i>
+                  <p className="image-upload-message">Or Choose Another</p>
                   <input id="image-upload" className="image-upload" type="file" onChange={this.handleFile} />
                 </label>
                 <button className="image-upload-button">Upload</button>

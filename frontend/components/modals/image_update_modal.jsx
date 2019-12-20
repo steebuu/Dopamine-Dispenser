@@ -46,7 +46,7 @@ class ImageUpdateModal extends React.Component {
         <div className="image-modal-info-div">
           <div className="image-modal-info-user-div">
             <div className="image-modal-profile-pic-div">
-              <img src={window.profilePic} className="modal-prof-pic" />
+              <img src={user.propic} className="modal-prof-pic" />
             </div>
             <div className="image-modal-username-div">
               {user.username}

@@ -117,8 +117,14 @@ class ImageModal extends React.Component {
     if (sessionId === user.id){
       userAction = this.userActionComponent();
     }
-
+    let propic;
+    if (!user.propicUrl) {
+      propic = "/images/igprofilepic.png"
+    } else (
+      propic = user.propicUrl
+    )
     return(
+      
       <div className="image-modal">
         {component}
         <Link to={`${this.handleLeft()}`} className="modal-arrow" onKeyDown={this.handleKeyDown}>
@@ -130,7 +136,7 @@ class ImageModal extends React.Component {
         <div className="image-modal-info-div">
           <div className="image-modal-info-user-div">
             <div className="image-modal-profile-pic-div">
-              <img src={window.profilePic} className="modal-prof-pic"/>
+              <img src={propic} className="modal-prof-pic"/>
             </div>
             <div className="image-modal-username-div">
               {user.username}
@@ -140,7 +146,7 @@ class ImageModal extends React.Component {
           <div className="image-modal-info-comments-div">
             <div className="inner-comments-div">
               <div className="image-modal-profile-pic-div">
-                <img src={window.profilePic} className="modal-prof-pic" />
+                <img src={propic} className="modal-prof-pic" />
               </div>
               <div className="image-modal-username-comment-div">
                 <div className="image-modal-username-div">
