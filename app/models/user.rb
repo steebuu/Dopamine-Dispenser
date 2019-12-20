@@ -51,4 +51,6 @@ class User < ApplicationRecord
     class_name: :Image,
     foreign_key: :user_id,
     primary_key: :id
+
+  has_one_attached :profile_pic
 end

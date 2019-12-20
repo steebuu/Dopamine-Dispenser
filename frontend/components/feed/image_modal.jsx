@@ -13,6 +13,8 @@ class ImageModal extends React.Component {
     this.handleUserAction = this.handleUserAction.bind(this);
     this.optionModal = this.optionModal.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.userActionComponent = this.userActionComponent.bind(this);
   }
 
   optionModal(){
@@ -56,9 +58,9 @@ class ImageModal extends React.Component {
     const { image, image_ids } = this.props;
     const imageId = image.id;
     const currentIndex = image_ids.indexOf(imageId);
-    const prevId = image_ids[currentIndex - 1];
-    if (currentIndex > 0){
-      return prevId;
+    const nextId = image_ids[currentIndex + 1];
+    if (currentIndex < image_ids.length - 1) {
+      return nextId;
     } else {
       return imageId;
     }
@@ -68,18 +70,38 @@ class ImageModal extends React.Component {
     const { image, image_ids } = this.props;
     const imageId = image.id;
     const currentIndex = image_ids.indexOf(imageId);
-    const nextId = image_ids[currentIndex + 1];
-    if (currentIndex < image_ids.length - 1) {
-      return nextId;
+    const prevId = image_ids[currentIndex - 1];
+    if (currentIndex > 0) {
+      return prevId;
     } else {
       return imageId;
     }
   }
 
+  handleKeyDown(e){
+    // debugger;
+    e.preventDefault();
+    
+    if (e.keyCode === 37) {
+      this.props.history.push(`${this.handleLeft()}`)
+    } else if (e.keyCode === 39) {
+      this.props.history.push(`${this.handleRight()}`)
+    }
+  }
+
+  userActionComponent(){
+    return(
+      <div className="image-modal-user-actions-div">
+        <i className="fas fa-ellipsis-h image-modal-user-actions" onClick={this.handleUserAction}></i>
+      </div>
+    )
+  }
+
   render(){
-    const {user, image} = this.props;
+    const {user, image, sessionId} = this.props;
     const {optionModalType} = this.state;
     let component;
+    let userAction = null;
     switch (optionModalType) {
       case "closed":
         component = null;
@@ -92,10 +114,14 @@ class ImageModal extends React.Component {
         break;
     }
 
+    if (sessionId === user.id){
+      userAction = this.userActionComponent();
+    }
+
     return(
       <div className="image-modal">
         {component}
-        <Link to={`${this.handleLeft()}`} className="modal-arrow">
+        <Link to={`${this.handleLeft()}`} className="modal-arrow" onKeyDown={this.handleKeyDown}>
           <i className="fas fa-chevron-left modal-arrow"></i>
         </Link>
         <div className="image-modal-picture-div-holder">
@@ -109,9 +135,7 @@ class ImageModal extends React.Component {
             <div className="image-modal-username-div">
               {user.username}
             </div>
-            <div className="image-modal-user-actions-div">
-              <i className="fas fa-ellipsis-h image-modal-user-actions" onClick={this.handleUserAction}></i>
-            </div>
+            {userAction}
           </div>
           <div className="image-modal-info-comments-div">
             <div className="inner-comments-div">
@@ -141,7 +165,7 @@ class ImageModal extends React.Component {
             <button className="post-comment-button">Post</button>
           </div>
         </div>
-        <Link to={`${this.handleRight()}`} className="modal-arrow">
+        <Link to={`${this.handleRight()}`} className="modal-arrow" onKeyDown={this.handleKeyDown}>
           <i className="fas fa-chevron-right modal-arrow"></i>
         </Link>
       </div>

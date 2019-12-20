@@ -9,7 +9,7 @@ const msp = (state, ownProps) => {
   const {users} = state.entities;
   const {userId} = ownProps.match.params;
   return {
-    currentUser: users[state.session.id],
+    currentUserId: state.session.id,
     user: users[userId],
     userId
   };

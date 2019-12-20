@@ -8,11 +8,13 @@ import {deleteImage} from '../../actions/image_actions';
 const msp = (state, ownProps) => {
   const {userId, imageId} = ownProps.match.params;
   const {users, images} = state.entities;
+  const sessionId = state.session.id;
   return{
     user: users[userId],
     image: images[imageId],
     modal: state.ui.modal,
-    image_ids: users[userId].image_ids
+    image_ids: users[userId].image_ids,
+    sessionId: sessionId
   };
 };
 

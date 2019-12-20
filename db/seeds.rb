@@ -38,3 +38,16 @@ image_3.photo.attach(io: File.open('app/assets/images/demo/test_3.png'), filenam
 image.save
 image_2.save
 image_3.save
+
+demo_2 = User.create!(
+  username: "DemoTheSecond",
+  password: "demopass",
+  email: "demo2@e.mail",
+  full_name: "Demo Lisher",
+  bio: "I am the missing semicolon, the undeclared variable, the forgotten export that wakes you in the unyielding grip of terror. Dread me. Run from me. I still arrive."
+)
+
+demo_2_image_1 = Image.new(
+  user_id: demo_2.id
+  caption: 
+)
