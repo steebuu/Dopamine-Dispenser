@@ -7,7 +7,8 @@ const SessionReducer = (state = _nullSession, action) => {
 
   switch(action.type){
     case RECEIVE_CURRENT_USER:
-      return Object.assign({}, state, {id: action.currentUser.id});
+      const userId = Object.keys(action.payload.user);
+      return Object.assign({}, state, {id: userId});
     case LOGOUT_CURRENT_USER:
       return _nullSession;
     default:

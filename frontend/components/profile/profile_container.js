@@ -11,7 +11,7 @@ const msp = (state, ownProps) => {
   return {
     currentUserId: state.session.id,
     user: users[userId],
-    userId
+    userId,
   };
 };
 

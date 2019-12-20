@@ -14,8 +14,8 @@ class Profile extends React.Component {
   }
 
   componentDidMount(){
-    const {user, getUser, match} = this.props;
-    getUser(match.params.userId);
+    const {userId, getUser, match} = this.props;
+    getUser(userId);
   }
 
   cogComponent(){

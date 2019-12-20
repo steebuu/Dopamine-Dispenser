@@ -6,7 +6,9 @@ const imagesReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      return Object.assign({}, state, action.currentUser.images);
+      const { payload } = action;
+      const userId = Object.keys(action.payload.user);
+      return Object.assign({}, state, payload.user[userId].images);
     case RECEIVE_USER:
       return Object.assign({}, state, action.images);
     case RECEIVE_IMAGE:
