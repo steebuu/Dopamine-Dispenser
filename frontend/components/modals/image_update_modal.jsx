@@ -35,7 +35,6 @@ class ImageUpdateModal extends React.Component {
 
   render() {
     const { user, image } = this.props;
-    
     return (
       <div className="image-modal">
         <div className="image-modal-picture-div-holder">
@@ -46,7 +45,7 @@ class ImageUpdateModal extends React.Component {
         <div className="image-modal-info-div">
           <div className="image-modal-info-user-div">
             <div className="image-modal-profile-pic-div">
-              <img src={user.propic} className="modal-prof-pic" />
+              <img src={user.propicUrl} className="modal-prof-pic" />
             </div>
             <div className="image-modal-username-div">
               {user.username}
