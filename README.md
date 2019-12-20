@@ -33,15 +33,20 @@ Because Instagram's desktop site has limited functionality (cannot post, update,
 
 ![PreUpload](app/assets/images/readme/preuploadmodal.png)
 
-As Instagram's site seemed very fond of modals, I chose to create a preupload modal, which served as the source for uploading an image. Upon image upload, a new modal with a preview of the image is rendered.
+As Instagram's site seemed very fond of modals, I chose to create a `preUploadModal`, which served as the source for uploading an image. Upon image upload, a new `uploadImageModal` with a preview of the image is rendered.
 
 ![Upload](app/assets/images/readme/uploadmodal.png)
 
 Here, an preview of the uploaded image is rendered, and the options to add a caption, choose another image, or upload are presented. Passing the file from modal to modal was done by adding the file into the modal slice of state, so that the upload image modal could have access via props.
 
+
 ![PreuploadSnippet](app/assets/images/readme/preuploadcodesnippet.png)
 
+How the preupload modal takes the image file and puts it in the modal slice of state via `openModal`.
+
 ![UploadSnippet](app/assets/images/readme/uploadcodesnippet.png)
+
+The `uploadImageModal` using the image's `photoUrl` to render the preview.
 
 ---
 
