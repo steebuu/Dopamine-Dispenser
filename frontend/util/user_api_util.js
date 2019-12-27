@@ -4,5 +4,12 @@ module.exports = {
       method: "GET",
       url: `/api/users/${id}`
     });
-  }
+  },
+  
+  updateUser(id) {
+    return $.ajax({
+      method: "PATCH",
+      url: `/api/users/${id}`
+    });
+  },
 };
