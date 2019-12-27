@@ -21,6 +21,10 @@ class UpdateUser extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
+
+        const {updateUser, user} = this.props;
+        updateUser(user.id);
+        this.props.history.push(`/users/${user.id}`)
     }
 
     render(){
