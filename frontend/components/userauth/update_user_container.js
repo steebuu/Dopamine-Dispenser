@@ -6,7 +6,6 @@ import {updateUser} from '../../actions/user_actions';
 const msp = (state, ownProps) => {
     const {users} = state.entities;
     const {userId} = ownProps.match.params;
-    debugger;
     return {
         user: users[userId],
     }

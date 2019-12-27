@@ -41,7 +41,6 @@ class Profile extends React.Component {
     let cogComponent;
 
     if (!isEmpty(user) && currentUserId === user.id) {
-      debugger;
       cogComponent = this.cogComponent()
     } else {
       cogComponent = null;

@@ -30,15 +30,27 @@ class UpdateUser extends React.Component {
                 <div className="update-user-form-div">
                     <form onSubmit={this.handleSubmit} className="update-user-form">
                         <div className="update-user-form-element-div">
-                            <label className="update-user-input" type="text" onChange={this.handleChange("full_name")}>Name</label>
+                            <label className="update-user-label">
+                                Name
+                                <input className="update-user-input" type="text" onChange={this.handleChange("full_name")}></input>
+                            </label>
                         </div>
                         <div className="update-user-form-element-div"></div>
-                            <label className="update-user-input" type="text" onChange={this.handleChange("username")}>Username</label>
+                            <label className="update-user-label">
+                                Username
+                                <input className="update-user-input" type="text" onChange={this.handleChange("username")}></input>
+                            </label>
                         <div className="update-user-form-element-div">
-                            <label className="update-user-input" type="email" onChange={this.handleChange("email")}>Email</label>
+                            <label className="update-user-label">
+                                Email
+                                <input className="update-user-input" type="email" onChange={this.handleChange("email")}></input>
+                            </label>
                         </div>
                         <div className="update-user-form-element-div">
-                            <label className="update-user-input" type="text" onChange={this.handleChange("bio")}>Bio</label>
+                            <label className="update-user-label">
+                                Bio
+                                <input className="update-user-input" type="text" onChange={this.handleChange("bio")}></input>
+                            </label>
                         </div>
                         <button className="update-user-button">Submit</button>
                     </form>
