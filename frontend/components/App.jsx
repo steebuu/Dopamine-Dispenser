@@ -5,6 +5,7 @@ import Footer from './footer';
 import SplashContainer from './splash_container';
 import ProfileContainer from './profile/profile_container';
 import ModalContainer from './modal_container';
+import UpdateUser from '../userauth/update_user';
 
 class App extends React.Component {
   constructor(props){
@@ -19,6 +20,7 @@ class App extends React.Component {
         <Route path="/users/:userId/images/:imageId" component={ModalContainer}/>
         <Route exact path="/users/:userId" component={ModalContainer}/>
         <Switch>
+          <Route path="/edit" component={UpdateUser}/>
           <Route path="/users/:userId" component={ProfileContainer}/>
           <AuthRoute path="/signup" component={SplashContainer}/>
           <AuthRoute path="/login" component={SplashContainer}/>
