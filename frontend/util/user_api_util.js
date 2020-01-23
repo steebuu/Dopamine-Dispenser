@@ -6,10 +6,11 @@ module.exports = {
     });
   },
   
-  updateUser(id) {
+  updateUser(id, user) {
     return $.ajax({
       method: "PATCH",
-      url: `/api/users/${id}`
+      url: `/api/users/${id}`,
+      data: { user: user }
     });
   },
 };
