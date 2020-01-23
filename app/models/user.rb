@@ -17,7 +17,6 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
   validates :password, length: {minimum: 6}, allow_nil: true
 
-  #FIGVAPER
   after_initialize :ensure_session_token
   attr_reader :password
 
@@ -50,6 +49,16 @@ class User < ApplicationRecord
   has_many :images,
     class_name: :Image,
     foreign_key: :user_id,
+    primary_key: :id
+
+  has_many :followers,
+    class_name: :Follow,
+    foreign_key: :follower_id,
+    primary_key: :id
+
+  has_many :followed,
+    class_name: :Follow,
+    foreign_key: :followed_id,
     primary_key: :id
 
   has_one_attached :propic
