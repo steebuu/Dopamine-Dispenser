@@ -2,7 +2,7 @@ import React from 'react';
 import NavBarContainer from '../navbar/navbar_container';
 import ImageIndexContainer from '../feed/image_index_container';
 import ImageUploadContainer from './image_upload_container';
-import { Route, Switch } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 import {ProtectedRoute} from '../../util/route_util';
 import {isEmpty} from 'lodash';
 
@@ -26,10 +26,12 @@ class Profile extends React.Component {
   }
 
   cogComponent(){
-    const {openModal} = this.props;
+    const {openModal, userId} = this.props;
     return(
       <div className="profile-current-user-div">
-        <button className="profile-action-button">Edit Profile</button>
+        <Link to={`/edit/${userId}`}>
+          <button className="profile-action-button">Edit Profile</button>
+        </Link>
         <i className="fas fa-cog" onClick={() => { openModal('profile') }}></i>
       </div>
     )
@@ -41,7 +43,6 @@ class Profile extends React.Component {
     let cogComponent;
 
     if (!isEmpty(user) && currentUserId === user.id) {
-      debugger;
       cogComponent = this.cogComponent()
     } else {
       cogComponent = null;
