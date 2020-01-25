@@ -6,7 +6,7 @@
 # end
 json.user do 
   json.set! @user.id do 
-    json.extract! @user, :id, :username, :bio, :full_name, :image_ids
+    json.extract! @user, :id, :username, :bio, :full_name, :image_ids, :followed, :followers
     if @user.propic.attached?
       json.propicUrl url_for(@user.propic)
     else

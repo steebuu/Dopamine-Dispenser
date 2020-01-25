@@ -19,7 +19,7 @@ class Follow < ApplicationRecord
     primary_key: :follower_id
 
     belongs_to :followed,
-    class_Name: :User,
+    class_name: :User,
     foreign_key: :id,
     primary_key: :followed_id
 end
