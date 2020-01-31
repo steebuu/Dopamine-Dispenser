@@ -55,6 +55,16 @@ class Profile extends React.Component {
       propic = user.propicUrl
     )
 
+    let followerCount = 0;
+    if (user.follower_ids) {
+      followerCount = user.follower_ids.length
+    }
+
+    let followedCount = 0;
+    if (user.followed_ids) {
+      followedCount = user.followed_ids.length
+    }
+
     return(
       <main className="profile-main">
         <NavBarContainer/>
@@ -73,8 +83,8 @@ class Profile extends React.Component {
               <div className="info-stats-div">
                 <ul className="info-stats-ul">
                   <li className="stat-element">0 posts</li>
-                  <li className="stat-element">0 followers</li>
-                  <li className="stat-element">0 following</li>
+                  <li className="stat-element">{followerCount} followers</li>
+                  <li className="stat-element">{followedCount} following</li>
                 </ul>
               </div>
               <div className="info-bio-div">
