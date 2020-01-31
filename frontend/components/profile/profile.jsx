@@ -38,7 +38,7 @@ class Profile extends React.Component {
   }
 
   render(){
-    const {openModal, currentUserId} = this.props;
+    const {currentUserId} = this.props;
     const user = this.props.user || {};
     let cogComponent;
 
@@ -55,18 +55,12 @@ class Profile extends React.Component {
       propic = user.propicUrl
     )
 
-    let followerCount = 0;
-    if (user.follower_ids) {
+    let followerCount;
+    let followedCount;
+    let postCount;
+    if (!isEmpty(user)) {
       followerCount = user.follower_ids.length
-    }
-
-    let followedCount = 0;
-    if (user.followed_ids) {
       followedCount = user.followed_ids.length
-    }
-
-    let postCount = 0;
-    if (user.image_ids) {
       postCount = user.image_ids.length
     }
 

@@ -1,12 +1,6 @@
-# json.partial! "/api/users/user", user: @user
-
-  # debugger
-# json.user do
-#   json.set! @user.id, :id, :username, :bio, :full_name, :image_ids
-# end
 json.user do 
   json.set! @user.id do 
-    json.extract! @user, :id, :username, :bio, :full_name, :image_ids, :followed_ids, :follower_ids
+    json.partial! "/api/users/user", user: @user
     if @user.propic.attached?
       json.propicUrl url_for(@user.propic)
     else
