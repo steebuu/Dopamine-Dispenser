@@ -65,6 +65,11 @@ class Profile extends React.Component {
       followedCount = user.followed_ids.length
     }
 
+    let postCount = 0;
+    if (user.image_ids) {
+      postCount = user.image_ids.length
+    }
+
     return(
       <main className="profile-main">
         <NavBarContainer/>
@@ -82,7 +87,7 @@ class Profile extends React.Component {
               </div>
               <div className="info-stats-div">
                 <ul className="info-stats-ul">
-                  <li className="stat-element">0 posts</li>
+                  <li className="stat-element">{postCount} posts</li>
                   <li className="stat-element">{followerCount} followers</li>
                   <li className="stat-element">{followedCount} following</li>
                 </ul>
