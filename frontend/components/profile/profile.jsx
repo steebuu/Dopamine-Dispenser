@@ -11,6 +11,7 @@ class Profile extends React.Component {
     super(props);
 
     this.cogComponent = this.cogComponent.bind(this);
+    this.followComponent = this.followComponent.bind(this);
   }
 
   componentDidMount(){
@@ -37,6 +38,22 @@ class Profile extends React.Component {
     )
   }
 
+  followComponent(){
+    const {currentUserId, user, users, followUser, unfollowUser, userId} = this.props;
+    let dynamicFollow;
+    if (users[currentUserId].followed_ids.includes(user.id)) {
+      dynamicFollow = "Following"
+    } else {
+      dynamicFollow = "Follow"
+    }
+
+    return(
+      <div className="profile-follow-div">
+        <button className="profile-follow-button">{dynamicFollow}</button>
+      </div>
+    )
+  }
+
   render(){
     const {currentUserId} = this.props;
     const user = this.props.user || {};
@@ -44,8 +61,8 @@ class Profile extends React.Component {
 
     if (!isEmpty(user) && currentUserId === user.id) {
       cogComponent = this.cogComponent()
-    } else {
-      cogComponent = null;
+    } else if (!isEmpty(user) && currentUserId !== user.id){
+      cogComponent = this.followComponent();
     }
 
     let propic;
