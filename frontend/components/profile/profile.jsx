@@ -41,15 +41,20 @@ class Profile extends React.Component {
   followComponent(){
     const {currentUserId, user, users, followUser, unfollowUser, userId} = this.props;
     let dynamicFollow;
-    if (users[currentUserId].followed_ids.includes(user.id)) {
-      dynamicFollow = "Following"
-    } else {
-      dynamicFollow = "Follow"
-    }
+    let followStatus;
+    let follow = {follower_id: currentUserId, followed_id: user.id}
 
+    if (users[currentUserId].followed_ids.includes(user.id)) {
+      followStatus = "Following"
+      dynamicFollow = unfollowUser
+    } else {
+      followStatus = "Follow"
+      dynamicFollow = followUser
+    }
+    // debugger;
     return(
       <div className="profile-follow-div">
-        <button className="profile-follow-button">{dynamicFollow}</button>
+        <button className="profile-follow-button" onClick={() => dynamicFollow(follow)}>{followStatus}</button>
       </div>
     )
   }

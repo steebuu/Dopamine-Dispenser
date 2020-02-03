@@ -1,16 +1,17 @@
 module.exports = {
-    follow(follower_id, followed_id) {
+    follow(follow) {
         return $.ajax({
             method: "POST",
             url: 'api/follows',
-            data: {follower_id: follower_id, followed_id: followed_id}
+            data: {follow: follow}
         })
     },
 
-    unfollow(id) {
+    unfollow(follow) {
         return $.ajax({
             method: "DELETE",
-            url: `api/follows/${id}`,
+            url: `api/follows`,
+            data: {follow: follow}
         })
     }
 }

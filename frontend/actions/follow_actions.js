@@ -17,12 +17,12 @@ export const removeFollow = follow => {
     };
 };
 
-export const followUser = (follower_id, followed_id) => dispatch => {
-    return followAPI.follow(follower_id, followed_id)
+export const followUser = (follow) => dispatch => {
+    return followAPI.follow(follow)
         .then(follow => dispatch(receiveFollow(follow)));
 };
 
-export const unfollowUser = id => dispatch => {
-    return followAPI.unfollow(id)
+export const unfollowUser = (follow) => dispatch => {
+    return followAPI.unfollow(follow)
         .then(follow => dispatch(removeFollow(follow)));
 };
