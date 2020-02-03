@@ -7,7 +7,8 @@ export const receiveUser = payload => {
   return {
     type: RECEIVE_USER,
     user: payload.user,
-    images: payload.images
+    images: payload.images,
+    follows: payload.follows
   };
 };
 

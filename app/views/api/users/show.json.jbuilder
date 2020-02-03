@@ -20,3 +20,18 @@ if @user.images
   end
 end
 
+if @user.follower_relationships
+  json.follows do
+    @user.follower_relationships.each do |follow|
+      json.set! follow.id do
+        json.extract! follow, :id, :follower_id, :followed_id
+      end
+    end
+    @user.followed_relationships.each do |follow|
+      json.set! follow.id do
+        json.extract! follow, :id, :follower_id, :followed_id
+      end
+    end
+  end
+end
+
