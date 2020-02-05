@@ -5,6 +5,7 @@ import ImageUploadContainer from './image_upload_container';
 import { Link, Route, Switch } from 'react-router-dom';
 import {ProtectedRoute} from '../../util/route_util';
 import {isEmpty} from 'lodash';
+import FollowContainer from '../follow/follow_container';
 import { unfollowUser } from '../../actions/follow_actions';
 
 class Profile extends React.Component {
@@ -76,7 +77,7 @@ class Profile extends React.Component {
     if (!isEmpty(user) && currentUserId === user.id) {
       cogComponent = this.cogComponent()
     } else if (!isEmpty(user) && currentUserId !== user.id){
-      cogComponent = this.followComponent();
+      cogComponent = <FollowContainer></FollowContainer>
     }
 
     let propic;
