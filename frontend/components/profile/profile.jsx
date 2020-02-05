@@ -1,20 +1,15 @@
 import React from 'react';
 import NavBarContainer from '../navbar/navbar_container';
 import ImageIndexContainer from '../feed/image_index_container';
-import ImageUploadContainer from './image_upload_container';
-import { Link, Route, Switch } from 'react-router-dom';
-import {ProtectedRoute} from '../../util/route_util';
+import { Link } from 'react-router-dom';
 import {isEmpty} from 'lodash';
 import FollowContainer from '../follow/follow_container';
-import { unfollowUser } from '../../actions/follow_actions';
 
 class Profile extends React.Component {
   constructor(props){
     super(props);
 
     this.cogComponent = this.cogComponent.bind(this);
-    this.followComponent = this.followComponent.bind(this);
-    this.dynamicFollow = this.dynamicFollow.bind(this);
   }
 
   componentDidMount(){
@@ -37,34 +32,6 @@ class Profile extends React.Component {
           <button className="profile-action-button">Edit Profile</button>
         </Link>
         <i className="fas fa-cog" onClick={() => { openModal('profile') }}></i>
-      </div>
-    )
-  }
-
-  dynamicFollow(e){
-    e.preventDefault();
-
-    const { currentUserId, user, users, followUser, unfollowUser} = this.props;
-    if (users[currentUserId].followed_ids[user.id]) {
-      unfollowUser(users[currentUserId].followed_ids[user.id])
-    } else {
-      followUser({ follower_id: currentUserId, followed_id: user.id })
-    }
-  }
-
-  followComponent(){
-    const {currentUserId, user, users} = this.props;
-    let followStatus;
-    
-    if (users[currentUserId].followed_ids[user.id]) {
-      followStatus = "Following"
-    } else {
-      followStatus = "Follow"
-    }
-
-    return(
-      <div className="profile-follow-div">
-        <button className="profile-follow-button" onClick={this.dynamicFollow}>{followStatus}</button>
       </div>
     )
   }
