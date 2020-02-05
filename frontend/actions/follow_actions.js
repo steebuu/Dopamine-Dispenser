@@ -22,7 +22,7 @@ export const followUser = (follow) => dispatch => {
         .then(follow => dispatch(receiveFollow(follow)));
 };
 
-export const unfollowUser = (follow) => dispatch => {
-    return followAPI.unfollow(follow)
+export const unfollowUser = (id) => dispatch => {
+    return followAPI.unfollow(id)
         .then(follow => dispatch(removeFollow(follow)));
 };

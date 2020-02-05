@@ -7,11 +7,10 @@ module.exports = {
         })
     },
 
-    unfollow(follow) {
+    unfollow(id) {
         return $.ajax({
             method: "DELETE",
-            url: `api/follows`,
-            data: {follow: follow}
+            url: `api/follows/${id}`
         })
     }
 }

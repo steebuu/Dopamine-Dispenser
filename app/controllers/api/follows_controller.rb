@@ -20,7 +20,7 @@ class Api::FollowsController < ApplicationController
   end
 
   def destroy
-    @follow = Follow.find_by(follower_id: params[:follower_id], followed_id: params[:follower_id])
+    @follow = Follow.find(params[:id])
     @follow.delete
     render 'api/follows/show'
   end

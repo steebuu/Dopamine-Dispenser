@@ -5,6 +5,7 @@ import ImageUploadContainer from './image_upload_container';
 import { Link, Route, Switch } from 'react-router-dom';
 import {ProtectedRoute} from '../../util/route_util';
 import {isEmpty} from 'lodash';
+import { unfollowUser } from '../../actions/follow_actions';
 
 class Profile extends React.Component {
   constructor(props){
@@ -12,6 +13,7 @@ class Profile extends React.Component {
 
     this.cogComponent = this.cogComponent.bind(this);
     this.followComponent = this.followComponent.bind(this);
+    this.dynamicFollow = this.dynamicFollow.bind(this);
   }
 
   componentDidMount(){
@@ -38,23 +40,31 @@ class Profile extends React.Component {
     )
   }
 
+  dynamicFollow(e){
+    e.preventDefault();
+
+    const { currentUserId, user, users, followUser, unfollowUser, userId } = this.props;
+
+    if (users[currentUserId].followed_ids.includes(user.id)) {
+      unfollowUser(users[currentUserId].followed_relationships_ids[user.id].id)
+    } else {
+      followUser({ follower_id: currentUserId, followed_id: user.id })
+    }
+  }
+
   followComponent(){
-    const {currentUserId, user, users, followUser, unfollowUser, userId} = this.props;
-    let dynamicFollow;
+    const {currentUserId, user, users} = this.props;
     let followStatus;
-    let follow = {follower_id: currentUserId, followed_id: user.id}
 
     if (users[currentUserId].followed_ids.includes(user.id)) {
       followStatus = "Following"
-      dynamicFollow = unfollowUser
     } else {
       followStatus = "Follow"
-      dynamicFollow = followUser
     }
-    // debugger;
+
     return(
       <div className="profile-follow-div">
-        <button className="profile-follow-button" onClick={() => dynamicFollow(follow)}>{followStatus}</button>
+        <button className="profile-follow-button" onClick={this.dynamicFollow}>{followStatus}</button>
       </div>
     )
   }
