@@ -1,10 +1,9 @@
 import React from 'react';
 import NavBarContainer from '../navbar/navbar_container';
 import ImageIndexContainer from '../feed/image_index_container';
-import ImageUploadContainer from './image_upload_container';
-import { Link, Route, Switch } from 'react-router-dom';
-import {ProtectedRoute} from '../../util/route_util';
+import { Link } from 'react-router-dom';
 import {isEmpty} from 'lodash';
+import FollowContainer from '../follow/follow_container';
 
 class Profile extends React.Component {
   constructor(props){
@@ -38,14 +37,14 @@ class Profile extends React.Component {
   }
 
   render(){
-    const {openModal, currentUserId} = this.props;
+    const {currentUserId} = this.props;
     const user = this.props.user || {};
     let cogComponent;
 
     if (!isEmpty(user) && currentUserId === user.id) {
       cogComponent = this.cogComponent()
-    } else {
-      cogComponent = null;
+    } else if (!isEmpty(user) && currentUserId !== user.id){
+      cogComponent = <FollowContainer></FollowContainer>
     }
 
     let propic;
@@ -54,6 +53,19 @@ class Profile extends React.Component {
     } else (
       propic = user.propicUrl
     )
+
+    let followerCount = 0;
+    let followedCount = 0;
+    let postCount;
+    if (!isEmpty(user)) {
+      if (user.follower_ids){
+        followerCount = Object.keys(user.follower_ids).length
+      }
+      if (user.followed_ids) {
+        followedCount = Object.keys(user.followed_ids).length
+      }
+      postCount = user.image_ids.length
+    }
 
     return(
       <main className="profile-main">
@@ -72,9 +84,9 @@ class Profile extends React.Component {
               </div>
               <div className="info-stats-div">
                 <ul className="info-stats-ul">
-                  <li className="stat-element">0 posts</li>
-                  <li className="stat-element">0 followers</li>
-                  <li className="stat-element">0 following</li>
+                  <li className="stat-element">{postCount} posts</li>
+                  <li className="stat-element">{followerCount} followers</li>
+                  <li className="stat-element">{followedCount} following</li>
                 </ul>
               </div>
               <div className="info-bio-div">
