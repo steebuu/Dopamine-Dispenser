@@ -28,9 +28,11 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_FOLLOW:
       const { follower_id, followed_id, follow_id } = action.follow;
       newState[follower_id].followed_ids[followed_id] = follow_id;
+      newState[followed_id].follower_ids[follower_id] = follow_id;
       return newState;
     case REMOVE_FOLLOW:
       delete newState[action.follow.follower_id].followed_ids[action.follow.followed_id];
+      delete newState[action.follow.followed_id].follower_ids[action.follow.follower_id];
       return newState;
     default:
       return state;

@@ -87,11 +87,13 @@ class Profile extends React.Component {
       propic = user.propicUrl
     )
 
-    let followerCount;
-    let followedCount;
+    let followerCount = 0;
+    let followedCount = 0;
     let postCount;
     if (!isEmpty(user)) {
-      followerCount = user.follower_ids.length
+      if (user.follower_ids){
+        followerCount = Object.keys(user.follower_ids).length
+      }
       if (user.followed_ids) {
         followedCount = Object.keys(user.followed_ids).length
       }
