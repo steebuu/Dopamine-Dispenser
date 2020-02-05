@@ -22,17 +22,18 @@ export default class Follow extends Component {
     render() {
         const { currentUserId, user, users } = this.props;
         let followStatus;
+        let buttonClass;
 
         if (users[currentUserId].followed_ids[user.id]) {
             followStatus = "Following"
+            buttonClass = "profile-follow following"
         } else {
             followStatus = "Follow"
+            buttonClass = "profile-follow nofollow"
         }
 
         return (
-            <div className="profile-follow-div">
-                <button className="profile-follow-button" onClick={this.handleFollow}>{followStatus}</button>
-            </div>
+            <button className={buttonClass} onClick={this.handleFollow}>{followStatus}</button>
         )
     }
 }
