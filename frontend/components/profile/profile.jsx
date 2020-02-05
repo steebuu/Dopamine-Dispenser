@@ -43,10 +43,9 @@ class Profile extends React.Component {
   dynamicFollow(e){
     e.preventDefault();
 
-    const { currentUserId, user, users, followUser, unfollowUser, userId } = this.props;
-
-    if (users[currentUserId].followed_ids.includes(user.id)) {
-      unfollowUser(users[currentUserId].followed_relationships_ids[user.id].id)
+    const { currentUserId, user, users, followUser, unfollowUser} = this.props;
+    if (users[currentUserId].followed_ids[user.id]) {
+      unfollowUser(users[currentUserId].followed_ids[user.id])
     } else {
       followUser({ follower_id: currentUserId, followed_id: user.id })
     }
@@ -55,8 +54,8 @@ class Profile extends React.Component {
   followComponent(){
     const {currentUserId, user, users} = this.props;
     let followStatus;
-
-    if (users[currentUserId].followed_ids.includes(user.id)) {
+    
+    if (users[currentUserId].followed_ids[user.id]) {
       followStatus = "Following"
     } else {
       followStatus = "Follow"
@@ -92,7 +91,9 @@ class Profile extends React.Component {
     let postCount;
     if (!isEmpty(user)) {
       followerCount = user.follower_ids.length
-      followedCount = user.followed_ids.length
+      if (user.followed_ids) {
+        followedCount = Object.keys(user.followed_ids).length
+      }
       postCount = user.image_ids.length
     }
 
