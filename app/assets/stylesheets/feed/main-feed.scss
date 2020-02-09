@@ -2,12 +2,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 935px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .main-feed-image-div {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 614px;
     width: fit-content;
     height: fit-content;
 }
