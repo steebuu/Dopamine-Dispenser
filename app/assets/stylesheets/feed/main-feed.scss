@@ -1,0 +1,17 @@
+.main-feed-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-feed-image-div {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+}
+
+.main-feed-img {
+    max-height: 750px;
+    min-width: 600px;
+    max-width: 600px;
+}

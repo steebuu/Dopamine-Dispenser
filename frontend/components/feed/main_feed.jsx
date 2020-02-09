@@ -17,7 +17,9 @@ export default class MainFeed extends Component {
             let reversed = Object.keys(images).reverse();
             feed = reversed.map(id => {
                return (
-                <img key={id} src={images[id].photoUrl}></img>
+                <div key={id} className="main-feed-image-div">
+                    <img src={images[id].photoUrl} className="main-feed-img"></img>
+                </div>    
                ) 
             })
         }
