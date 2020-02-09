@@ -1,5 +1,5 @@
 import {RECEIVE_FOLLOW, REMOVE_FOLLOW} from '../actions/follow_actions';
-import {RECEIVE_USER} from '../actions/user_actions';
+import {RECEIVE_USER, RECEIVE_CURRENT_USER} from '../actions/user_actions';
 
 const followsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -13,6 +13,8 @@ const followsReducer = (state = {}, action) => {
             return newState;
         case RECEIVE_USER:
             return Object.assign({}, state, action.follows)
+        case RECEIVE_CURRENT_USER:
+            return Object.assign({}, state, action.payload.follows)
         default:
             return state;
     }
