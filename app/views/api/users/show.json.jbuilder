@@ -36,9 +36,9 @@ if @user.follower_relationships
   end
 end
 
-if @user.followers_images
+if @user.followed_images
   json.images do
-    @user.followers_images.each do |image|
+    @user.followed_images.each do |image|
       json.set! image.id do
         json.extract! image, :id, :user_id, :caption
         json.user image.user.username
