@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import FeedImage from './feed_image';
 
 export default class MainFeed extends Component {
     constructor(props){
@@ -17,9 +18,7 @@ export default class MainFeed extends Component {
             let reversed = Object.keys(images).reverse();
             feed = reversed.map(id => {
                return (
-                <div key={id} className="main-feed-image-div">
-                    <img src={images[id].photoUrl} className="main-feed-img"></img>
-                </div>    
+                <FeedImage key={id} id={id}></FeedImage>   
                ) 
             })
         }
