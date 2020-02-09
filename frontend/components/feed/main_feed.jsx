@@ -6,14 +6,25 @@ export default class MainFeed extends Component {
     }
 
     componentDidMount() {
-        //fetch followers and images
-        //deal with n+1 
+        const {currentUser, getCurrentUser} = this.props;
+        getCurrentUser(currentUser.id);
     }
     
     render() {
+        const {images} = this.props;
+        let feed;
+        if (Object.keys(images).length > 0) {
+            let reversed = Object.keys(images).reverse();
+            feed = reversed.map(id => {
+               return (
+                <img key={id} src={images[id].photoUrl}></img>
+               ) 
+            })
+        }
+
         return (
             <div className="main-feed-div">
-                
+                {feed}
             </div>
         )
     }

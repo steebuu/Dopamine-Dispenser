@@ -1,19 +1,19 @@
 import {connect} from "react-redux";
-import {fetchImages} from "../../actions/image_actions";
+import {getCurrentUser} from '../../actions/user_actions';
 import MainFeed from "./main_feed";
 
 const msp = (state, ownProps) => {
-    const {users} = state.entities;
-
+    const {users, images} = state.entities;
     return {
         users,
+        images,
         currentUser: users[state.session.id]
     }
 }
 
 const mdp = (dispatch) => {
     return {
-        fetchImages: () => dispatch(fetchImages())
+        getCurrentUser: id => dispatch(getCurrentUser(id)),
     }
 }
 
