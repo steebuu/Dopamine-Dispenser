@@ -46,12 +46,12 @@ class User < ApplicationRecord
     self.session_token
   end
 
-  def followers_images
-    follows = self.followers.includes(:images)
+  def followed_images
+    follows = self.followed.includes(:images)
 
     feed = []
     follows.each do |follower|
-      follower.images.each do |image|
+      followed.images.each do |image|
         feed << image
       end
     end
