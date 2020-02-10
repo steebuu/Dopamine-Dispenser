@@ -5,7 +5,9 @@ class FeedImage extends Component {
     constructor(props) {
         super(props)
     }
+
     render() {
+        // debugger;
         const {images, id} = this.props;
         const image = images[id];
         return (
