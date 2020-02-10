@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import {getCurrentUser} from '../../actions/user_actions';
+import {getCurrentUser, getAllUsers} from '../../actions/user_actions';
 import MainFeed from "./main_feed";
 
 const msp = (state, ownProps) => {
@@ -14,6 +14,7 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch) => {
     return {
         getCurrentUser: id => dispatch(getCurrentUser(id)),
+        getAllUsers: () => dispatch(getAllUsers())
     }
 }
 

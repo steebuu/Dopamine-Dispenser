@@ -20,10 +20,10 @@ export const receiveCurrentUser = (payload) => {
   };
 };
 
-export const receiveUsers = payload => {
+export const receiveUsers = users => {
   return {
-    type: RECEIVE_USERS
-    payload
+    type: RECEIVE_USERS,
+    users
   }
 }
 
@@ -44,5 +44,5 @@ export const getCurrentUser = id => dispatch => {
 
 export const getAllUsers = () => dispatch => {
   return APIUtil.getAllUsers()
-    .then(payload => dispatch(receiveUsers(payload)))
+    .then(users => dispatch(receiveUsers(users)))
 }

@@ -7,8 +7,9 @@ export default class MainFeed extends Component {
     }
 
     componentDidMount() {
-        const {currentUser, getCurrentUser} = this.props;
+        const {currentUser, getCurrentUser, getAllUsers} = this.props;
         getCurrentUser(currentUser.id);
+        getAllUsers();
     }
     
     render() {
