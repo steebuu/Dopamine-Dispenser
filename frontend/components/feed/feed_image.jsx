@@ -14,7 +14,16 @@ class FeedImage extends Component {
             <div className="main-feed-image-div">
                 <div className="main-feed-image-header">{image.user}</div>
                 <img src={images[id].photoUrl} className="main-feed-img"></img>
-                <div className="main-feed-image-bottom">{image.caption}</div>
+                <div className="main-feed-image-bottom">
+                    <div className="main-feed-image-bottom-actions"></div>
+                    <div className="main-feed-image-likes">5 likes</div>
+                    <div className="main-feed-caption">
+                        <div className="main-feed-caption-username">{image.user}</div>
+                        {image.caption}
+                    </div>
+                    <div className="main-feed-image-date"></div>
+                    <div className="main-feed-image-comment"></div>
+                </div>
             </div>  
         )
     }
