@@ -7,7 +7,6 @@ class FeedImage extends Component {
     }
 
     render() {
-        // debugger;
         const {images, id} = this.props;
         const image = images[id];
         return (
@@ -15,7 +14,10 @@ class FeedImage extends Component {
                 <div className="main-feed-image-header">{image.user}</div>
                 <img src={images[id].photoUrl} className="main-feed-img"></img>
                 <div className="main-feed-image-bottom">
-                    <div className="main-feed-image-bottom-actions"></div>
+                    <div className="main-feed-image-bottom-actions">
+                        <i className="far fa-heart modal-icon"></i>
+                        <i className="far fa-comment modal-icon"></i>
+                    </div>
                     <div className="main-feed-image-likes">5 likes</div>
                     <div className="main-feed-caption">
                         <div className="main-feed-caption-username">{image.user}</div>

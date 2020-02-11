@@ -5,12 +5,14 @@
     max-width: 70%;
     width: 100%;
     margin: 0 auto;
+    padding-top: 60px;
 }
 
 .main-feed-image-header {
     display: flex;
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
 }
 
 .main-feed-image-div {
@@ -19,8 +21,37 @@
     align-items: center;
     max-width: 66%;
     width: 100%;
+    border: 1px solid rgb(230, 230, 230);
+    margin-bottom: 60px;
 }
 
 .main-feed-img {
     width: 100%;
+}
+
+.main-feed-image-bottom {
+    background-color: white;
+    padding: 0px 16px 0px 16px;  
+    box-sizing: border-box;
+}
+
+.main-feed-image-bottom, .main-feed-image-bottom-actions, .main-feed-image-likes {
+    display: flex;
+    width: 100%;  
+}
+
+.main-feed-image-bottom {
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.main-feed-caption {
+    display: inline-block;
+}
+
+.main-feed-caption-username {
+    display: inline-flex;
+    margin-right: 4px;
+    font-weight: 600;
 }
