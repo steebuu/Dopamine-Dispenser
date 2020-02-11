@@ -30,15 +30,3 @@ if @user.follower_relationships
     end
   end
 end
-
-if @user.followed_images
-  json.images do
-    @user.followed_images.each do |image|
-      json.set! image.id do
-        json.extract! image, :id, :user_id, :caption
-        json.user image.user.username
-        json.photoUrl url_for(image.photo)
-      end
-    end
-  end
-end

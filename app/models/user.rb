@@ -50,9 +50,9 @@ class User < ApplicationRecord
     follows = self.followed.includes(:images)
 
     feed = []
-    follows.each do |follower|
+    follows.each do |followed|
       followed.images.each do |image|
-        feed << image
+        feed << image.id
       end
     end
     feed
