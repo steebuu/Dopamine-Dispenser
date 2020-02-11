@@ -15,12 +15,23 @@ export default class MainFeed extends Component {
     render() {
         const {images, currentUser} = this.props;
         let feed;
-        if (Object.keys(images).length > 0 && currentUser.image_ids.length > 0) {
-            let reversed = currentUser.image_ids.reverse();
+        let reversed;
+        if (Object.keys(images).length < 1) {
+            return null;
+        }
+        if (currentUser.followed_image_ids.length < 1) {
+            reversed = currentUser.image_ids.reverse();
             feed = reversed.map(id => {
                return (
-                <FeedImage key={id} id={id}></FeedImage>   
+                    <FeedImage key={id} id={id}></FeedImage>   
                ) 
+            })
+        } else {
+            reversed = currentUser.followed_image_ids.reverse();
+            feed = reversed.map(id => {
+                return (
+                    <FeedImage key={id} id={id}></FeedImage>   
+                ) 
             })
         }
 

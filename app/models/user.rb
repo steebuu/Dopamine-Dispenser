@@ -46,7 +46,7 @@ class User < ApplicationRecord
     self.session_token
   end
 
-  def followed_images
+  def followed_image_ids
     follows = self.followed.includes(:images)
 
     feed = []
