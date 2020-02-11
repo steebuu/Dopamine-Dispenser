@@ -13,6 +13,21 @@
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
     background-color: white;
+    padding: 16px;
+    align-items: center;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.main-feed-profile-pic {
+    max-width: 32px;
+    max-height: 32px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 16px;
 }
 
 .main-feed-image-div {
@@ -64,6 +79,7 @@
 
 .main-feed-caption {
     display: inline-block;
+    margin-bottom: 4px;
 }
 
 .main-feed-caption-username {
@@ -75,6 +91,7 @@
 .main-feed-timestamp {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 10px;
+    margin-bottom: 4px;
     color: #999999;
 }
 

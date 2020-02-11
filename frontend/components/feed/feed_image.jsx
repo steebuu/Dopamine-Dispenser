@@ -7,11 +7,23 @@ class FeedImage extends Component {
     }
 
     render() {
-        const {images, id} = this.props;
+        const {images, id, users} = this.props;
         const image = images[id];
+        const user = users[image.user_id]
+        let propic;
+        if (!user.propicUrl) {
+        propic = window.propic
+        } else (
+        propic = user.propicUrl
+        )
         return (
             <div className="main-feed-image-div">
-                <div className="main-feed-image-header">{image.user}</div>
+                <div className="main-feed-image-header">
+                    <div className="main-feed-profile-pic">
+                        <img src={propic} className="modal-prof-pic"/>
+                    </div>
+                    {image.user}
+                </div>
                 <img src={images[id].photoUrl} className="main-feed-img"></img>
                 <div className="main-feed-image-bottom">
                     <div className="main-feed-image-bottom-actions">
@@ -35,9 +47,10 @@ class FeedImage extends Component {
 }
 
 const msp = (state, ownProps) => {
-    const {images} = state.entities;
+    const {images, users} = state.entities;
     return {
-        images
+        images,
+        users
     }
 }
 
