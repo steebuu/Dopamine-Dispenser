@@ -23,8 +23,11 @@ class FeedImage extends Component {
                         <div className="main-feed-caption-username">{image.user}</div>
                         {image.caption}
                     </div>
-                    <div className="main-feed-image-date"></div>
-                    <div className="main-feed-image-comment"></div>
+                    <div className="main-feed-timestamp">2 DAYS AGO</div>
+                    <div className="main-feed-comment-div">
+                        <input type="text" className="comment-input" placeholder="Add a comment..." />
+                        <button className="post-comment-button">Post</button>
+                    </div>
                 </div>
             </div>  
         )
