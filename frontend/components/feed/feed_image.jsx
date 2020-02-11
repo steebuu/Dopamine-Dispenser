@@ -10,11 +10,14 @@ class FeedImage extends Component {
         const {images, id, users} = this.props;
         const image = images[id];
         const user = users[image.user_id]
+        if (!user) {
+            return null;
+        }
         let propic;
         if (!user.propicUrl) {
-        propic = window.propic
+            propic = window.propic
         } else (
-        propic = user.propicUrl
+            propic = user.propicUrl
         )
         return (
             <div className="main-feed-image-div">
