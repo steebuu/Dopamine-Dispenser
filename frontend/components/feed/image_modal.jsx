@@ -137,7 +137,7 @@ class ImageModal extends React.Component {
       case (time < 86400):
           timeSince = Math.floor(time/(60*24)) + " HOURS AGO"
           break;
-      case (time > 604800):
+      case (time < 604800):
           timeSince = Math.floor(time/(60*24*7)) + " DAYS AGO"
           break;
       default:
