@@ -35,7 +35,7 @@ export const unfollowUser = (id) => dispatch => {
         .then(follow => dispatch(removeFollow(follow)));
 };
 
-export const getFollows = () => dispatch => {
+export const getAllFollows = () => dispatch => {
     return followAPI.receiveFollows()
         .then(follows => dispatch(receiveFollows(follows)));
 }
