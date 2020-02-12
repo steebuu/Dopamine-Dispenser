@@ -8,9 +8,7 @@ if @user.images
   json.images do  
     @user.images.each do |image|
       json.set! image.id do
-        json.extract! image, :id, :user_id, :caption
-        json.user image.user.username
-        json.photoUrl url_for(image.photo)
+        json.partial! "/api/images/image", image: image
       end 
     end
   end
