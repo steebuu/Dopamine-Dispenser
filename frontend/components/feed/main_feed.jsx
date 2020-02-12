@@ -20,14 +20,14 @@ export default class MainFeed extends Component {
             return null;
         }
         if (currentUser.followed_image_ids.length < 1) {
-            reversed = currentUser.image_ids.reverse();
+            reversed = currentUser.image_ids.sort().reverse();
             feed = reversed.map(id => {
                return (
                     <FeedImage key={id} id={id}></FeedImage>   
                ) 
             })
         } else {
-            reversed = currentUser.followed_image_ids.reverse();
+            reversed = currentUser.followed_image_ids.sort().reverse();
             feed = reversed.map(id => {
                 return (
                     <FeedImage key={id} id={id}></FeedImage>   
