@@ -18,7 +18,7 @@ const mdp = (dispatch) => {
         getCurrentUser: id => dispatch(getCurrentUser(id)),
         getAllUsers: () => dispatch(getAllUsers()),
         fetchImages: () => dispatch(fetchImages()),
-        getAllFollows: () => dispatch(getFollows())
+        getAllFollows: () => dispatch(getAllFollows())
     }
 }
 

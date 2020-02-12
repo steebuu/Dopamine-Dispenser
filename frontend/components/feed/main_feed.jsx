@@ -7,9 +7,10 @@ export default class MainFeed extends Component {
     }
 
     componentDidMount() {
-        const {fetchImages, getAllUsers} = this.props;
+        const {fetchImages, getAllUsers, getAllFollows} = this.props;
         getAllUsers();
         fetchImages();
+        getAllFollows();
     }
     
     render() {
