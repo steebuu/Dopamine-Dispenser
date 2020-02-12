@@ -12,7 +12,7 @@ module.exports = {
             method: "DELETE",
             url: `api/follows/${id}`
         })
-    }
+    },
 
     receiveFollows() {
         return $.ajax({
