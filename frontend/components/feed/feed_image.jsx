@@ -58,14 +58,14 @@ class FeedImage extends Component {
                         <i className="far fa-heart modal-icon"></i>
                         <i className="far fa-comment modal-icon"></i>
                     </div>
-                    <div className="main-feed-image-likes">5 likes</div>
+                    <div className="main-feed-image-likes">Likes Placeholder</div>
                     <div className="main-feed-caption">
                         <div className="main-feed-caption-username">{image.user}</div>
                         {image.caption}
                     </div>
                     <div className="main-feed-timestamp">{timeSince}</div>
                     <div className="main-feed-comment-div">
-                        <input type="text" className="comment-input" placeholder="Add a comment..." />
+                        <input type="text" className="comment-input" placeholder="Comments coming soon" />
                         <button className="post-comment-button">Post</button>
                     </div>
                 </div>
