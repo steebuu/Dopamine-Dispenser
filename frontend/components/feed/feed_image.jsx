@@ -22,6 +22,24 @@ class FeedImage extends Component {
         } else (
             propic = user.propicUrl
         )
+        let timeSince;
+        const currentTime = new Date();
+        const createdAt = new Date(image.created_at);
+        const timeBetween = currentTime.getTime() - createdAt.getTime();
+        const time = Math.floor(timeBetween / 1000);
+        switch (time) {
+            case (time < 60):
+                timeSince = time + " SECONDS AGO"
+            case (time < 3600):
+                timeSince = Math.floor(time/60) + " MINUTES AGO"
+            case (time < 86400):
+                timeSince = Math.floor(time/(60*24)) + " HOURS AGO"
+            case (time > 604800):
+                timeSince = Math.floor(time/(60*24*7)) + " DAYS AGO"
+            default:
+                timeSince = createdAt.toLocaleString('default', {month: 'long'}).toUpperCase() + " " + createdAt.getDay();
+        }
+        Math.floor(timeBetween / (1000 * 3600 * 24));    
         return (
             <div className="main-feed-image-div">
                 <div className="main-feed-image-header">
@@ -41,7 +59,7 @@ class FeedImage extends Component {
                         <div className="main-feed-caption-username">{image.user}</div>
                         {image.caption}
                     </div>
-                    <div className="main-feed-timestamp">2 DAYS AGO</div>
+                    <div className="main-feed-timestamp">{timeSince}</div>
                     <div className="main-feed-comment-div">
                         <input type="text" className="comment-input" placeholder="Add a comment..." />
                         <button className="post-comment-button">Post</button>
