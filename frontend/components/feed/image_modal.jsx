@@ -122,6 +122,25 @@ class ImageModal extends React.Component {
     } else (
       propic = user.propicUrl
     )
+    debugger;
+    let timeSince;
+    const currentTime = new Date();
+    const createdAt = new Date(image.created_at);
+    const timeBetween = currentTime.getTime() - createdAt.getTime();
+    const time = Math.floor(timeBetween / 1000);
+    switch (time) {
+      case (time < 60):
+          timeSince = time + " SECONDS AGO"
+      case (time < 3600):
+          timeSince = Math.floor(time/60) + " MINUTES AGO"
+      case (time < 86400):
+          timeSince = Math.floor(time/(60*24)) + " HOURS AGO"
+      case (time > 604800):
+          timeSince = Math.floor(time/(60*24*7)) + " DAYS AGO"
+      default:
+          timeSince = createdAt.toLocaleString('default', {month: 'long'}).toUpperCase() + " " + createdAt.getDay();
+  }
+
     return(
       
       <div className="image-modal">
@@ -163,7 +182,7 @@ class ImageModal extends React.Component {
               <i className="far fa-comment modal-icon"></i>
             </div>
             <div className="image-modal-likes-div">10 likes</div>
-            <div className="image-modal-timestamp-div">2 DAYS AGO</div>  
+            <div className="image-modal-timestamp-div">{timeSince}</div>  
           </div>
           <div className="image-modal-comment-div">
             <input type="text" className="comment-input" placeholder="Add a comment..." />
