@@ -9,6 +9,9 @@ class FeedImage extends Component {
     render() {
         const {images, id, users} = this.props;
         const image = images[id];
+        if (!image) {
+            return null;
+        }
         const user = users[image.user_id]
         if (!user) {
             return null;
