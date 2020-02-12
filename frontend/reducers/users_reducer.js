@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
-import { RECEIVE_USER } from '../actions/user_actions';
+import { RECEIVE_USER, RECEIVE_USERS } from '../actions/user_actions';
 import { RECEIVE_IMAGE, REMOVE_IMAGE } from '../actions/image_actions';
 import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from '../actions/follow_actions';
 
@@ -14,6 +14,8 @@ const usersReducer = (state = {}, action) => {
       return Object.assign({}, state, { [userId]: payload.user[userId] });
     case RECEIVE_USER:
       return Object.assign({}, state, action.user);
+    case RECEIVE_USERS:
+      return Object.assign({}, state, action.users);
     case RECEIVE_IMAGE:
       let { user_id, id } = action.image;
       if (newState[user_id].image_ids.indexOf(id) < 0){

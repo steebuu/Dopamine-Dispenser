@@ -122,6 +122,28 @@ class ImageModal extends React.Component {
     } else (
       propic = user.propicUrl
     )
+    let timeSince;
+    const currentTime = new Date();
+    const createdAt = new Date(image.created_at);
+    const timeBetween = currentTime.getTime() - createdAt.getTime();
+    const time = Math.floor(timeBetween / 1000);
+    switch (true) {
+      case (time < 60):
+          timeSince = time + " SECONDS AGO"
+          break;
+      case (time < 3600):
+          timeSince = Math.floor(time/60) + " MINUTES AGO"
+          break;
+      case (time < 86400):
+          timeSince = Math.floor(time/(60*24)) + " HOURS AGO"
+          break;
+      case (time < 604800):
+          timeSince = Math.floor(time/(60*24*7)) + " DAYS AGO"
+          break;
+      default:
+          timeSince = createdAt.toLocaleString('default', {month: 'long'}).toUpperCase() + " " + createdAt.getDate();
+  }
+
     return(
       
       <div className="image-modal">
@@ -162,11 +184,11 @@ class ImageModal extends React.Component {
               <i className="far fa-heart modal-icon"></i>
               <i className="far fa-comment modal-icon"></i>
             </div>
-            <div className="image-modal-likes-div">10 likes</div>
-            <div className="image-modal-timestamp-div">2 DAYS AGO</div>  
+            <div className="image-modal-likes-div">Likes Placeholder</div>
+            <div className="image-modal-timestamp-div">{timeSince}</div>  
           </div>
           <div className="image-modal-comment-div">
-            <input type="text" className="comment-input" placeholder="Add a comment..." />
+            <input type="text" className="comment-input" placeholder="Comments coming soon" />
             <button className="post-comment-button">Post</button>
           </div>
         </div>

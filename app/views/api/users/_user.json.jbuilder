@@ -1,6 +1,12 @@
-json.extract! user, :id, :username, :bio, :full_name, :image_ids
+json.extract! user, :id, :username, :bio, :full_name, :image_ids, :followed_image_ids
 
 hash = {}
+
+if user.propic.attached?
+    json.propicUrl url_for(user.propic)
+  else
+    json.propicUrl nil
+end
 
 json.followed_ids hash
 
@@ -17,3 +23,4 @@ json.follower_ids do
         json.set! follow.follower_id, follow.id
     end
 end
+

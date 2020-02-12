@@ -13,4 +13,11 @@ module.exports = {
       data: { user: user }
     });
   },
+
+  getAllUsers() {
+    return $.ajax({
+      method: "GET",
+      url: `/api/users`
+    })
+  }
 };

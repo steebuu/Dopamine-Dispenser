@@ -46,6 +46,18 @@ class User < ApplicationRecord
     self.session_token
   end
 
+  def followed_image_ids
+    follows = self.followed.includes(:images)
+
+    feed = []
+    follows.each do |followed|
+      followed.images.each do |image|
+        feed << image.id
+      end
+    end
+    feed
+  end
+
   has_many :images,
     class_name: :Image,
     foreign_key: :user_id,

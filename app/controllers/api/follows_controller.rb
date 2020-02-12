@@ -1,6 +1,6 @@
 class Api::FollowsController < ApplicationController
   def index
-    @follows = Follow.find_by(followed_id: params[:followed_id])
+    @follows = Follow.all
     render 'api/follows/index'
   end
 

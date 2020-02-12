@@ -1,3 +1,3 @@
 json.array! @follows do |follow|
-    json.extract! follow, :follower_id, :followed_id
+    json.partial! "api/follows/follow", follow: follow
 end
