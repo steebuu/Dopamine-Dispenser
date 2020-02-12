@@ -27,15 +27,19 @@ class FeedImage extends Component {
         const createdAt = new Date(image.created_at);
         const timeBetween = currentTime.getTime() - createdAt.getTime();
         const time = Math.floor(timeBetween / 1000);
-        switch (time) {
+        switch (true) {
             case (time < 60):
                 timeSince = time + " SECONDS AGO"
+                break;
             case (time < 3600):
                 timeSince = Math.floor(time/60) + " MINUTES AGO"
+                break;
             case (time < 86400):
                 timeSince = Math.floor(time/(60*24)) + " HOURS AGO"
+                break;
             case (time > 604800):
                 timeSince = Math.floor(time/(60*24*7)) + " DAYS AGO"
+                break;
             default:
                 timeSince = createdAt.toLocaleString('default', {month: 'long'}).toUpperCase() + " " + createdAt.getDate();
         }
