@@ -37,7 +37,7 @@ class FeedImage extends Component {
             case (time > 604800):
                 timeSince = Math.floor(time/(60*24*7)) + " DAYS AGO"
             default:
-                timeSince = createdAt.toLocaleString('default', {month: 'long'}).toUpperCase() + " " + createdAt.getDay();
+                timeSince = createdAt.toLocaleString('default', {month: 'long'}).toUpperCase() + " " + createdAt.getDate();
         }
         Math.floor(timeBetween / (1000 * 3600 * 24));    
         return (

@@ -122,7 +122,6 @@ class ImageModal extends React.Component {
     } else (
       propic = user.propicUrl
     )
-    debugger;
     let timeSince;
     const currentTime = new Date();
     const createdAt = new Date(image.created_at);
@@ -138,7 +137,7 @@ class ImageModal extends React.Component {
       case (time > 604800):
           timeSince = Math.floor(time/(60*24*7)) + " DAYS AGO"
       default:
-          timeSince = createdAt.toLocaleString('default', {month: 'long'}).toUpperCase() + " " + createdAt.getDay();
+          timeSince = createdAt.toLocaleString('default', {month: 'long'}).toUpperCase() + " " + createdAt.getDate();
   }
 
     return(
