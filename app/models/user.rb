@@ -92,5 +92,10 @@ class User < ApplicationRecord
     primary_key: :id,
     dependent: :destroy
 
+  has_many :liked_images,
+    through: :likes,
+    source: :image,
+    dependent: :destroy
+
   has_one_attached :propic
 end
