@@ -10,7 +10,7 @@ export default class Like extends Component {
     handleLike(e) {
         e.preventDefault();
 
-        const { imageId, currentUser, unlikeImage, likeImage } = this.props;
+        const { imageId, currentUser, unlikeImage, likeImage, images } = this.props;
         const image = images[imageId];
 
         if (currentUser.liked_image_ids[imageId]) {

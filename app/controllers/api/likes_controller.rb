@@ -10,7 +10,7 @@ class Api::LikesController < ApplicationController
     end
 
     def create
-        @like = Like.new(follow_params)
+        @like = Like.new(like_params)
         if @like.save
             render 'api/likes/show'
         else

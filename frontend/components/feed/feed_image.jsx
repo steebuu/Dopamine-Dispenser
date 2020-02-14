@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux';
+import LikeContainer from '../like/like_container';
 
 class FeedImage extends Component {
     constructor(props) {
@@ -67,7 +68,7 @@ class FeedImage extends Component {
                 <img src={images[id].photoUrl} className="main-feed-img"></img>
                 <div className="main-feed-image-bottom">
                     <div className="main-feed-image-bottom-actions">
-                        <i className="far fa-heart modal-icon"></i>
+                        <LikeContainer imageId={image.id}></LikeContainer>
                         <i className="far fa-comment modal-icon"></i>
                     </div>
                     <div className="main-feed-image-likes">{likeMessage}</div>
