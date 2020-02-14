@@ -146,7 +146,6 @@ class ImageModal extends React.Component {
     }
     let likeCount = Object.keys(image.liked_by_ids).length
     let likeMessage;
-    debugger;
     switch (true) {
       case (likeCount === 0):
         likeMessage = "Be the first to like this"
