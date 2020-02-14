@@ -2,6 +2,7 @@ import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { RECEIVE_USER, RECEIVE_USERS } from '../actions/user_actions';
 import { RECEIVE_IMAGE, REMOVE_IMAGE } from '../actions/image_actions';
 import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from '../actions/follow_actions';
+import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/like_actions';
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -35,6 +36,12 @@ const usersReducer = (state = {}, action) => {
     case REMOVE_FOLLOW:
       delete newState[action.follow.follower_id].followed_ids[action.follow.followed_id];
       delete newState[action.follow.followed_id].follower_ids[action.follow.follower_id];
+      return newState;
+    case RECEIVE_LIKE:
+      newState[action.like.user_id].liked_image_ids[action.like.image_id] = action.id
+      return newState;
+    case REMOVE_LIKE:
+      delete newState[action.like.user_id].liked_image_ids[action.like.image_id];
       return newState;
     default:
       return state;
