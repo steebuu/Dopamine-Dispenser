@@ -43,7 +43,19 @@ class FeedImage extends Component {
             default:
                 timeSince = createdAt.toLocaleString('default', {month: 'long'}).toUpperCase() + " " + createdAt.getDate();
         }
-        Math.floor(timeBetween / (1000 * 3600 * 24));    
+        Math.floor(timeBetween / (1000 * 3600 * 24));
+        let likeCount = Object.keys(image.liked_by_ids).length
+        let likeMessage;
+        switch(true) {
+            case (likeCount === 0):
+                likeMessage = "Be the first to like this"
+                break;
+            case (likeCount === 1):
+                likeMessage = "1 like"
+                break;
+            default:
+                likeMessage = likeCount + " likes"
+        }  
         return (
             <div className="main-feed-image-div">
                 <div className="main-feed-image-header">
@@ -58,7 +70,7 @@ class FeedImage extends Component {
                         <i className="far fa-heart modal-icon"></i>
                         <i className="far fa-comment modal-icon"></i>
                     </div>
-                    <div className="main-feed-image-likes">Likes Placeholder</div>
+                    <div className="main-feed-image-likes">{likeMessage}</div>
                     <div className="main-feed-caption">
                         <div className="main-feed-caption-username">{image.user}</div>
                         {image.caption}
