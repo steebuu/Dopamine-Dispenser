@@ -10,7 +10,8 @@ export default class Like extends Component {
     handleLike(e) {
         e.preventDefault();
 
-        const { image, currentUser, unlikeImage, likeImage } = this.props;
+        const { imageId, currentUser, unlikeImage, likeImage } = this.props;
+        const image = images[imageId];
 
         if (currentUser.liked_image_ids[imageId]) {
             unlikeImage(currentUser.liked_image_ids[imageId.id])
@@ -20,7 +21,9 @@ export default class Like extends Component {
     }
 
     render() {
-        const {image, currentUser} = this.props;
+        const {images, imageId, currentUser} = this.props;
+        const image = images[imageId];
+        
         let buttonClass;
         
         if (currentUser.liked_image_ids[image.id]) {
@@ -30,7 +33,9 @@ export default class Like extends Component {
         }
 
         return (
-            <button className={buttonClass} onClick={this.handleLike}></button>
+            <button className={buttonClass} onClick={this.handleLike}>
+                <i className="far fa-heart modal-icon"></i>
+            </button>
         )
     }
 }
