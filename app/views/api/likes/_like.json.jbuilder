@@ -1,1 +1,1 @@
-json.extract! like, :user_id, :image_id
+json.extract! like, :user_id, :image_id, :id
