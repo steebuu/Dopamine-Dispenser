@@ -25,17 +25,20 @@ export default class Like extends Component {
         const image = images[imageId];
         
         let buttonClass;
+        let buttonType;
         
         if (currentUser.liked_image_ids[image.id]) {
             buttonClass = "liked"
+            buttonType = <i class="fas fa-heart modal-icon"></i>
         } else {
             buttonClass = "unliked"
+            buttonType = <i className="far fa-heart modal-icon"></i>
         }
 
         return (
-            <button className={buttonClass} onClick={this.handleLike}>
-                <i className="far fa-heart modal-icon"></i>
-            </button>
+            <div className={buttonClass} onClick={this.handleLike}>
+                {buttonType}
+            </div>
         )
     }
 }
