@@ -38,7 +38,7 @@ const usersReducer = (state = {}, action) => {
       delete newState[action.follow.followed_id].follower_ids[action.follow.follower_id];
       return newState;
     case RECEIVE_LIKE:
-      newState[action.like.user_id].liked_image_ids[action.like.image_id] = action.id
+      newState[action.like.user_id].liked_image_ids[action.like.image_id] = action.like.id
       return newState;
     case REMOVE_LIKE:
       delete newState[action.like.user_id].liked_image_ids[action.like.image_id];

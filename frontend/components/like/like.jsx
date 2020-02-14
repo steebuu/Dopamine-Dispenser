@@ -14,7 +14,7 @@ export default class Like extends Component {
         const image = images[imageId];
 
         if (currentUser.liked_image_ids[imageId]) {
-            unlikeImage(currentUser.liked_image_ids[imageId.id])
+            unlikeImage(currentUser.liked_image_ids[imageId])
         } else {
             likeImage({ user_id: currentUser.id, image_id: image.id })
         }
