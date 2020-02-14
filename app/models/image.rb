@@ -26,4 +26,10 @@ class Image < ApplicationRecord
     class_name: :User,
     foreign_key: :user_id,
     primary_key: :id
+
+  has_many :likes,
+    class_name: :Like,
+    foreign_key: :image_id,
+    primary_key: :id,
+    dependent: :destroy
 end

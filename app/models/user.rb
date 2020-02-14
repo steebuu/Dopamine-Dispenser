@@ -61,25 +61,41 @@ class User < ApplicationRecord
   has_many :images,
     class_name: :Image,
     foreign_key: :user_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
 
   has_many :follower_relationships,
     class_name: :Follow,
     foreign_key: :followed_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
 
   has_many :followers,
     through: :follower_relationships,
-    source: :follower
+    source: :follower,
+    dependent: :destroy
 
   has_many :followed_relationships,
     class_name: :Follow,
     foreign_key: :follower_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
 
   has_many :followed,
     through: :followed_relationships,
-    source: :followed
+    source: :followed,
+    dependent: :destroy
+  
+  has_many :likes,
+    class_name: :Like,
+    foreign_key: :user_id,
+    primary_key: :id,
+    dependent: :destroy
+
+  has_many :liked_images,
+    through: :likes,
+    source: :image,
+    dependent: :destroy
 
   has_one_attached :propic
 end

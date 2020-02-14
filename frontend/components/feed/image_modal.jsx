@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import LikeContainer from '../like/like_container';
 
 class ImageModal extends React.Component {
   constructor(props){
@@ -142,7 +143,19 @@ class ImageModal extends React.Component {
           break;
       default:
           timeSince = createdAt.toLocaleString('default', {month: 'long'}).toUpperCase() + " " + createdAt.getDate();
-  }
+    }
+    let likeCount = Object.keys(image.liked_by_ids).length
+    let likeMessage;
+    switch (true) {
+      case (likeCount === 0):
+        likeMessage = "Be the first to like this"
+        break;
+      case (likeCount === 1):
+        likeMessage = "1 like"
+        break;
+      default:
+        likeMessage = likeCount + " likes"
+    }  
 
     return(
       
@@ -181,10 +194,10 @@ class ImageModal extends React.Component {
           </div>
           <div className="image-modal-info-actions-div">
             <div className="image-modal-icons-div">
-              <i className="far fa-heart modal-icon"></i>
+              <LikeContainer imageId={image.id}></LikeContainer>
               <i className="far fa-comment modal-icon"></i>
             </div>
-            <div className="image-modal-likes-div">Likes Placeholder</div>
+            <div className="image-modal-likes-div">{likeMessage}</div>
             <div className="image-modal-timestamp-div">{timeSince}</div>  
           </div>
           <div className="image-modal-comment-div">

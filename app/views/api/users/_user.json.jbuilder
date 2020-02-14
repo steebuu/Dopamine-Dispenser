@@ -24,3 +24,11 @@ json.follower_ids do
     end
 end
 
+json.liked_image_ids hash
+
+json.liked_image_ids do
+    user.likes.each do |like|
+        json.set! like.image_id, like.id
+    end
+end
+

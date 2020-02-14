@@ -11,6 +11,7 @@ const msp = (state, ownProps) => {
   const sessionId = state.session.id;
   return{
     user: users[userId],
+    images,
     image: images[imageId],
     modal: state.ui.modal,
     image_ids: users[userId].image_ids,
