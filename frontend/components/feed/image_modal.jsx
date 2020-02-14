@@ -143,6 +143,18 @@ class ImageModal extends React.Component {
       default:
           timeSince = createdAt.toLocaleString('default', {month: 'long'}).toUpperCase() + " " + createdAt.getDate();
   }
+  let likeCount = Object.keys(image.liked_by_ids).length
+  let likeMessage;
+  switch (true) {
+    case (likeCount === 0):
+      likeMessage = "Be the first to like this"
+      break;
+    case (likeCount === 1):
+      likeMessage = "1 like"
+      break;
+    default:
+      likeMessage = likeCount + " likes"
+  }  
 
     return(
       
@@ -184,7 +196,7 @@ class ImageModal extends React.Component {
               <i className="far fa-heart modal-icon"></i>
               <i className="far fa-comment modal-icon"></i>
             </div>
-            <div className="image-modal-likes-div">Likes Placeholder</div>
+            <div className="image-modal-likes-div">{likeMessage}</div>
             <div className="image-modal-timestamp-div">{timeSince}</div>  
           </div>
           <div className="image-modal-comment-div">
