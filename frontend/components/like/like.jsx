@@ -10,14 +10,20 @@ export default class Like extends Component {
     handleLike(e) {
         e.preventDefault();
 
-        
+        const { image, currentUser, unlikeImage, likeImage } = this.props;
+
+        if (currentUser.liked_image_ids[imageId]) {
+            unlikeImage(currentUser.liked_image_ids[imageId.id])
+        } else {
+            likeImage({ user_id: currentUser.id, image_id: image.id })
+        }
     }
 
     render() {
-        const {imageId, currentUser} = this.props;
+        const {image, currentUser} = this.props;
         let buttonClass;
         
-        if (currentUser.liked_image_ids[imageId]) {
+        if (currentUser.liked_image_ids[image.id]) {
             buttonClass = "liked"
         } else {
             buttonClass = "unliked"
