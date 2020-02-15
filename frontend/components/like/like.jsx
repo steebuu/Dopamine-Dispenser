@@ -29,7 +29,7 @@ export default class Like extends Component {
         
         if (currentUser.liked_image_ids[image.id]) {
             buttonClass = "liked"
-            buttonType = <i class="fas fa-heart modal-icon"></i>
+            buttonType = <i className="fas fa-heart modal-icon"></i>
         } else {
             buttonClass = "unliked"
             buttonType = <i className="far fa-heart modal-icon"></i>
