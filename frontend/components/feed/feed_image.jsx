@@ -61,10 +61,10 @@ class FeedImage extends Component {
         return (
             <div className="main-feed-image-div">
                 <div className="main-feed-image-header">
-                    <div className="main-feed-profile-pic">
-                        <img src={propic} className="modal-prof-pic"/>
-                    </div>
-                    <Link to={`/users/${image.user_id}`} className="link">
+                    <Link to={`/users/${image.user_id}`} className="name-link">
+                        <div className="main-feed-profile-pic">
+                            <img src={propic} className="modal-prof-pic"/>
+                        </div>
                         {image.user}
                     </Link>
                 </div>
