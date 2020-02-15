@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     resources :images, only: [:create, :index, :show, :update, :destroy]
     resources :follows, only: [:index, :show, :create, :destroy]
     resources :likes, only: [:index, :show, :create, :destroy]
+    resources :comments, only: [:index, :show, :create, :destroy]
   end
 end
