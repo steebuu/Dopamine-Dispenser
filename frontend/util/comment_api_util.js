@@ -7,7 +7,7 @@ module.exports = {
         })
     },
 
-    removeComment(id) {
+    deleteComment(id) {
         return $.ajax({
             method: "DELETE",
             url: `api/comments/${id}`
