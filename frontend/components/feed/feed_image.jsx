@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux';
+import { Link } from 'react-router-dom';
 import LikeContainer from '../like/like_container';
 
 class FeedImage extends Component {
@@ -63,7 +64,9 @@ class FeedImage extends Component {
                     <div className="main-feed-profile-pic">
                         <img src={propic} className="modal-prof-pic"/>
                     </div>
-                    {image.user}
+                    <Link to={`/users/${image.user_id}`} className="link">
+                        {image.user}
+                    </Link>
                 </div>
                 <img src={images[id].photoUrl} className="main-feed-img"></img>
                 <div className="main-feed-image-bottom">
