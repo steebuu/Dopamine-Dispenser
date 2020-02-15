@@ -24,3 +24,18 @@ export const receiveComments = comments => {
         comments
     }
 }
+
+export const addComment = comment => dispatch => {
+    return commentAPI.addComment(comment)
+        .then(comment => dispatch(receiveComment(comment)));
+}
+
+export const deleteComment = id => dispatch => {
+    return commentAPI.deleteComment(id)
+        .then(comment => dispatch(removeComment(comment)));
+}
+
+export const getAllComments = () => dispatch => {
+    return commentAPI.getAllComments()
+        .then(comments => dispatch(receiveComments(comments)));
+}
