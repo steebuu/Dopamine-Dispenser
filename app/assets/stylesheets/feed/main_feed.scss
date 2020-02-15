@@ -28,6 +28,14 @@
     margin-right: 16px;
 }
 
+.name-link {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
 .main-feed-image-div {
     display: flex;
     flex-direction: column;
