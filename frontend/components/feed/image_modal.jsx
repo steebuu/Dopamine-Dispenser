@@ -98,7 +98,7 @@ class ImageModal extends React.Component {
   }
 
   render(){
-    const {user, image, sessionId} = this.props;
+    const {user, image, sessionId, closeModal} = this.props;
     const {optionModalType} = this.state;
     let component;
     let userAction = null;
@@ -169,12 +169,14 @@ class ImageModal extends React.Component {
         </div>
         <div className="image-modal-info-div">
           <div className="image-modal-info-user-div">
-            <div className="image-modal-profile-pic-div">
-              <img src={propic} className="modal-prof-pic"/>
-            </div>
-            <div className="image-modal-username-div">
-              {user.username}
-            </div>
+            <Link to={`/users/${image.user_id}`} className="name-link" onClick={closeModal}>
+              <div className="image-modal-profile-pic-div">
+                <img src={propic} className="modal-prof-pic"/>
+              </div>
+              <div className="image-modal-username-div">
+                {user.username}
+              </div>
+            </Link>
             {userAction}
           </div>
           <div className="image-modal-info-comments-div">
