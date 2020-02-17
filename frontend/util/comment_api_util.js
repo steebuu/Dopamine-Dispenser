@@ -14,7 +14,7 @@ module.exports = {
         })
     },
 
-    receiveComments() {
+    getAllComments() {
         return $.ajax({
             method: "GET",
             url: "api/comments"
