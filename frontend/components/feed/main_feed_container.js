@@ -2,6 +2,7 @@ import {connect} from "react-redux";
 import {getCurrentUser, getAllUsers} from '../../actions/user_actions';
 import {fetchImages} from '../../actions/image_actions';
 import {getAllFollows} from '../../actions/follow_actions';
+import {getAllComments} from '../../actions/comment_actions';
 import MainFeed from "./main_feed";
 
 const msp = (state, ownProps) => {
@@ -18,7 +19,8 @@ const mdp = (dispatch) => {
         getCurrentUser: id => dispatch(getCurrentUser(id)),
         getAllUsers: () => dispatch(getAllUsers()),
         fetchImages: () => dispatch(fetchImages()),
-        getAllFollows: () => dispatch(getAllFollows())
+        getAllFollows: () => dispatch(getAllFollows()),
+        getAllComments: () => dispatch(getAllComments())
     }
 }
 
