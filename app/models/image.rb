@@ -32,4 +32,10 @@ class Image < ApplicationRecord
     foreign_key: :image_id,
     primary_key: :id,
     dependent: :destroy
+  
+  has_many :comments,
+    class_name: :Comment,
+    foreign_key: :image_id,
+    primary_key: :id,
+    dependent: :destroy
 end
