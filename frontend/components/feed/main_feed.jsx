@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import FeedImage from './feed_image';
-import { getAllComments } from '../../actions/comment_actions';
 
 export default class MainFeed extends Component {
     constructor(props){
@@ -8,7 +7,7 @@ export default class MainFeed extends Component {
     }
 
     componentDidMount() {
-        const {fetchImages, getAllUsers, getAllFollows} = this.props;
+        const {fetchImages, getAllUsers, getAllFollows, getAllComments} = this.props;
         getAllUsers();
         fetchImages();
         getAllFollows();
