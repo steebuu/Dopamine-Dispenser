@@ -1,4 +1,4 @@
-json.extract! user, :id, :username, :bio, :full_name, :image_ids, :followed_image_ids
+json.extract! user, :id, :username, :bio, :full_name, :image_ids, :followed_image_ids, :comment_ids
 
 hash = {}
 
