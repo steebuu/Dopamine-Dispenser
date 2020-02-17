@@ -6,17 +6,17 @@ export default class CommentsIndex extends Component {
     }
 
     componentDidMount() {
-        const {imageId, getAllComments} = this.props;
-        getAllComments(imageId);    
+        const { getAllComments } = this.props;
+        getAllComments();    
     }
     
     render() {
-        const {comments} = this.props;
+        const {comment_ids, comments} = this.props;
         let commentLis;
-        if (Object.keys(comments).length > 0) {
-            commentLis = Object.values(comments).map((comment, i) => {
+        if (comment_ids.length > 0) {
+            commentLis = comment_ids.map((id, i) => {
                 return(
-                    <CommentIndexItemContainer comment={comment} key={i}/>
+                    <CommentIndexItemContainer comment={comments[id]} key={i}/>
                 )
             })
         }
