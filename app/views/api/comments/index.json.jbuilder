@@ -1,4 +1,4 @@
-json.array! @comments do |comment|
+@comments.each do |comment|
     json.set! comment.id do 
         json.partial! "api/comments/comment", comment: comment
     end
