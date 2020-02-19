@@ -11,7 +11,7 @@ export default class CommentForm extends Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
+        // this.handleChange = this.handleChange.bind(this);
     }
 
     handleSubmit(e) {
@@ -21,16 +21,16 @@ export default class CommentForm extends Component {
         addComment(comment);
     }
 
-    handleChange() {
+    handleChange(field) {
         return (e) => {
-            this.setState({ body: e.target.value });
+            this.setState({ [field]: e.target.value });
         }
     }
 
     render() {
         return (
             <form className="main-feed-comment-div" onSubmit={this.handleSubmit}>
-                <input type="text" className="comment-input" placeholder="Comments coming soon" value={this.state.body} onChange={this.handleChange}/>
+                <input type="text" className="comment-input" placeholder="Comments coming soon" value={this.state.body} onChange={this.handleChange("body")}/>
                 <button className="post-comment-button">Post</button>
             </form>
         )
