@@ -6,7 +6,7 @@ export default class CommentIndexItem extends Component {
     }
     
     render() {
-        const {comment} = this.props;
+        const {comment, users} = this.props;
         if (!comment || !comment.user || !comment.body) {
             return null;
         }
