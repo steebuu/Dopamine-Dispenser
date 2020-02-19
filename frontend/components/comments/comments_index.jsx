@@ -23,7 +23,7 @@ export default class CommentsIndex extends Component {
         }
 
         return (
-            <div>
+            <div className="comments-index">
                 {commentLis}
             </div>
         )

@@ -193,8 +193,8 @@ class ImageModal extends React.Component {
                   {image.caption}
                 </span>
               </div>
-              <CommentsIndexContainer comment_ids={image.comment_ids}/>
             </div>
+            <CommentsIndexContainer comment_ids={image.comment_ids}/>
           </div>
           <div className="image-modal-info-actions-div">
             <div className="image-modal-icons-div">
