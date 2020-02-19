@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CommentIndexItem from './comment_index_item';
+import CommentIndexItemContainer from './comment_index_item_container';
 
 export default class CommentsIndex extends Component {
     constructor(props){
@@ -17,7 +17,7 @@ export default class CommentsIndex extends Component {
         if (comment_ids.length > 0) {
             commentLis = comment_ids.map((id, i) => {
                 return(
-                    <CommentIndexItem comment={comments[id]} key={i}/>
+                    <CommentIndexItemContainer comment={comments[id]} key={i}/>
                 )
             })
         }
