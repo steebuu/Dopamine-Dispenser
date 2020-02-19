@@ -21,9 +21,9 @@ export default class CommentForm extends Component {
         addComment(comment);
     }
 
-    handleChange(field) {
+    handleChange() {
         return (e) => {
-            this.setState({ [field]: e.target.value });
+            this.setState({ body: e.target.value });
         }
     }
 
