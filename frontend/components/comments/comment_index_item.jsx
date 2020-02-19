@@ -10,7 +10,7 @@ export default class CommentIndexItem extends Component {
 
         return (
             <div className="comment">
-               <div className="comment-username">{comment.user}</div>
+               <div className="main-feed-caption-username">{comment.user}</div>
                <div className="comment-body">{comment.body}</div>         
             </div>
         )
