@@ -12,12 +12,12 @@ export default class CommentsIndex extends Component {
     }
     
     render() {
-        const {comment_ids, comments} = this.props;
+        const {comment_ids, comments, classType} = this.props;
         let commentLis;
         if (comment_ids.length > 0) {
             commentLis = comment_ids.map((id, i) => {
                 return(
-                    <CommentIndexItemContainer comment={comments[id]} key={i}/>
+                    <CommentIndexItemContainer comment={comments[id]} key={i} classType={classType}/>
                 )
             })
         }

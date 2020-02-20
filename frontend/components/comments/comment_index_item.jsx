@@ -19,16 +19,16 @@ export default class CommentIndexItem extends Component {
             propic = user.propicUrl
         )
         let propicLink;
-        if (classType = "modal") {
+        let commentClass = "feed-comment"
+        if (classType === "modal-comment") {
             propicLink = <Link to={`/users/${user.id}`} className="comment-pic-link">
                 <img src={propic} className="comment-prof-pic" />
             </Link>
+            commentClass = classType
         }
         return (
-            <div className="comment">
-                <Link to={`/users/${user.id}`} className="comment-pic-link">
-                    <img src={propic} className="comment-prof-pic" />
-                </Link>
+            <div className={commentClass}>
+                {propicLink}
                 <span className="comment-text">
                     <Link to={`/users/${user.id}`} className="comment-username">
                         {user.username}

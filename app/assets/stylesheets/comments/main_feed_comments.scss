@@ -4,10 +4,16 @@
     font-size: 14px;
 }
 
-.comment {
+.modal-comment {
     display: flex;
     padding: 12px 16px;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.feed-comment {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0px 16px;
 }
 
 .comment-body {
