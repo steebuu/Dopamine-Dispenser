@@ -20,18 +20,15 @@ export default class CommentIndexItem extends Component {
         )
         return (
             <div className="comment">
-                <div className="image-modal-info-user-div">
-                    <Link to={`/users/${user.id}`} className="name-link">
-                        <div className="comment-prof-pic-div">
-                            <img src={propic} className="comment-prof-pic" />
-                        </div>
-                        <div className="comment-username-div">
-                            {user.username}
-                        </div>
+                <Link to={`/users/${user.id}`} className="comment-pic-link">
+                    <img src={propic} className="comment-prof-pic" />
+                </Link>
+                <span className="comment-text">
+                    <Link to={`/users/${user.id}`} className="comment-username">
+                        {user.username}
                     </Link>
-                </div>
-               {/* <div className="main-feed-caption-username">{comment.user}</div> */}
-               <div className="comment-body">{comment.body}</div>         
+                    {comment.body}        
+                </span>
             </div>
         )
     }
