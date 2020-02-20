@@ -30,7 +30,7 @@ export default class CommentForm extends Component {
     render() {
         return (
             <form className="main-feed-comment-div" onSubmit={this.handleSubmit}>
-                <input type="text" className="comment-input" placeholder="Comments coming soon" value={this.state.body} onChange={this.handleChange("body")}/>
+                <input type="text" className="comment-input" placeholder="Add a comment..." value={this.state.body} onChange={this.handleChange("body")}/>
                 <button className="post-comment-button">Post</button>
             </form>
         )
