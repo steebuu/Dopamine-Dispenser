@@ -7,7 +7,7 @@ export default class CommentIndexItem extends Component {
     }
     
     render() {
-        const {comment, users} = this.props;
+        const {comment, users, classType} = this.props;
         if (!comment || !comment.user || !comment.body) {
             return null;
         }
@@ -18,6 +18,12 @@ export default class CommentIndexItem extends Component {
         } else (
             propic = user.propicUrl
         )
+        let propicLink;
+        if (classType = "modal") {
+            propicLink = <Link to={`/users/${user.id}`} className="comment-pic-link">
+                <img src={propic} className="comment-prof-pic" />
+            </Link>
+        }
         return (
             <div className="comment">
                 <Link to={`/users/${user.id}`} className="comment-pic-link">
