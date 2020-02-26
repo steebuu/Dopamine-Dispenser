@@ -19,6 +19,7 @@ export default class CommentForm extends Component {
         const {addComment} = this.props;
         const comment = Object.assign({}, this.state);
         addComment(comment);
+        this.setState({ body: "" });
     }
 
     handleChange(field) {
