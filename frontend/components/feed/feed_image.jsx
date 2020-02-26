@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
 import LikeContainer from '../like/like_container';
+import CommentIndexContainer from '../comments/comments_index_container';
+import CommentFormContainer from '../comments/comment_form_container';
 
 class FeedImage extends Component {
     constructor(props) {
@@ -79,11 +81,9 @@ class FeedImage extends Component {
                         <div className="main-feed-caption-username">{image.user}</div>
                         {image.caption}
                     </div>
+                    <CommentIndexContainer comment_ids={image.comment_ids}/>
                     <div className="main-feed-timestamp">{timeSince}</div>
-                    <div className="main-feed-comment-div">
-                        <input type="text" className="comment-input" placeholder="Comments coming soon" />
-                        <button className="post-comment-button">Post</button>
-                    </div>
+                    <CommentFormContainer image_id={image.id}/>
                 </div>
             </div>  
         )

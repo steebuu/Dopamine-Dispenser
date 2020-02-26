@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import LikeContainer from '../like/like_container';
+import CommentsIndexContainer from '../comments/comments_index_container';
 
 class ImageModal extends React.Component {
   constructor(props){
@@ -193,6 +194,7 @@ class ImageModal extends React.Component {
                 </span>
               </div>
             </div>
+            <CommentsIndexContainer comment_ids={image.comment_ids} classType="modal-comment"/>
           </div>
           <div className="image-modal-info-actions-div">
             <div className="image-modal-icons-div">
